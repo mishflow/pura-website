@@ -761,9 +761,27 @@
         alert('Please enter your name and email address.');
         return;
       }
-      this.style.display = 'none';
-      document.getElementById('form-success').style.display = 'block';
-      document.querySelector('.enquire-contact').style.display = 'none';
+
+      const form = this;
+      const data = new FormData(form);
+
+      fetch('https://formspree.io/f/xbdpvqww', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(res => {
+        if (res.ok) {
+          form.style.display = 'none';
+          document.getElementById('form-success').style.display = 'block';
+          document.querySelector('.enquire-contact').style.display = 'none';
+        } else {
+          alert('Something went wrong — please email us directly at purapilatessrilanka@gmail.com');
+        }
+      })
+      .catch(() => {
+        alert('Something went wrong — please email us directly at purapilatessrilanka@gmail.com');
+      });
     });
   </script>
 

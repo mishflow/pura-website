@@ -683,22 +683,83 @@
     });
 
     document.getElementById('b-submit').addEventListener('click', () => {
-      const pkg = builderState.package ? builderState.package.charAt(0).toUpperCase() + builderState.package.slice(1) : '';
+      const pkg = builderState.package;
+      const accom = builderState.accom;
       const total = calcTotal();
-      const enquire = document.getElementById('enquire');
-      if (enquire) {
-        enquire.scrollIntoView({ behavior: 'smooth' });
-        const msgField = document.getElementById('f-message');
-        if (msgField && total > 0) {
-          msgField.value = `Package: ${pkg}\nEstimate: LKR ${total.toLocaleString()}\n\n`;
+
+      // Map builder keys to form option text
+      const pkgMap = {
+        taste: 'Taste of Pura — 4 days',
+        escape: 'Escape — 7 days',
+        retreat: 'Retreat — 10 days',
+        immersion: 'Immersion — 14 days'
+      };
+      const accomMap = {
+        none: 'None — I\'ll arrange my own',
+        dorm: '8-bed Dorm',
+        fourbed: '4-bed Superior',
+        ensuite: 'Private Ensuite'
+      };
+
+      // Pre-fill package select
+      const pkgSelect = document.querySelector('select[name="package"]');
+      if (pkgSelect && pkg) {
+        Array.from(pkgSelect.options).forEach(o => {
+          if (o.text === pkgMap[pkg]) o.selected = true;
+        });
+      }
+
+      // Pre-fill accommodation select
+      const accomSelect = document.querySelector('select[name="accommodation"]');
+      if (accomSelect && accom) {
+        Array.from(accomSelect.options).forEach(o => {
+          if (o.text === accomMap[accom]) o.selected = true;
+        });
+      }
+
+      // Pre-fill add-ons select
+      const addonsSelect = document.querySelector('select[name="addons"]');
+      if (addonsSelect) {
+        if (builderState.transfer && builderState.tuktuk) {
+          Array.from(addonsSelect.options).forEach(o => { if (o.value === '+ Accommodation & transfers') o.selected = true; });
+        } else if (builderState.transfer) {
+          Array.from(addonsSelect.options).forEach(o => { if (o.text === '+ Transfers') o.selected = true; });
+        } else if (accom && accom !== 'none') {
+          Array.from(addonsSelect.options).forEach(o => { if (o.text === '+ Accommodation') o.selected = true; });
         }
       }
+
+      // Build message with full summary
+      const msgField = document.getElementById('f-message');
+      if (msgField) {
+        const lines = [];
+        if (pkg) lines.push(`Package: ${pkgMap[pkg]}`);
+        if (accom && accom !== 'none') lines.push(`Accommodation: ${accomMap[accom]}`);
+        if (builderState.transfer) lines.push('Airport transfer: Yes');
+        if (builderState.tuktuk) lines.push('Tuk tuk to classes: Yes');
+        if (builderState.breakfast) lines.push('Breakfast add-on: Yes');
+        if (builderState.dinner) lines.push('Dinner add-on: Yes');
+        if (builderState.activities > 0) lines.push(`Activities selected: ${builderState.activities}`);
+        if (total > 0) lines.push(`\nEstimate: LKR ${total.toLocaleString()} (≈ $${Math.round(total/PRICING.fx.usd).toLocaleString()} USD)`);
+        lines.push('\n');
+        msgField.value = lines.join('\n');
+      }
+
+      // Scroll to form
+      document.getElementById('enquire').scrollIntoView({ behavior: 'smooth' });
     });
 
     document.querySelector('.enquiry-form').addEventListener('submit', function(e) {
       e.preventDefault();
+      const name = this.querySelector('input[name="name"]').value.trim();
+      const email = this.querySelector('input[name="email"]').value.trim();
+      if (!name || !email) {
+        alert('Please enter your name and email address.');
+        return;
+      }
       this.style.display = 'none';
       document.getElementById('form-success').style.display = 'block';
+      document.querySelector('.enquire-contact').style.display = 'none';
     });
   </script>
 

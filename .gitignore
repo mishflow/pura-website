@@ -3,3 +3,8 @@ Thumbs.db
 *.log
 node_modules/
 .env
+.claude/
+First Try/
+Photos/
+pura-website/
+start-server.sh

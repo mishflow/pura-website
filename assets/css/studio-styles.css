@@ -133,3 +133,60 @@ footer { background: var(--dark); padding: 48px 52px; }
 .footer-links { display: flex; gap: 24px; }
 .footer-link { font-size: 11px; color: rgba(245,237,227,0.4); letter-spacing: 0.1em; }
 .footer-social { font-size: 12px; color: rgba(245,237,227,0.4); }
+
+/* ── MOBILE ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* NAV — keep logo + book button, hide nav links */
+  nav { padding: 16px 24px; }
+  .nav-links { gap: 0; }
+  .nav-link { display: none; }
+  .nav-cta { padding: 9px 18px; }
+
+  /* HERO */
+  .hero-content { padding: 0 24px 48px; }
+  .hero-sub { font-size: 11px; letter-spacing: 0.12em; }
+  .hero-btns { flex-direction: column; gap: 10px; align-items: flex-start; }
+
+  /* SECTIONS */
+  .section { padding: 52px 24px; }
+
+  /* ABOUT */
+  .about-wrap { grid-template-columns: 1fr; gap: 32px; }
+  .about-photo { height: 320px; }
+
+  /* CLASSES */
+  .classes-full { padding: 52px 0; }
+  .classes-inner { padding: 0 24px; }
+  .class-cards { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .class-card-img { height: 220px; }
+  .class-card-body { padding: 14px; }
+  .class-name { font-size: 20px; }
+
+  /* SCHEDULE CTA */
+  .schedule-cta { flex-direction: column; align-items: flex-start; gap: 16px; padding: 22px 20px; }
+
+  /* BOOK */
+  .book-section { padding: 52px 0; }
+  .book-inner { padding: 0 24px; }
+
+  /* INSTRUCTORS */
+  #instructors { padding: 52px 0; }
+  .instructors-inner { padding: 0 24px; }
+  .instructor-cards { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .instructor-photo { height: 200px; }
+  .instructor-body { padding: 12px; }
+  .instructor-name { font-size: 17px; }
+
+  /* RETREAT TEASER */
+  #retreat-teaser { padding: 52px 0; }
+  .retreat-inner { grid-template-columns: 1fr; gap: 32px; padding: 0 24px; }
+  .retreat-photo { height: 280px; order: -1; }
+  .retreat-pkgs { grid-template-columns: 1fr 1fr; }
+
+  /* FOOTER */
+  footer { padding: 40px 24px; }
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .footer-links { flex-wrap: wrap; gap: 16px; }
+
+}

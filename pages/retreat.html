@@ -123,22 +123,63 @@
     <div class="eyebrow">Make it yours</div>
     <h2 class="section-title">Beyond the <em>studio.</em></h2>
     <div class="addons-strip">
-      <div class="addon-item">
+      <div class="addon-item" data-popup="surfing">
         <div class="addon-name">Surfing</div>
+        <div class="addon-hint">Learn more ↗</div>
       </div>
-      <div class="addon-item">
+      <div class="addon-item" data-popup="yoga">
         <div class="addon-name">Yoga</div>
+        <div class="addon-hint">Learn more ↗</div>
       </div>
-      <div class="addon-item">
+      <div class="addon-item" data-popup="cooking">
         <div class="addon-name">Cooking class</div>
+        <div class="addon-hint">Learn more ↗</div>
       </div>
-      <div class="addon-item">
+      <div class="addon-item" data-popup="daytrips">
         <div class="addon-name">Day trips</div>
+        <div class="addon-hint">Learn more ↗</div>
       </div>
-      <div class="addon-item">
+      <div class="addon-item" data-popup="townpass">
         <div class="addon-name">Ahangama town pass</div>
+        <div class="addon-hint">Learn more ↗</div>
       </div>
     </div>
+
+  <!-- ACTIVITY POPUPS -->
+  <div class="popup-overlay" id="popup-overlay">
+    <div class="popup-box">
+      <button class="popup-close" id="popup-close">✕</button>
+      <div class="popup-content" id="popup-content"></div>
+    </div>
+  </div>
+
+  <div class="popup-data" hidden>
+    <div data-id="surfing">
+      <p class="popup-eyebrow">Activity</p>
+      <h3 class="popup-title">Surfing</h3>
+      <p class="popup-body">Ahangama has a reef break that works for beginners and improves fast. Boards and lessons are available right on the beach — most people pick it up within a day or two. A good counterbalance to the reformer.</p>
+    </div>
+    <div data-id="yoga">
+      <p class="popup-eyebrow">Activity</p>
+      <h3 class="popup-title">Yoga</h3>
+      <p class="popup-body">Mat yoga classes run at the studio alongside Pilates. If you want something slower, more breath-led and meditative to balance your reformer days, this is it.</p>
+    </div>
+    <div data-id="cooking">
+      <p class="popup-eyebrow">Activity</p>
+      <h3 class="popup-title">Cooking class</h3>
+      <p class="popup-body">Sri Lankan food is genuinely one of the best things about being here. A local cooking class will teach you rice and curry from scratch — the kind you'll spend years trying to recreate at home.</p>
+    </div>
+    <div data-id="daytrips">
+      <p class="popup-eyebrow">Activity</p>
+      <h3 class="popup-title">Day trips</h3>
+      <p class="popup-body">Galle Fort is 20 minutes away. Mirissa for whale watching, Udawalawe for elephants, and Ella for hills and waterfalls are all doable from Ahangama. Good drivers are easy to find and not expensive.</p>
+    </div>
+    <div data-id="townpass">
+      <p class="popup-eyebrow">Activity</p>
+      <h3 class="popup-title">Ahangama town pass</h3>
+      <p class="popup-body">A discount card that gets you savings across local cafes, restaurants and activities around Ahangama. We can sort it for you — $30, pays for itself fast.</p>
+    </div>
+  </div>
     <p class="addons-note">All activities are optional add-ons. Select them in the package builder above for an instant estimate.</p>
   </div>
 </section>
@@ -770,6 +811,32 @@
       }
       // Otherwise let the form POST naturally to Formspree
     });
+
+  // ── ACTIVITY POPUPS ──
+  const overlay = document.getElementById('popup-overlay');
+  const content = document.getElementById('popup-content');
+
+  document.querySelectorAll('.addon-item[data-popup]').forEach(tile => {
+    tile.addEventListener('click', () => {
+      const id = tile.dataset.popup;
+      const src = document.querySelector(`.popup-data [data-id="${id}"]`);
+      if (!src) return;
+      content.innerHTML = src.innerHTML;
+      overlay.classList.add('open');
+    });
+  });
+
+  document.getElementById('popup-close').addEventListener('click', () => {
+    overlay.classList.remove('open');
+  });
+
+  overlay.addEventListener('click', e => {
+    if (e.target === overlay) overlay.classList.remove('open');
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') overlay.classList.remove('open');
+  });
   </script>
 
 </body>

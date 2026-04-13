@@ -229,6 +229,19 @@ footer { background: var(--dark); padding: 48px 52px; }
 .pc-link { font-size: 11px; letter-spacing: 0.1em; color: var(--sage); display: inline-block; margin-top: 6px; }
 .hidden { display: none !important; }
 
+.resident-toggle {
+  display: flex; gap: 3px; margin-bottom: 10px;
+  background: rgba(111,122,96,0.1); border-radius: 20px;
+  padding: 3px; width: fit-content;
+}
+.res-btn {
+  font-family: 'Jost', sans-serif; font-size: 9px; font-weight: 400;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 6px 16px; border-radius: 18px; border: none; cursor: pointer;
+  background: transparent; color: rgba(61,35,20,0.45); transition: all 0.2s;
+}
+.res-btn.active { background: white; color: var(--dark); box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+
 .rental-note {
   margin-top: 20px; font-size: 12px; color: rgba(61,35,20,0.5); line-height: 1.7;
 }

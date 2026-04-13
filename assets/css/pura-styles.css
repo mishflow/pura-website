@@ -40,6 +40,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ── RETREAT NAV ── */
+.retreat-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 48px;
+  background: rgba(245,237,227,0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 0.5px solid rgba(74,85,56,0.1);
+}
+.retreat-nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; color: #3d2314; letter-spacing: 0.02em; text-decoration: none; }
+.retreat-nav-logo em { font-style: italic; color: #6f7a60; }
+.retreat-nav-back { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(61,35,20,0.55); text-decoration: none; transition: color 0.2s; }
+.retreat-nav-back:hover { color: #3d2314; }
+
 /* ── PAGE WRAPPER ── */
 .page {
   max-width: 1100px;

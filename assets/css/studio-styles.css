@@ -51,7 +51,7 @@ nav {
 .hero-btn-secondary { background: rgba(255,255,255,0.15); color: white; border: 0.5px solid rgba(255,255,255,0.3); }
 
 /* SECTIONS */
-.section { padding: 72px 52px; max-width: 1100px; margin: 0 auto; }
+.section { padding: 48px 52px; max-width: 1100px; margin: 0 auto; }
 .eyebrow { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(61,35,20,0.38); margin-bottom: 10px; }
 .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 48px); font-weight: 300; line-height: 1.08; color: var(--dark); margin-bottom: 20px; }
 .section-title em { font-style: italic; color: var(--dusty); }
@@ -72,7 +72,7 @@ nav {
 
 /* CLASSES */
 #classes { background: var(--white); }
-.classes-full { background: var(--white); padding: 72px 0; }
+.classes-full { background: var(--white); padding: 48px 0; }
 .classes-inner { max-width: 1100px; margin: 0 auto; padding: 0 52px; }
 .class-cards { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 40px; }
 .class-card { background: var(--sage-light); border-radius: 14px; overflow: hidden; border: 0.5px solid rgba(111,122,96,0.15); }
@@ -93,12 +93,12 @@ nav {
 .btn-white { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; padding: 12px 24px; border-radius: 24px; background: white; color: var(--sage-dark); border: none; cursor: pointer; font-family: 'Jost', sans-serif; }
 
 /* BOOK */
-.book-section { background: var(--white); padding: 72px 0; }
+.book-section { background: var(--white); padding: 48px 0; }
 .book-inner { max-width: 1100px; margin: 0 auto; padding: 0 52px; }
 .book-embed { margin-top: 32px; border-radius: 14px; overflow: hidden; border: 0.5px solid rgba(111,122,96,0.15); }
 
 /* INSTRUCTORS */
-#instructors { background: var(--sand); padding: 72px 0; }
+#instructors { background: var(--sand); padding: 48px 0; }
 .instructors-inner { max-width: 1100px; margin: 0 auto; padding: 0 52px; }
 .instructor-cards { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 40px; }
 .instructor-card { background: var(--white); border-radius: 14px; overflow: hidden; border: 0.5px solid rgba(61,35,20,0.08); }
@@ -112,7 +112,7 @@ nav {
 .instructors-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 28px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); }
 
 /* RETREAT TEASER */
-#retreat-teaser { background: var(--mauve); padding: 72px 0; }
+#retreat-teaser { background: var(--mauve); padding: 48px 0; }
 .retreat-inner { max-width: 1100px; margin: 0 auto; padding: 0 52px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
 .retreat-photo { height: 420px; border-radius: 14px; overflow: hidden; background: linear-gradient(160deg, #c8b0a0 0%, #674d50 100%); }
 .retreat-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
@@ -150,14 +150,14 @@ footer { background: var(--dark); padding: 48px 52px; }
   .hero-btns { flex-direction: column; gap: 10px; align-items: flex-start; }
 
   /* SECTIONS */
-  .section { padding: 52px 24px; }
+  .section { padding: 36px 24px; }
 
   /* ABOUT */
   .about-wrap { grid-template-columns: 1fr; gap: 32px; }
   .about-photo { height: 320px; }
 
   /* CLASSES */
-  .classes-full { padding: 52px 0; }
+  .classes-full { padding: 36px 0; }
   .classes-inner { padding: 0 24px; }
   .class-cards { grid-template-columns: 1fr 1fr; gap: 12px; }
   .class-card-img { height: 200px; }
@@ -168,11 +168,11 @@ footer { background: var(--dark); padding: 48px 52px; }
   .schedule-cta { flex-direction: column; align-items: flex-start; gap: 16px; padding: 22px 20px; }
 
   /* BOOK */
-  .book-section { padding: 52px 0; }
+  .book-section { padding: 36px 0; }
   .book-inner { padding: 0 24px; }
 
   /* INSTRUCTORS */
-  #instructors { padding: 52px 0; }
+  #instructors { padding: 36px 0; }
   .instructors-inner { padding: 0 24px; }
   .instructor-cards { grid-template-columns: 1fr 1fr; gap: 12px; }
   .instructor-photo { height: 200px; }
@@ -180,7 +180,7 @@ footer { background: var(--dark); padding: 48px 52px; }
   .instructor-name { font-size: 17px; }
 
   /* RETREAT TEASER */
-  #retreat-teaser { padding: 52px 0; }
+  #retreat-teaser { padding: 36px 0; }
   .retreat-inner { grid-template-columns: 1fr; gap: 32px; padding: 0 24px; }
   .retreat-photo { height: 280px; order: -1; }
   .retreat-pkgs { grid-template-columns: 1fr 1fr; }

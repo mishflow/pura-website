@@ -496,7 +496,7 @@ document.querySelectorAll('.ctype-btn').forEach(btn => {
     btn.classList.add('active');
     const type = btn.dataset.ctype;
     // Elements that belong to exactly one type
-    document.querySelectorAll('[class*="ctype-"]').forEach(el => {
+    document.querySelectorAll('[class*="ctype-"]:not(.ctype-btn)').forEach(el => {
       const classes = [...el.classList];
       const types = classes.filter(c => c.startsWith('ctype-')).map(c => c.replace('ctype-', ''));
       el.classList.toggle('hidden', !types.includes(type));

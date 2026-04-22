@@ -229,17 +229,15 @@ footer { background: var(--dark); padding: 48px 52px; }
 .pc-link { font-size: 11px; letter-spacing: 0.1em; color: var(--sage); display: inline-block; margin-top: 6px; }
 .hidden { display: none !important; }
 
-/* Green Season deal banner */
+/* Green Season deal */
 .green-season-deal {
-  display: flex; align-items: center; gap: 12px;
-  background: linear-gradient(135deg, rgba(111,122,96,0.15) 0%, rgba(111,122,96,0.08) 100%);
-  border: 1px solid rgba(111,122,96,0.25); border-radius: 12px;
-  padding: 14px 20px; margin-bottom: 24px;
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-bottom: 28px;
 }
 .green-season-deal.hidden { display: none; }
-.gs-leaf { font-size: 18px; flex-shrink: 0; }
-.gs-text { font-size: 12px; color: rgba(61,35,20,0.65); line-height: 1.6; }
-.gs-text strong { color: var(--sage-dark); font-weight: 500; }
+.gs-leaf { font-size: 13px; }
+.gs-text { font-size: 11px; color: rgba(61,35,20,0.45); letter-spacing: 0.03em; }
+.gs-text strong { color: var(--sage); font-weight: 400; }
 
 .resident-toggle {
   display: flex; gap: 3px; margin-bottom: 10px;

@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pura Pilates · Green Season</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../assets/css/pura-styles.css">
+
+  <style>
+    /* ── GREEN SEASON OVERRIDES ── */
+
+    /* Hero gradient — deep forest green fallback */
+    .hero {
+      background: linear-gradient(135deg, #2a3d2e 0%, #3e5a40 50%, #4a5538 100%);
+    }
+
+    /* Green season badge strip */
+    .gs-banner {
+      background: var(--sage);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(245, 237, 227, 0.9);
+      font-family: 'Jost', sans-serif;
+    }
+
+    /* Why green season section */
+    #why-green {
+      background: var(--ivory);
+      padding: 0;
+    }
+    #why-green .page {
+      padding: 36px 52px;
+    }
+    #why-green .section-title {
+      margin-top: 10px;
+      margin-bottom: 36px;
+    }
+    #why-green .section-title em {
+      color: var(--sage);
+    }
+
+    .gs-reasons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .gs-reason {
+      background: var(--warm-white);
+      border-radius: 14px;
+      border: 0.5px solid rgba(61, 35, 20, 0.1);
+      padding: 28px 24px;
+    }
+
+    .gs-reason-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-weight: 300;
+      color: rgba(111, 122, 96, 0.25);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .gs-reason-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--dark-brown);
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .gs-reason-title em {
+      font-style: italic;
+      color: var(--sage);
+    }
+
+    .gs-reason-desc {
+      font-size: 13px;
+      color: rgba(61, 35, 20, 0.6);
+      line-height: 1.75;
+    }
+
+    /* Packages — green season accent overrides */
+    #packages .section-title em { color: var(--sage); }
+
+    .pkg-gs-savings {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--sage);
+      font-family: 'Jost', sans-serif;
+      margin-bottom: 4px;
+      font-weight: 400;
+    }
+
+    .pkg-taste-gs .pkg-accent-bar  { background: var(--sage); }
+    .pkg-taste-gs .pkg-badge       { background: rgba(111, 122, 96, 0.15); color: var(--sage); }
+    .pkg-taste-gs .pkg-price span  { color: var(--sage); }
+
+    .pkg-escape-gs .pkg-accent-bar { background: var(--rust); }
+    .pkg-escape-gs .pkg-badge      { background: rgba(151, 100, 78, 0.15); color: var(--rust); }
+    .pkg-escape-gs .pkg-price span { color: var(--rust); }
+
+    .pkg-retreat-gs .pkg-accent-bar { background: var(--mauve); }
+    .pkg-retreat-gs .pkg-badge      { background: rgba(103, 77, 80, 0.15); color: var(--mauve); }
+    .pkg-retreat-gs .pkg-price span { color: var(--mauve); }
+
+    .pkg-immersion-gs .pkg-accent-bar { background: var(--dusty-rose); }
+    .pkg-immersion-gs .pkg-badge      { background: rgba(196, 119, 106, 0.15); color: var(--dusty-rose); }
+    .pkg-immersion-gs .pkg-price span { color: var(--dusty-rose); }
+
+    /* Builder overrides */
+    #builder .section-title em { color: var(--sage); }
+    .b-option:hover { border-color: var(--sage); }
+    .b-option.selected { border-color: var(--sage); background: rgba(111, 122, 96, 0.08); }
+    .b-check input:checked ~ .b-check-box { background: var(--sage); border-color: var(--sage); }
+    .builder-submit { background: var(--sage); }
+    .builder-submit:hover { opacity: 0.85; }
+
+    /* Form overrides */
+    #enquire .section-title em { color: var(--sage); }
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus { border-color: var(--sage); }
+    .form-submit { background: var(--sage); }
+
+    @media (max-width: 768px) {
+      #why-green .page { padding: 32px 20px; }
+      .gs-reasons { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── GREEN SEASON BANNER ── -->
+  <div class="gs-banner">Green Season · May – October · Better rates, lush island</div>
+
+  <!-- ── NAV ── -->
+  <nav class="retreat-nav" style="top: 37px;">
+    <a class="retreat-nav-logo" href="/"><span>Pura</span> <em>Pilates</em></a>
+    <a class="retreat-nav-back" href="/">← Studio</a>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section id="hero" class="hero" style="margin-top: 37px;">
+    <img id="hero-img"
+         src="../assets/images/lifestyle-01.jpg"
+         alt="Pura Pilates Green Season — Ahangama, Sri Lanka">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Green Season · Ahangama, Sri Lanka · May – October</p>
+      <h1 class="hero-title">
+        Lush island.<br>
+        <em>Better rates.</em><br>
+        Same Pura.
+      </h1>
+      <p class="hero-subline">4–14 days · Reformer · Mat · Green Season deals</p>
+    </div>
+  </section>
+
+  <!-- ── INTRO ── -->
+  <section id="intro">
+    <div class="page">
+      <p class="eyebrow">Green season</p>
+      <h2 class="section-title">
+        Sri Lanka's best-kept<br>
+        <em>secret season.</em>
+      </h2>
+      <div class="quote-line">
+        <p><em>The island turns green, the prices drop, and the vibe gets even better.</em></p>
+      </div>
+      <p class="body-text">May to October is Sri Lanka's green season — the island's off-peak. The south coast is lush, the crowds thin out, and Pura is offering its best rates of the year. Same studio, same instructors, same practice. Just quieter, greener, and easier on the wallet. If you've been waiting for a reason to come, this is it.</p>
+    </div>
+  </section>
+
+  <!-- ── WHY GREEN SEASON ── -->
+  <section id="why-green">
+    <div class="page">
+      <p class="eyebrow">Why come now</p>
+      <h2 class="section-title">Three good reasons to book <em>green.</em></h2>
+      <div class="gs-reasons">
+        <div class="gs-reason">
+          <div class="gs-reason-num">01</div>
+          <div class="gs-reason-title">Best rates <em>of the year.</em></div>
+          <div class="gs-reason-desc">Green season is our lowest pricing across all packages. Same practice, same studio, same everything — just significantly more affordable. Good time to go longer.</div>
+        </div>
+        <div class="gs-reason">
+          <div class="gs-reason-num">02</div>
+          <div class="gs-reason-title">Quieter studio, <em>more attention.</em></div>
+          <div class="gs-reason-desc">Fewer people means smaller groups and more instructor time. If you want to progress faster or just enjoy a less crowded space, this is the window.</div>
+        </div>
+        <div class="gs-reason">
+          <div class="gs-reason-num">03</div>
+          <div class="gs-reason-title">The island at its <em>most beautiful.</em></div>
+          <div class="gs-reason-desc">Rain keeps the south coast lush and green. The light is different, the rice paddies are full, and the landscape looks the way it does in all the photos you've saved. Come see it properly.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PACKAGES ── -->
+  <section id="packages">
+    <div class="page">
+      <p class="eyebrow">Green season deals</p>
+      <h2 class="section-title">Your <em>green season</em> retreat.</h2>
+      <p class="pkg-subtext">Click any package to see the full schedule and what's included.</p>
+
+      <div class="package-cards">
+
+        <div class="pkg-card pkg-taste-gs" data-package="taste">
+          <div class="pkg-accent-bar"></div>
+          <div class="pkg-inner">
+            <span class="pkg-badge">ENTRY</span>
+            <h3 class="pkg-name">Taste of Pura</h3>
+            <div class="pkg-duration">4 days · 3 nights</div>
+            <div class="pkg-stats">1 private · 3 group classes</div>
+            <div class="pkg-gs-savings">Green Season Deal</div>
+            <div class="pkg-price">From <span>LKR 20,000</span></div>
+            <div class="pkg-toggle">See details ↓</div>
+          </div>
+        </div>
+
+        <div class="pkg-card pkg-escape-gs" data-package="escape">
+          <div class="pkg-accent-bar"></div>
+          <div class="pkg-inner">
+            <span class="pkg-badge">PURA FEEL</span>
+            <h3 class="pkg-name">Escape</h3>
+            <div class="pkg-duration">7 days · 6 nights</div>
+            <div class="pkg-stats">2 privates · 6 group classes</div>
+            <div class="pkg-gs-savings">Green Season Deal</div>
+            <div class="pkg-price">From <span>LKR 40,000</span></div>
+            <div class="pkg-toggle">See details ↓</div>
+          </div>
+        </div>
+
+        <div class="pkg-card pkg-retreat-gs" data-package="retreat">
+          <div class="pkg-accent-bar"></div>
+          <div class="pkg-inner">
+            <span class="pkg-badge">PURA LOVE</span>
+            <h3 class="pkg-name">Retreat</h3>
+            <div class="pkg-duration">10 days · 9 nights</div>
+            <div class="pkg-stats">2 privates · 8 group classes · Pura tee</div>
+            <div class="pkg-gs-savings">Green Season Deal</div>
+            <div class="pkg-price">From <span>LKR 46,000</span></div>
+            <div class="pkg-toggle">See details ↓</div>
+          </div>
+        </div>
+
+        <div class="pkg-card pkg-immersion-gs" data-package="immersion">
+          <div class="pkg-accent-bar"></div>
+          <div class="pkg-inner">
+            <span class="pkg-badge">PURA BLISS</span>
+            <h3 class="pkg-name">Immersion</h3>
+            <div class="pkg-duration">14 days · 13 nights</div>
+            <div class="pkg-stats">3 privates · 12 group classes · Pura tee</div>
+            <div class="pkg-gs-savings">Green Season Deal</div>
+            <div class="pkg-price">From <span>LKR 68,000</span></div>
+            <div class="pkg-toggle">See details ↓</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pkg-expand" id="pkg-expand">
+        <div class="pkg-expand-inner page"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ADD-ONS ── -->
+  <section id="addons">
+  <div class="page">
+    <div class="eyebrow">Make it yours</div>
+    <h2 class="section-title">Beyond the <em>studio.</em></h2>
+    <div class="addons-strip">
+      <div class="addon-item" data-popup="surfing">
+        <div class="addon-name">Surfing</div>
+        <div class="addon-hint">Learn more ↗</div>
+      </div>
+      <div class="addon-item" data-popup="yoga">
+        <div class="addon-name">Yoga</div>
+        <div class="addon-hint">Learn more ↗</div>
+      </div>
+      <div class="addon-item" data-popup="cooking">
+        <div class="addon-name">Cooking class</div>
+        <div class="addon-hint">Learn more ↗</div>
+      </div>
+      <div class="addon-item" data-popup="daytrips">
+        <div class="addon-name">Day trips</div>
+        <div class="addon-hint">Learn more ↗</div>
+      </div>
+      <div class="addon-item" data-popup="townpass">
+        <div class="addon-name">Ahangama town pass</div>
+        <div class="addon-hint">Learn more ↗</div>
+      </div>
+    </div>
+
+  <!-- ACTIVITY POPUPS -->
+  <div class="popup-overlay" id="popup-overlay">
+    <div class="popup-box">
+      <button class="popup-close" id="popup-close">✕</button>
+      <div class="popup-content" id="popup-content"></div>
+    </div>
+  </div>
+
+  <div class="popup-data" hidden>
+    <div data-id="surfing">
+      <p class="popup-eyebrow">Activity</p>
+      <h3 class="popup-title">Surfing</h3>
+      <p class="popup-body">Ahangama has a reef break that works for beginners and improves fast. Boards and lessons are available right on the beach — most people pick it up within a day or two. A good counterbalance to the reformer.</p>
+    </div>
+    <div data-id="yoga">
+      <p class="popup-eyebrow">Activity</p>
+      <h3 class="popup-title">Yoga</h3>
+      <p class="popup-body">Mat yoga classes run at the studio alongside Pilates. If you want something slower, more breath-led and meditative to balance your reformer days, this is it.</p>
+    </div>
+    <div data-id="cooking">
+      <p class="popup-eyebrow">Activity</p>
+      <h3 class="popup-title">Cooking class</h3>
+      <p class="popup-body">Sri Lankan food is genuinely one of the best things about being here. A local cooking class will teach you rice and curry from scratch — the kind you'll spend years trying to recreate at home.</p>
+    </div>
+    <div data-id="daytrips">
+      <p class="popup-eyebrow">Activity</p>
+      <h3 class="popup-title">Day trips</h3>
+      <p class="popup-body">Galle Fort is 20 minutes away. Mirissa for whale watching, Udawalawe for elephants, and Ella for hills and waterfalls are all doable from Ahangama. Good drivers are easy to find and not expensive.</p>
+    </div>
+    <div data-id="townpass">
+      <p class="popup-eyebrow">Activity</p>
+      <h3 class="popup-title">Ahangama town pass</h3>
+      <p class="popup-body">A discount card that gets you savings across local cafes, restaurants and activities around Ahangama. We can sort it for you — $30, pays for itself fast.</p>
+    </div>
+  </div>
+    <p class="addons-note">All activities are optional add-ons. Select them in the package builder above for an instant estimate.</p>
+  </div>
+</section>
+
+  <!-- ── BUILDER ── -->
+  <section id="builder">
+  <div class="page">
+    <div class="eyebrow">Build your Pura</div>
+    <h2 class="section-title">Make it <em>yours.</em></h2>
+    <p class="builder-subtext">Pick what you need — we'll confirm everything when you reach out.</p>
+
+    <div class="builder-grid">
+
+      <div class="builder-step">
+        <div class="builder-step-label">01 — Package</div>
+        <div class="builder-options" id="b-packages">
+          <div class="b-option" data-type="package" data-key="taste" data-price="20000">
+            <div class="b-option-name">Taste of Pura</div>
+            <div class="b-option-sub">4 days · 3 nights</div>
+          </div>
+          <div class="b-option" data-type="package" data-key="escape" data-price="40000">
+            <div class="b-option-name">Escape</div>
+            <div class="b-option-sub">7 days · 6 nights</div>
+          </div>
+          <div class="b-option" data-type="package" data-key="retreat" data-price="46000">
+            <div class="b-option-name">Retreat</div>
+            <div class="b-option-sub">10 days · 9 nights</div>
+          </div>
+          <div class="b-option" data-type="package" data-key="immersion" data-price="68000">
+            <div class="b-option-name">Immersion</div>
+            <div class="b-option-sub">14 days · 13 nights</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="builder-step">
+        <div class="builder-step-label">02 — Accommodation</div>
+        <div class="builder-options" id="b-accom">
+          <div class="b-option" data-type="accom" data-key="none" data-price="0">
+            <div class="b-option-name">None</div>
+            <div class="b-option-sub">I'll arrange my own</div>
+          </div>
+          <div class="b-option" data-type="accom" data-key="dorm" data-price="0">
+            <div class="b-option-name">8-bed Dorm</div>
+            <div class="b-option-sub">Budget</div>
+          </div>
+          <div class="b-option" data-type="accom" data-key="fourbed" data-price="0">
+            <div class="b-option-name">4-bed Superior</div>
+            <div class="b-option-sub">Mid</div>
+          </div>
+          <div class="b-option" data-type="accom" data-key="ensuite" data-price="0">
+            <div class="b-option-name">Private Ensuite</div>
+            <div class="b-option-sub">Premium</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="builder-step">
+        <div class="builder-step-label">03 — Logistics</div>
+        <div class="builder-checks">
+          <label class="b-check">
+            <input type="checkbox" id="b-transfer" data-price="33000">
+            <span class="b-check-box"></span>
+            <span>Airport transfer (return)</span>
+          </label>
+          <label class="b-check">
+            <input type="checkbox" id="b-tuktuk" data-price="1000">
+            <span class="b-check-box"></span>
+            <span>Tuk tuk to every class</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="builder-step">
+        <div class="builder-step-label">04 — Meals</div>
+        <div class="builder-checks">
+          <label class="b-check">
+            <input type="checkbox" id="b-breakfast" data-price="1000">
+            <span class="b-check-box"></span>
+            <span>Breakfast</span>
+          </label>
+          <label class="b-check">
+            <input type="checkbox" id="b-dinner" data-price="2000">
+            <span class="b-check-box"></span>
+            <span>Dinner</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="builder-step">
+        <div class="builder-step-label">05 — Activities</div>
+        <div class="builder-checks">
+          <label class="b-check"><input type="checkbox" class="b-activity" data-price="12000"><span class="b-check-box"></span><span>Surfing</span></label>
+          <label class="b-check"><input type="checkbox" class="b-activity" data-price="3000"><span class="b-check-box"></span><span>Yoga</span></label>
+          <label class="b-check"><input type="checkbox" class="b-activity" data-price="10000"><span class="b-check-box"></span><span>Cooking class</span></label>
+          <label class="b-check"><input type="checkbox" class="b-activity" data-price="10000"><span class="b-check-box"></span><span>Day trips</span></label>
+          <label class="b-check"><input type="checkbox" class="b-activity" data-price="15000"><span class="b-check-box"></span><span>Ahangama town pass</span></label>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="builder-total">
+      <div class="builder-total-inner">
+        <div class="builder-total-label">Your estimate</div>
+        <div class="builder-total-lkr" id="b-total-lkr">LKR 0</div>
+        <div class="builder-total-fx" id="b-total-fx">≈ $0 USD · A$0 AUD · €0 EUR</div>
+        <div class="builder-total-note">This is an estimate — your final quote comes from us directly. Accommodation total depends on exact dates.</div>
+        <button class="builder-submit" id="b-submit">Send my estimate →</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- ── ACCOMMODATION ── -->
+  <section id="accommodation">
+  <div class="page">
+    <div class="eyebrow">Where you'll stay</div>
+    <h2 class="section-title">LuckyU Hostel, <em>Ahangama.</em></h2>
+    <p class="accom-intro">Pura's preferred accommodation partner — 5 minutes from the studio. Three tiers to suit every budget.</p>
+    <div class="accom-grid">
+      <div class="accom-card">
+        <div class="accom-img-wrap">
+          <img src="../assets/images/luckyu-dorm-01.jpg" alt="8-bed dorm" class="accom-img" onerror="this.style.display='none'">
+          <div class="accom-img-placeholder"></div>
+        </div>
+        <div class="accom-body">
+          <span class="accom-tier">Budget</span>
+          <div class="accom-name">8-bed Dorm</div>
+          <div class="accom-desc">Deluxe 8-bed mixed · ensuite · A/C · privacy curtain</div>
+          <div class="accom-rate">Starting @ LKR 3,400 <span>/night</span></div>
+        </div>
+      </div>
+      <div class="accom-card">
+        <div class="accom-img-wrap">
+          <img src="../assets/images/luckyu-4bed-01.jpg" alt="4-bed superior" class="accom-img" onerror="this.style.display='none'">
+          <div class="accom-img-placeholder"></div>
+        </div>
+        <div class="accom-body">
+          <span class="accom-tier">Mid</span>
+          <div class="accom-name">4-bed Superior</div>
+          <div class="accom-desc">Superior 4-bed · ensuite · A/C · more privacy</div>
+          <div class="accom-rate">Starting @ LKR 4,400 <span>/night</span></div>
+        </div>
+      </div>
+      <div class="accom-card">
+        <div class="accom-img-wrap">
+          <img src="../assets/images/luckyu-ensuite-01.jpg" alt="Private ensuite" class="accom-img" onerror="this.style.display='none'">
+          <div class="accom-img-placeholder"></div>
+        </div>
+        <div class="accom-body">
+          <span class="accom-tier">Premium</span>
+          <div class="accom-name">Private Ensuite</div>
+          <div class="accom-desc">Deluxe double · pool or jungle view · A/C · ensuite</div>
+          <div class="accom-rate">Starting @ LKR 14,000 <span>/night</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="accom-note">Accommodation is subject to availability at booking. Rates vary by package length — exact total shown in the package builder.</p>
+  </div>
+</section>
+
+  <!-- ── HOW IT WORKS ── -->
+  <section id="how-it-works">
+  <div class="page">
+    <div class="hiw-grid">
+      <div class="hiw-left">
+        <div class="eyebrow">How it works</div>
+        <h2 class="section-title">Six simple <em>steps.</em></h2>
+        <div class="hiw-steps">
+          <div class="hiw-step"><div class="hiw-num">01</div><div><div class="hiw-step-title">Pick your dates</div><div class="hiw-step-desc">Choose 4, 7, 10 or 14 days. Mat, reformer or both. May through October.</div></div></div>
+          <div class="hiw-step"><div class="hiw-num">02</div><div><div class="hiw-step-title">Check availability</div><div class="hiw-step-desc">We confirm your room at LuckyU and hold it while you sort your flight.</div></div></div>
+          <div class="hiw-step"><div class="hiw-num">03</div><div><div class="hiw-step-title">Reserve & deposit</div><div class="hiw-step-desc">Lock in your place. Transfer the 65% deposit. Balance paid on arrival.</div></div></div>
+          <div class="hiw-step"><div class="hiw-num">04</div><div><div class="hiw-step-title">Book your flight</div><div class="hiw-step-desc">Fly into Colombo (CMB). We arrange your return transfer — 2.5 hrs south.</div></div></div>
+          <div class="hiw-step"><div class="hiw-num">05</div><div><div class="hiw-step-title">Get your schedule</div><div class="hiw-step-desc">Personalised class schedule sent before arrival. Private welcome on day one.</div></div></div>
+          <div class="hiw-step"><div class="hiw-num">06</div><div><div class="hiw-step-title">Arrive & enjoy</div><div class="hiw-step-desc">Come to Sri Lanka. Don't stress. Move, rest, explore. Everything is sorted.</div></div></div>
+        </div>
+      </div>
+      <div class="hiw-right">
+        <div class="eyebrow">Booking conditions</div>
+        <ul class="conditions-list">
+          <li>Full package booked and paid as one</li>
+          <li>65% deposit to secure your spot — balance due on arrival</li>
+          <li>Deposit refundable if cancelled 30+ days before start date</li>
+          <li>After 30 days — non-refundable</li>
+          <li>Missed sessions are non-refundable</li>
+          <li>Package must be completed within booked dates — no extensions</li>
+          <li>Accommodation subject to availability at booking</li>
+          <li>Last minute is always encouraged — reach out and we'll make it work</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- ── ENQUIRY FORM ── -->
+  <section id="enquire">
+  <div class="page">
+    <div class="eyebrow">Get in touch</div>
+    <h2 class="section-title">Ready to book your <em>green season?</em></h2>
+    <p class="form-subtext">Tell us your dates and what you need — we'll come back within 2 business days.</p>
+    <form class="enquiry-form" action="https://formspree.io/f/xbdpvqww" method="POST">
+      <input type="hidden" name="_next" value="https://purapilatessrilanka.com/green-season/?sent=1">
+      <input type="hidden" name="source" value="Green Season page">
+      <input type="hidden" name="builder_package"       id="bh-package">
+      <input type="hidden" name="builder_accommodation" id="bh-accom">
+      <input type="hidden" name="builder_transfer"      id="bh-transfer">
+      <input type="hidden" name="builder_tuktuk"        id="bh-tuktuk">
+      <input type="hidden" name="builder_breakfast"     id="bh-breakfast">
+      <input type="hidden" name="builder_dinner"        id="bh-dinner">
+      <input type="hidden" name="builder_activities"    id="bh-activities">
+      <input type="hidden" name="builder_total_lkr"     id="bh-total">
+      <div class="form-grid">
+        <div class="form-group">
+          <label class="form-label">Your name</label>
+          <input class="form-input" type="text" name="name" placeholder="First name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email address</label>
+          <input class="form-input" type="email" name="email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Package interest</label>
+          <select class="form-select" name="package">
+            <option value="">Select a package</option>
+            <option>Taste of Pura — 4 days</option>
+            <option>Escape — 7 days</option>
+            <option>Retreat — 10 days</option>
+            <option>Immersion — 14 days</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Preferred month</label>
+          <select class="form-select" name="dates">
+            <option value="">Select a month</option>
+            <option>May 2026</option>
+            <option>June 2026</option>
+            <option>July 2026</option>
+            <option>August 2026</option>
+            <option>September 2026</option>
+            <option>October 2026</option>
+            <option>Flexible / not sure yet</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Accommodation preference</label>
+          <select class="form-select" name="accommodation">
+            <option value="">Select</option>
+            <option>None — I'll arrange my own</option>
+            <option>8-bed Dorm</option>
+            <option>4-bed Superior</option>
+            <option>Private Ensuite</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Add-ons needed</label>
+          <select class="form-select" name="addons">
+            <option value="">Pilates only</option>
+            <option>+ Accommodation</option>
+            <option>+ Transfers</option>
+            <option>+ Accommodation & transfers</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label class="form-label">Your estimate summary</label>
+          <textarea class="form-textarea form-textarea-readonly" name="builder_summary" id="f-message" readonly placeholder="Select a package in the builder above and click 'Send my estimate' — your summary will appear here."></textarea>
+        </div>
+        <div class="form-group full">
+          <label class="form-label">Anything else we should know</label>
+          <textarea class="form-textarea" name="message" id="f-extra" placeholder="Anything you want us to know — Pilates experience, injuries, goals, what you're running from (or toward). Pet name optional but encouraged."></textarea>
+        </div>
+      </div>
+      <button type="submit" class="form-submit">Start planning</button>
+      <p class="form-note">We typically respond within 2 business days. Your details are never shared.</p>
+      <div class="form-success" id="form-success" style="display:none;">
+        <strong>Thank you — we've got your enquiry.</strong><br><br>
+        We'll be in touch within 2 business days. Follow us on Instagram <strong>@purapilatessrilanka</strong> in the meantime.
+      </div>
+    </form>
+    <div class="enquire-contact">
+      <a href="https://instagram.com/purapilatessrilanka" target="_blank">@purapilatessrilanka</a>
+      <a href="https://wa.me/94784724956">WhatsApp</a>
+      <a href="mailto:purapilatessrilanka@gmail.com">purapilatessrilanka@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+  <script>
+    const PACKAGES = {
+      taste: {
+        accent: '#6f7a60',
+        stats: ['4', '1', '3', '20k'],
+        statLabels: ['Days', 'Private', 'Classes', 'From LKR'],
+        intro: 'Four days of Pilates dropped into your trip — no fuss, no long commitment. One private session to get you properly set up, three group classes to build momentum. Green season rates.',
+        quote: 'Already in Sri Lanka, or just need a quick reset?',
+        schedule: [
+          { day: 'Day 1', type: 'Private — welcome', tag: '1-on-1', cls: 'is-private', tagCls: 'tag-private' },
+          { day: 'Day 2', type: 'Group class', tag: 'Group', cls: '', tagCls: 'tag-group' },
+          { day: 'Day 3', type: 'Group class', tag: 'Group', cls: '', tagCls: 'tag-group' },
+          { day: 'Day 4', type: 'Group class', tag: 'Group', cls: '', tagCls: 'tag-group' },
+        ],
+        included: [
+          { dot: '#6f7a60', text: '1 private session — welcome (60 min)' },
+          { dot: '#6f7a60', text: '3 group classes — reformer or mat' },
+          { dot: '#6f7a60', text: 'All levels welcome' },
+          { dot: '#4a5538', text: 'Green season pricing' },
+        ]
+      },
+      escape: {
+        accent: '#97644e',
+        stats: ['7', '2', '6', '40k'],
+        statLabels: ['Days', 'Privates', 'Classes', 'From LKR'],
+        intro: 'Seven days is where the practice starts to settle. Two private sessions bookend your week — one to get you calibrated, one to track what\'s shifted. Green season rates.',
+        quote: 'Long enough to actually feel it.',
+        schedule: [
+          { day: 'Day 1', type: 'Private — welcome', tag: '1-on-1', cls: 'is-private', tagCls: 'tag-private' },
+          { day: 'Day 2', type: 'Reformer', tag: 'Group', cls: '', tagCls: 'tag-group' },
+          { day: 'Day 3', type: 'Mat class', tag: 'Group', cls: '', tagCls: 'tag-group' },
+          { day: 'Day 4', type: 'Rest', tag: 'Free day', cls: 'is-rest', tagCls: 'tag-rest' },
+          { day: 'Day 5', type: 'Reformer', tag: 'Group', cls: '', tagCls: 'tag-group' },
+          { day: 'Day 6', type: 'Reformer + mat', tag: 'Double', cls: '', tagCls: 'tag-double' },
+          { day: 'Day 7', type: 'Private — farewell', tag: '1-on-1', cls: 'is-private', tagCls: 'tag-private' },
+        ],
+        included: [
+          { dot: '#674d50', text: '2 private sessions — welcome + farewell (60 min each)' },
+          { dot: '#6f7a60', text: '6 group classes — reformer, mat, or mixed' },
+          { dot: '#6f7a60', text: 'All levels welcome' },
+          { dot: '#4a5538', text: 'Green season pricing' },
+        ]
+      },
+      retreat: {
+        accent: '#674d50',
+        stats: ['10', '2', '8', '46k'],
+        statLabels: ['Days', 'Privates', 'Classes', 'From LKR'],
+        intro: 'Ten days is where the practice becomes a habit. Two privates, eight group classes — enough time to feel genuinely transformed. Green season rates.',
+        quote: 'The one where people message us from the airport saying they\'re already looking at flights back.',
+        schedule: [
+          { day: 'Day 1', type: 'Private — welcome', tag: '1-on-1', cls: 'is-private', tagCls: 'tag-private' },
+          { day: 'Day 2', type: 'Reformer', tag: 'Group', cls: '', tagCls: 'tag-group' },
+          { day: 'Day 3', type: 'Reformer + mat', tag: 'Double', cls: '', tagCls: 'tag-double' },
+          { day: 'Day 4', type: 'Rest', tag: 'Free day', cls: 'is-rest', tagCls: 'tag-rest' },
+          { day: 'Day 5', type: 'Mat class', tag: 'Group', cls: '', tagCls: 'tag-group' },
+          { day: 'Day 6', type: 'Reformer', tag: 'Group', cls: '', tagCls: 'tag-group' },
+          { day: 'Day 7', type: 'Private — mid programme', tag: '1-on-1', cls: 'is-private', tagCls: 'tag-private' },
+          { day: 'Day 8', type: 'Rest', tag: 'Free day', cls: 'is-rest', tagCls: 'tag-rest' },
+          { day: 'Day 9', type: 'Reformer + mat', tag: 'Double', cls: '', tagCls: 'tag-double' },
+          { day: 'Day 10', type: 'Reformer', tag: 'Group', cls: '', tagCls: 'tag-group' },
+        ],
+        included: [
+          { dot: '#674d50', text: '2 private sessions — welcome + mid programme (60 min each)' },
+          { dot: '#6f7a60', text: '8 group classes — reformer, mat, or mixed' },
+          { dot: '#c4776a', text: '1 Pura tee included' },
+          { dot: '#4a5538', text: 'Green season pricing' },
+        ]
+      },
+      immersion: {
+        accent: '#c4776a',
+        stats: ['14', '3', '12', '68k'],
+        statLabels: ['Days', 'Privates', 'Classes', 'From LKR'],
+        intro: 'Fourteen days is where something genuinely changes. Three privates track your arc from arrival to departure. Twelve group classes build real consistency. Green season rates.',
+        quote: 'Two weeks is long enough that Sri Lanka starts to feel like home.',
+        schedule: [
+          { day: 'Day 1', type: 'Private — welcome', tag: '1-on-1', cls: 'is-private', tagCls: 'tag-private' },
+          { day: 'Day 2', type: 'Reformer', tag: 'Group', cls: '', tagCls: 'tag-group' },
+          { day: 'Day 3', type: 'Mat class', tag: 'Group', cls: '', tagCls: 'tag-group' },
+          { day: 'Day 4', type: 'Reformer + mat', tag: 'Double', cls: '', tagCls: 'tag-double' },
+          { day: 'Day 5', type: 'Rest', tag: 'Free day', cls: 'is-rest', tagCls: 'tag-rest' },
+          { day: 'Day 6', type: 'Reformer', tag: 'Group', cls: '', tagCls: 'tag-group' },
+          { day: 'Day 7', type: 'Mat class', tag: 'Group', cls: '', tagCls: 'tag-group' },
+          { day: 'Day 8', type: 'Private — mid programme', tag: '1-on-1', cls: 'is-private', tagCls: 'tag-private' },
+          { day: 'Day 9', type: 'Rest', tag: 'Free day', cls: 'is-rest', tagCls: 'tag-rest' },
+          { day: 'Day 10', type: 'Reformer + mat', tag: 'Double', cls: '', tagCls: 'tag-double' },
+          { day: 'Day 11', type: 'Reformer', tag: 'Group', cls: '', tagCls: 'tag-group' },
+          { day: 'Day 12', type: 'Mat class', tag: 'Group', cls: '', tagCls: 'tag-group' },
+          { day: 'Day 13', type: 'Reformer + mat', tag: 'Double', cls: '', tagCls: 'tag-double' },
+          { day: 'Day 14', type: 'Private — farewell', tag: '1-on-1', cls: 'is-private', tagCls: 'tag-private' },
+        ],
+        included: [
+          { dot: '#674d50', text: '3 private sessions — welcome, mid, farewell (60 min each)' },
+          { dot: '#6f7a60', text: '12 group classes — reformer, mat, or mixed' },
+          { dot: '#c4776a', text: '1 Pura tee included' },
+          { dot: '#4a5538', text: 'Green season pricing' },
+        ]
+      }
+    };
+
+    let activePackage = null;
+
+    document.querySelectorAll('.pkg-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const pkg = card.dataset.package;
+        const expand = document.getElementById('pkg-expand');
+        const inner = expand.querySelector('.pkg-expand-inner');
+
+        if (activePackage === pkg) {
+          expand.classList.remove('open');
+          card.classList.remove('active');
+          activePackage = null;
+          return;
+        }
+
+        document.querySelectorAll('.pkg-card').forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+        activePackage = pkg;
+
+        const data = PACKAGES[pkg];
+        const scheduleRows = data.schedule.map(d => `
+          <div class="day-row ${d.cls}">
+            <div class="day-num">${d.day}</div>
+            <div class="day-type">${d.type}</div>
+            <span class="day-tag ${d.tagCls}">${d.tag}</span>
+          </div>`).join('');
+
+        const includedItems = data.included.map(i => `
+          <li>
+            <div class="inc-dot" style="background:${i.dot}"></div>
+            ${i.text}
+          </li>`).join('');
+
+        inner.innerHTML = `
+          <div class="expand-stats">
+            ${data.stats.map((s, i) => `
+              <div class="expand-stat">
+                <div class="expand-stat-num" style="${i === 3 ? 'color:' + data.accent : ''}">${s}</div>
+                <div class="expand-stat-label">${data.statLabels[i]}</div>
+              </div>`).join('')}
+          </div>
+          <div class="expand-body">
+            <div class="expand-schedule">
+              <div class="eyebrow">Your programme</div>
+              <div class="schedule-list" style="margin-top:12px;">${scheduleRows}</div>
+            </div>
+            <div class="expand-intro">
+              <div class="eyebrow">What's included</div>
+              <div class="quote-line" style="border-color:${data.accent}">
+                <p>${data.quote}</p>
+              </div>
+              <p class="body-text">${data.intro}</p>
+              <div class="expand-included">
+                <div class="eyebrow">Always included</div>
+                <ul class="inc-list">${includedItems}</ul>
+              </div>
+              <button class="expand-cta" style="background:${data.accent};color:#fdfaf7;" onclick="selectBuilderPackage('${pkg}')">Start planning</button>
+            </div>
+          </div>`;
+
+        expand.classList.add('open');
+        expand.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+    });
+
+    const style = document.createElement('style');
+    style.textContent = '.pkg-card.active { border-color: var(--sage); box-shadow: 0 0 0 1px var(--sage); }';
+    document.head.appendChild(style);
+
+    const PRICING = {
+      packages: {
+        taste:     { days: 4,  nights: 3,  pilates: 20000, tukTuk: 3000 },
+        escape:    { days: 7,  nights: 6,  pilates: 40000, tukTuk: 7000 },
+        retreat:   { days: 10, nights: 9,  pilates: 46000, tukTuk: 8000 },
+        immersion: { days: 14, nights: 13, pilates: 68000, tukTuk: 12000 },
+      },
+      accom: {
+        none:     { 3: 0,     6: 0,     9: 0,     13: 0 },
+        dorm:     { 3: 3400,  6: 3200,  9: 3000,  13: 2800 },
+        fourbed:  { 3: 4400,  6: 4200,  9: 4000,  13: 3800 },
+        ensuite:  { 3: 14000, 6: 13500, 9: 13000, 13: 12500 },
+      },
+      fx: { usd: 300, aud: 195, eur: 320 },
+      mgmt: 0.10,
+    };
+
+    let builderState = {
+      package: null,
+      accom: null,
+      transfer: false,
+      tuktuk: false,
+      breakfast: false,
+      dinner: false,
+      activities: 0,
+    };
+
+    function calcTotal() {
+      if (!builderState.package) return 0;
+      const pkg = PRICING.packages[builderState.package];
+      let total = pkg.pilates;
+      let logistics = 0;
+      if (builderState.accom && builderState.accom !== 'none') {
+        const rate = PRICING.accom[builderState.accom][pkg.nights];
+        logistics += rate * pkg.nights;
+      }
+      if (builderState.transfer) logistics += 33000;
+      if (builderState.tuktuk) logistics += pkg.tukTuk;
+      if (builderState.breakfast) logistics += 1000 * pkg.days;
+      if (builderState.dinner) logistics += 2000 * pkg.days;
+      logistics += builderState.activities * 10000;
+      total += logistics + (logistics * PRICING.mgmt);
+      return Math.round(total);
+    }
+
+    function updateTotal() {
+      const total = calcTotal();
+      const fmt = n => n.toLocaleString();
+      document.getElementById('b-total-lkr').textContent = total === 0 ? 'LKR —' : 'LKR ' + fmt(total);
+      document.getElementById('b-total-fx').textContent = total === 0 ? '≈ Select a package to start' :
+        '≈ $' + fmt(Math.round(total/PRICING.fx.usd)) + ' USD · ' +
+        'A$' + fmt(Math.round(total/PRICING.fx.aud)) + ' AUD · ' +
+        '€' + fmt(Math.round(total/PRICING.fx.eur)) + ' EUR';
+      const set = (id, val) => { const el = document.getElementById(id); if (el) el.value = val; };
+      set('bh-package',    builderState.package  || '');
+      set('bh-accom',      builderState.accom    || '');
+      set('bh-transfer',   builderState.transfer  ? 'Yes' : '');
+      set('bh-tuktuk',     builderState.tuktuk    ? 'Yes' : '');
+      set('bh-breakfast',  builderState.breakfast ? 'Yes' : '');
+      set('bh-dinner',     builderState.dinner    ? 'Yes' : '');
+      set('bh-activities', builderState.activities > 0 ? builderState.activities + ' selected' : '');
+      set('bh-total',      total > 0 ? 'LKR ' + total.toLocaleString() : '');
+    }
+
+    function selectBuilderPackage(pkg) {
+      const opt = document.querySelector(`.b-option[data-type="package"][data-key="${pkg}"]`);
+      if (opt) opt.click();
+      const builder = document.getElementById('builder');
+      if (builder) builder.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    document.querySelectorAll('.b-option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        const type = opt.dataset.type;
+        document.querySelectorAll(`.b-option[data-type="${type}"]`).forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+        if (type === 'package') builderState.package = opt.dataset.key;
+        if (type === 'accom') builderState.accom = opt.dataset.key;
+        updateTotal();
+      });
+    });
+
+    document.getElementById('b-transfer').addEventListener('change', e => { builderState.transfer = e.target.checked; updateTotal(); });
+    document.getElementById('b-tuktuk').addEventListener('change', e => { builderState.tuktuk = e.target.checked; updateTotal(); });
+    document.getElementById('b-breakfast').addEventListener('change', e => { builderState.breakfast = e.target.checked; updateTotal(); });
+    document.getElementById('b-dinner').addEventListener('change', e => { builderState.dinner = e.target.checked; updateTotal(); });
+    document.querySelectorAll('.b-activity').forEach(cb => {
+      cb.addEventListener('change', () => {
+        builderState.activities = document.querySelectorAll('.b-activity:checked').length;
+        updateTotal();
+      });
+    });
+
+    document.getElementById('b-submit').addEventListener('click', () => {
+      const pkg = builderState.package;
+      const accom = builderState.accom;
+      const total = calcTotal();
+
+      const pkgMap = {
+        taste: 'Taste of Pura — 4 days',
+        escape: 'Escape — 7 days',
+        retreat: 'Retreat — 10 days',
+        immersion: 'Immersion — 14 days'
+      };
+      const accomMap = {
+        none: 'None — I\'ll arrange my own',
+        dorm: '8-bed Dorm',
+        fourbed: '4-bed Superior',
+        ensuite: 'Private Ensuite'
+      };
+
+      const pkgSelect = document.querySelector('select[name="package"]');
+      if (pkgSelect && pkg) {
+        Array.from(pkgSelect.options).forEach(o => {
+          if (o.text === pkgMap[pkg]) o.selected = true;
+        });
+      }
+
+      const accomSelect = document.querySelector('select[name="accommodation"]');
+      if (accomSelect && accom) {
+        Array.from(accomSelect.options).forEach(o => {
+          if (o.text === accomMap[accom]) o.selected = true;
+        });
+      }
+
+      const msgField = document.getElementById('f-message');
+      if (msgField) {
+        const lines = [];
+        lines.push('Green Season Enquiry');
+        if (pkg) lines.push(`Package: ${pkgMap[pkg]}`);
+        if (accom && accom !== 'none') lines.push(`Accommodation: ${accomMap[accom]}`);
+        if (builderState.transfer) lines.push('Airport transfer: Yes');
+        if (builderState.tuktuk) lines.push('Tuk tuk to classes: Yes');
+        if (builderState.breakfast) lines.push('Breakfast add-on: Yes');
+        if (builderState.dinner) lines.push('Dinner add-on: Yes');
+        if (builderState.activities > 0) lines.push(`Activities selected: ${builderState.activities}`);
+        if (total > 0) lines.push(`\nEstimate: LKR ${total.toLocaleString()} (≈ $${Math.round(total/PRICING.fx.usd).toLocaleString()} USD)`);
+        lines.push('\n');
+        msgField.value = lines.join('\n');
+      }
+
+      document.getElementById('enquire').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.querySelector('.enquiry-form').addEventListener('submit', function(e) {
+      const name = this.querySelector('input[name="name"]').value.trim();
+      const email = this.querySelector('input[name="email"]').value.trim();
+      if (!name || !email) {
+        e.preventDefault();
+        alert('Please enter your name and email address.');
+      }
+    });
+
+    // ── ACTIVITY POPUPS ──
+    const overlay = document.getElementById('popup-overlay');
+    const content = document.getElementById('popup-content');
+
+    document.querySelectorAll('.addon-item[data-popup]').forEach(tile => {
+      tile.addEventListener('click', () => {
+        const id = tile.dataset.popup;
+        const src = document.querySelector(`.popup-data [data-id="${id}"]`);
+        if (!src) return;
+        content.innerHTML = src.innerHTML;
+        overlay.classList.add('open');
+      });
+    });
+
+    document.getElementById('popup-close').addEventListener('click', () => {
+      overlay.classList.remove('open');
+    });
+
+    overlay.addEventListener('click', e => {
+      if (e.target === overlay) overlay.classList.remove('open');
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') overlay.classList.remove('open');
+    });
+
+    // Show success message if redirected back after form submit
+    if (window.location.search.includes('sent=1')) {
+      const s = document.getElementById('form-success');
+      if (s) s.style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>

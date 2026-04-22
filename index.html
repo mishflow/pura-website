@@ -19,6 +19,7 @@
     <a class="nav-link" href="#pricing">Pricing</a>
     <a class="nav-link" href="#instructors">Instructors</a>
     <a class="nav-link" href="#retreat-teaser">Retreat</a>
+    <a class="nav-link" href="/green-season/">Green Season</a>
     <a class="nav-cta" href="#book">Book Now</a>
   </div>
 </nav>
@@ -156,6 +157,15 @@
       <div class="class-type-toggle">
         <button class="ctype-btn active" data-ctype="reformer">Reformer</button>
         <button class="ctype-btn" data-ctype="mat">Mat &amp; Yoga</button>
+        <button class="ctype-btn" data-ctype="combo">Reformer + Mat &amp; Yoga</button>
+      </div>
+
+      <!-- Green Season deal -->
+      <div class="green-season-deal ctype-reformer">
+        <div class="gs-leaf">🌿</div>
+        <div class="gs-text">
+          <strong>Green Season offer</strong> — Book a Reformer drop-in and get your next Mat &amp; Yoga class at <strong>half price.</strong>
+        </div>
       </div>
 
       <div class="pricing-cols">
@@ -165,9 +175,12 @@
           <div class="pricing-col-label">Drop-in</div>
           <div class="pricing-card">
             <div class="pc-name">Single class</div>
-            <div class="pc-price ctype-reformer">LKR <span>6,000</span></div>
+            <div class="pc-price ctype-reformer ctype-combo">LKR <span>6,000</span></div>
             <div class="pc-price ctype-mat hidden">LKR <span>3,000</span></div>
-            <div class="pc-note">Book via live schedule</div>
+            <div class="pc-note ctype-reformer ctype-combo">Book via live schedule</div>
+            <div class="pc-note ctype-mat hidden">Book via live schedule</div>
+            <!-- Combo note -->
+            <div class="ctype-combo hidden pc-note-combo">+ Mat &amp; Yoga LKR <span style="font-family:'Cormorant Garamond',serif;font-size:16px;">3,000</span></div>
           </div>
         </div>
 
@@ -212,6 +225,20 @@
               <div class="pc-price">LKR <span>22,000</span></div>
             </div>
           </div>
+          <!-- Combo packs -->
+          <div class="ctype-combo hidden">
+            <div class="pricing-card">
+              <div class="pc-name">5 classes</div>
+              <div class="pc-price">LKR <span>35,000</span></div>
+              <div class="pc-divider"></div>
+              <div class="pc-name">10 classes</div>
+              <div class="pc-price">LKR <span>65,000</span></div>
+              <div class="pc-divider"></div>
+              <div class="pc-name">20 classes</div>
+              <div class="pc-price">LKR <span>120,000</span></div>
+              <div class="pc-note">Mix of Reformer &amp; Mat/Yoga</div>
+            </div>
+          </div>
         </div>
 
         <!-- Membership -->
@@ -227,12 +254,16 @@
             <div class="mem-weekly">
               <div class="pc-price ctype-reformer">LKR <span>20,000</span> <em>/ week</em></div>
               <div class="pc-price ctype-mat hidden">LKR <span>12,000</span> <em>/ week</em></div>
+              <div class="pc-price ctype-combo hidden">LKR <span>28,000</span> <em>/ week</em></div>
             </div>
             <div class="mem-monthly hidden">
               <div class="pc-price ctype-reformer">LKR <span>60,000</span> <em>/ month</em></div>
               <div class="pc-price ctype-mat hidden">LKR <span>35,000</span> <em>/ month</em></div>
+              <div class="pc-price ctype-combo hidden">LKR <span>85,000</span> <em>/ month</em></div>
             </div>
-            <div class="pc-note">Unlimited classes in this format<br>Unlimited classes in this format</div>
+            <div class="pc-note ctype-reformer">Up to 1 class per day</div>
+            <div class="pc-note ctype-mat hidden">Up to 1 class per day</div>
+            <div class="pc-note ctype-combo hidden">Up to 2 classes per day · one of each format</div>
           </div>
         </div>
 
@@ -398,6 +429,27 @@
   </div>
 </div>
 
+<!-- GREEN SEASON TEASER -->
+<div id="green-season-teaser">
+  <div class="retreat-inner">
+    <div class="retreat-photo">
+      <img src="/assets/images/lifestyle-01.jpg" alt="Pura Pilates green season">
+    </div>
+    <div class="retreat-text">
+      <div class="eyebrow">Green Season · May – October</div>
+      <h2 class="section-title">Lush island.<br><em>Better rates.</em></h2>
+      <p class="body-text">Off-peak Sri Lanka is a secret worth knowing. Smaller groups, greener landscape, and our best prices of the year — across all four retreat packages.</p>
+      <div class="retreat-pkgs">
+        <div class="retreat-pkg"><div class="retreat-pkg-name">Taste of Pura</div><div class="retreat-pkg-days">4 days · from LKR 20,000</div></div>
+        <div class="retreat-pkg"><div class="retreat-pkg-name">Escape</div><div class="retreat-pkg-days">7 days · from LKR 40,000</div></div>
+        <div class="retreat-pkg"><div class="retreat-pkg-name">Retreat</div><div class="retreat-pkg-days">10 days · from LKR 46,000</div></div>
+        <div class="retreat-pkg"><div class="retreat-pkg-name">Immersion</div><div class="retreat-pkg-days">14 days · from LKR 68,000</div></div>
+      </div>
+      <a class="retreat-btn" href="/green-season/">Explore green season →</a>
+    </div>
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
@@ -407,6 +459,7 @@
       <a class="footer-link" href="#book">Schedule</a>
       <a class="footer-link" href="#instructors">Instructors</a>
       <a class="footer-link" href="/retreat/">Retreat</a>
+      <a class="footer-link" href="/green-season/">Green Season</a>
       <a class="footer-link" href="mailto:purapilatessrilanka@gmail.com">Contact</a>
     </div>
     <div class="footer-social">
@@ -436,14 +489,22 @@ document.querySelectorAll('.pricing-tab').forEach(btn => {
   });
 });
 
-// Class type toggle (Reformer / Mat)
+// Class type toggle (Reformer / Mat / Combo)
 document.querySelectorAll('.ctype-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.ctype-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     const type = btn.dataset.ctype;
-    document.querySelectorAll('.ctype-reformer').forEach(el => el.classList.toggle('hidden', type !== 'reformer'));
-    document.querySelectorAll('.ctype-mat').forEach(el => el.classList.toggle('hidden', type !== 'mat'));
+    // Elements that belong to exactly one type
+    document.querySelectorAll('[class*="ctype-"]').forEach(el => {
+      const classes = [...el.classList];
+      const types = classes.filter(c => c.startsWith('ctype-')).map(c => c.replace('ctype-', ''));
+      el.classList.toggle('hidden', !types.includes(type));
+    });
+    // Green season deal only shows on reformer
+    document.querySelectorAll('.green-season-deal').forEach(el => el.classList.toggle('hidden', type !== 'reformer'));
+    // Combo-only note
+    document.querySelectorAll('.pc-note-combo').forEach(el => el.classList.toggle('hidden', type !== 'combo'));
   });
 });
 

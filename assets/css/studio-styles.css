@@ -307,6 +307,9 @@ footer { background: var(--dark); padding: 48px 52px; }
   .classes-full { padding: 36px 0; }
   .classes-inner { padding: 0 24px; }
   .class-cards { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .class-card { grid-column: span 1; }
+  .class-card:nth-child(4) { grid-column: span 1; }
+  .class-card:nth-child(5) { grid-column: span 2; }
   .class-card-img { height: 200px; }
   .class-card-body { padding: 14px; }
   .class-name { font-size: 20px; }
@@ -339,6 +342,16 @@ footer { background: var(--dark); padding: 48px 52px; }
   .pricing-tab { padding: 9px 14px; font-size: 10px; }
   .pricing-cols { grid-template-columns: 1fr; gap: 12px; }
   .pricing-cols-2 { grid-template-columns: 1fr; max-width: none; }
+
+  /* REVIEW */
+  .review-section { padding: 52px 24px; }
+  .review-inner { max-width: 100%; }
+  .review-prev { left: -20px; }
+  .review-next { right: -20px; }
+  .review-quote { font-size: 20px; }
+
+  /* ABOUT FOLLOW */
+  .about-follow { flex-wrap: wrap; gap: 12px; }
 
   /* FOOTER */
   footer { padding: 40px 24px; }

@@ -3,18 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Host a Retreat · Pura Pilates Sri Lanka</title>
+  <title>Plan a Retreat · Pura Pilates Sri Lanka</title>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
   <link rel="stylesheet" href="../assets/css/pura-styles.css">
 
   <style>
-    /* ── RETREAT HOST PAGE ── */
+
+    /* ── SECTION LAYOUT ── */
+    .rp-section {
+      padding: 0;
+    }
+    .rp-section .page {
+      padding: 64px 52px;
+    }
+    .rp-section .eyebrow {
+      margin-bottom: 10px;
+    }
+    .rp-section .section-title {
+      margin-bottom: 24px;
+    }
+
+    /* ── INTRO ── */
+    #intro { background: var(--ivory); }
+    #intro .section-title em { color: var(--sage); }
+
+    .intro-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .intro-photo {
+      border-radius: 16px;
+      overflow: hidden;
+      height: 440px;
+    }
+
+    .intro-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* ── OFFER ── */
+    #offer { background: var(--warm-white); }
+    #offer .section-title em { color: var(--mauve); }
 
     .offer-grid {
       display: grid;
@@ -24,27 +64,27 @@
     }
 
     .offer-card {
-      background: var(--warm-white);
-      border: 0.5px solid rgba(61, 35, 20, 0.12);
+      background: var(--ivory);
+      border: 0.5px solid rgba(61, 35, 20, 0.1);
       border-radius: 14px;
-      padding: 32px 28px;
+      padding: 36px 32px;
     }
 
     .offer-card-num {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 38px;
+      font-size: 40px;
       font-weight: 300;
-      color: rgba(103, 77, 80, 0.2);
+      color: rgba(103, 77, 80, 0.18);
       line-height: 1;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
     .offer-card-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
+      font-size: 23px;
       font-weight: 300;
       color: var(--dark-brown);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       line-height: 1.2;
     }
 
@@ -55,20 +95,20 @@
 
     .offer-card-desc {
       font-size: 13px;
-      color: rgba(61, 35, 20, 0.65);
-      line-height: 1.8;
+      color: rgba(61, 35, 20, 0.6);
+      line-height: 1.85;
     }
 
-    /* Studio stats strip */
+    /* ── STUDIO STATS ── */
     #studio-stats {
       background: var(--dark-brown);
-      padding: 0;
     }
 
     .stats-strip {
       display: flex;
       justify-content: space-around;
-      padding: 52px 40px;
+      align-items: center;
+      padding: 64px 52px;
       gap: 24px;
       flex-wrap: wrap;
     }
@@ -79,7 +119,7 @@
 
     .stat-num {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 52px;
+      font-size: 58px;
       font-weight: 300;
       color: var(--warm-white);
       line-height: 1;
@@ -88,27 +128,60 @@
     .stat-label {
       font-family: 'Jost', sans-serif;
       font-size: 10px;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: rgba(253, 250, 247, 0.5);
-      margin-top: 8px;
+      color: rgba(253, 250, 247, 0.4);
+      margin-top: 10px;
     }
 
-    /* Who it's for */
+    /* ── STUDIO PHOTOS ── */
+    #studio-photos {
+      background: var(--warm-white);
+      padding: 0;
+    }
+
+    .photo-strip {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 4px;
+      height: 340px;
+    }
+
+    .photo-strip-img {
+      overflow: hidden;
+    }
+
+    .photo-strip-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .photo-strip-img img:hover {
+      transform: scale(1.03);
+    }
+
+    /* ── WHO IT'S FOR ── */
+    #who { background: var(--sand); }
+    #who .section-title em { color: var(--rust); }
+
     .for-list {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
-      margin-top: 32px;
+      margin-top: 36px;
     }
 
     .for-item {
       background: var(--warm-white);
-      border: 0.5px solid rgba(61, 35, 20, 0.1);
-      border-radius: 10px;
-      padding: 24px 20px;
+      border: 0.5px solid rgba(61, 35, 20, 0.08);
+      border-radius: 12px;
+      padding: 28px 24px;
       font-family: 'Cormorant Garamond', serif;
-      font-size: 19px;
+      font-size: 20px;
       font-weight: 300;
       color: var(--dark-brown);
       line-height: 1.3;
@@ -117,16 +190,23 @@
     .for-item em {
       display: block;
       font-style: italic;
-      color: var(--mauve);
+      color: rgba(61, 35, 20, 0.45);
+      font-size: 16px;
+      margin-top: 4px;
     }
 
-    /* How it works — simplified */
+    /* ── HOW IT WORKS ── */
+    #how { background: var(--mauve); }
+
+    #how .eyebrow { color: rgba(245, 237, 227, 0.4); }
+    #how .section-title { color: var(--cream); }
+    #how .section-title em { color: rgba(245, 237, 227, 0.65); font-style: italic; }
+
     .steps-simple {
       display: flex;
       flex-direction: column;
-      gap: 0;
-      margin-top: 32px;
-      border: 0.5px solid rgba(61, 35, 20, 0.12);
+      margin-top: 40px;
+      border: 0.5px solid rgba(245, 237, 227, 0.12);
       border-radius: 14px;
       overflow: hidden;
     }
@@ -134,54 +214,54 @@
     .step-row {
       display: flex;
       align-items: flex-start;
-      gap: 24px;
-      padding: 24px 28px;
-      border-bottom: 0.5px solid rgba(61, 35, 20, 0.08);
+      gap: 28px;
+      padding: 28px 32px;
+      border-bottom: 0.5px solid rgba(245, 237, 227, 0.08);
     }
 
-    .step-row:last-child {
-      border-bottom: none;
-    }
+    .step-row:last-child { border-bottom: none; }
 
     .step-n {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 28px;
+      font-size: 30px;
       font-weight: 300;
-      color: rgba(103, 77, 80, 0.3);
-      min-width: 36px;
+      color: rgba(245, 237, 227, 0.2);
+      min-width: 40px;
       line-height: 1;
       padding-top: 2px;
     }
 
     .step-text-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 19px;
+      font-size: 21px;
       font-weight: 300;
-      color: var(--dark-brown);
-      margin-bottom: 4px;
+      color: var(--cream);
+      margin-bottom: 6px;
     }
 
     .step-text-desc {
       font-size: 13px;
-      color: rgba(61, 35, 20, 0.6);
-      line-height: 1.7;
+      color: rgba(245, 237, 227, 0.55);
+      line-height: 1.75;
     }
 
-    /* Enquiry form */
-    #enquire {
-      background: var(--ivory);
-    }
-
+    /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
+      .rp-section .page { padding: 48px 24px; }
+      .intro-wrap { grid-template-columns: 1fr; gap: 32px; }
+      .intro-photo { height: 280px; }
       .offer-grid { grid-template-columns: 1fr; }
       .for-list { grid-template-columns: 1fr 1fr; }
-      .stats-strip { padding: 40px 24px; }
-      .stat-num { font-size: 38px; }
+      .stats-strip { padding: 48px 24px; }
+      .stat-num { font-size: 42px; }
+      .photo-strip { grid-template-columns: 1fr 1fr; height: 240px; }
+      .photo-strip-img:last-child { display: none; }
     }
 
     @media (max-width: 480px) {
       .for-list { grid-template-columns: 1fr; }
     }
+
   </style>
 </head>
 <body>
@@ -199,7 +279,7 @@
          alt="Pura Pilates Studio — Ahangama, Sri Lanka">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow">Host a Retreat · Pura Pilates · Ahangama, Sri Lanka</p>
+      <p class="hero-eyebrow">Plan a Retreat · Pura Pilates · Ahangama, Sri Lanka</p>
       <h1 class="hero-title">
         Your retreat.<br>
         <em>Our studio.</em><br>
@@ -210,22 +290,29 @@
   </section>
 
   <!-- ── INTRO ── -->
-  <section id="intro">
+  <section id="intro" class="rp-section">
     <div class="page">
-      <p class="eyebrow">For teachers & studios</p>
-      <h2 class="section-title">
-        Planning a retreat?<br>
-        <em>We've got the space.</em>
-      </h2>
-      <div class="quote-line">
-        <p><em>Bring your group. We'll handle the studio, the reformers, and the logistics.</em></p>
+      <div class="intro-wrap">
+        <div>
+          <p class="eyebrow">For teachers &amp; studios</p>
+          <h2 class="section-title">
+            Planning a retreat?<br>
+            <em>We've got the space.</em>
+          </h2>
+          <div class="quote-line">
+            <p><em>Bring your group. We'll handle the studio, the reformers, and the logistics.</em></p>
+          </div>
+          <p class="body-text">Pura is a fully equipped Pilates studio on the south coast of Sri Lanka — 8 reformers, mat space, qualified instructors, and accommodation 5 minutes away. If you're a teacher, a studio, or a wellness brand looking for a base to run your own retreat, we can make it simple. You focus on your clients. We handle the rest.</p>
+        </div>
+        <div class="intro-photo">
+          <img src="../assets/images/studio-interior-02.jpg" alt="Pura Pilates studio reformers">
+        </div>
       </div>
-      <p class="body-text">Pura is a fully equipped Pilates studio on the south coast of Sri Lanka — reformers, mat space, qualified instructors, and accommodation 5 minutes away. If you're a teacher, a studio, or a wellness brand looking for a base to run your own retreat, we can make it simple. You focus on your clients. We handle the rest.</p>
     </div>
   </section>
 
   <!-- ── WHAT WE OFFER ── -->
-  <section id="offer">
+  <section id="offer" class="rp-section">
     <div class="page">
       <p class="eyebrow">What we offer</p>
       <h2 class="section-title">Everything you <em>need.</em></h2>
@@ -233,8 +320,8 @@
 
         <div class="offer-card">
           <div class="offer-card-num">01</div>
-          <div class="offer-card-title">Studio <em>space & reformers.</em></div>
-          <div class="offer-card-desc">Full studio hire with reformers, props, and mat space. Morning or afternoon blocks, full-day hire, or multi-day — we'll work around your programme.</div>
+          <div class="offer-card-title">Studio <em>space &amp; reformers.</em></div>
+          <div class="offer-card-desc">Full studio hire with 8 reformers, props, and mat space. Morning or afternoon blocks, full-day hire, or multi-day — we'll work around your programme.</div>
         </div>
 
         <div class="offer-card">
@@ -246,12 +333,12 @@
         <div class="offer-card">
           <div class="offer-card-num">03</div>
           <div class="offer-card-title">Accommodation <em>coordination.</em></div>
-          <div class="offer-card-desc">We work closely with LuckyU Hostel — 5 minutes from the studio. Group bookings across dorm, shared, and private rooms. We'll coordinate it for your group.</div>
+          <div class="offer-card-desc">We work closely with LuckyU Hostel — 5 minutes from the studio. Group bookings across dorm, shared, and private rooms. We'll coordinate it all for your group.</div>
         </div>
 
         <div class="offer-card">
           <div class="offer-card-num">04</div>
-          <div class="offer-card-title">Transfers & <em>logistics.</em></div>
+          <div class="offer-card-title">Transfers &amp; <em>logistics.</em></div>
           <div class="offer-card-desc">Airport transfers from Colombo, tuk tuks to and from sessions, day trips, add-ons. We know the area. Your group will be sorted from the moment they land.</div>
         </div>
 
@@ -263,11 +350,11 @@
   <section id="studio-stats">
     <div class="stats-strip">
       <div class="stat-item">
-        <div class="stat-num">6</div>
+        <div class="stat-num">8</div>
         <div class="stat-label">Reformers</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num">12</div>
+        <div class="stat-num">16</div>
         <div class="stat-label">Max group size</div>
       </div>
       <div class="stat-item">
@@ -281,17 +368,32 @@
     </div>
   </section>
 
+  <!-- ── PHOTO STRIP ── -->
+  <section id="studio-photos">
+    <div class="photo-strip">
+      <div class="photo-strip-img">
+        <img src="../assets/images/lifestyle-workshops-01.jpg" alt="Pura Pilates studio">
+      </div>
+      <div class="photo-strip-img">
+        <img src="../assets/images/studio-interior-03.jpg" alt="Pura Pilates reformer">
+      </div>
+      <div class="photo-strip-img">
+        <img src="../assets/images/lifestyle-01.jpg" alt="Sri Lanka lifestyle">
+      </div>
+    </div>
+  </section>
+
   <!-- ── WHO IT'S FOR ── -->
-  <section id="who">
+  <section id="who" class="rp-section">
     <div class="page">
       <p class="eyebrow">Who this is for</p>
-      <h2 class="section-title">Built for <em>teachers.</em></h2>
+      <h2 class="section-title">Built for <em>anyone planning a retreat.</em></h2>
       <p class="body-text">If any of these sounds like you, let's talk.</p>
       <div class="for-list">
-        <div class="for-item">Pilates teacher<em>wanting to run your first retreat</em></div>
-        <div class="for-item">Studio owner<em>expanding into destination programmes</em></div>
-        <div class="for-item">Wellness brand<em>looking for a beautiful base</em></div>
-        <div class="for-item">Yoga teacher<em>who wants to add Pilates to the mix</em></div>
+        <div class="for-item">Pilates teacher<em>running your first retreat</em></div>
+        <div class="for-item">Studio owner<em>taking your community somewhere beautiful</em></div>
+        <div class="for-item">Wellness brand<em>looking for a stunning base</em></div>
+        <div class="for-item">Yoga teacher<em>who wants Pilates in the mix</em></div>
         <div class="for-item">Fitness trainer<em>building a group travel experience</em></div>
         <div class="for-item">Corporate group<em>after something different for your team</em></div>
       </div>
@@ -299,7 +401,7 @@
   </section>
 
   <!-- ── HOW IT WORKS ── -->
-  <section id="how">
+  <section id="how" class="rp-section">
     <div class="page">
       <p class="eyebrow">How it works</p>
       <h2 class="section-title">Simple from <em>start to finish.</em></h2>
@@ -328,7 +430,7 @@
         <div class="step-row">
           <div class="step-n">04</div>
           <div>
-            <div class="step-text-title">Arrive & run your retreat</div>
+            <div class="step-text-title">Arrive &amp; run your retreat</div>
             <div class="step-text-desc">Studio is ready when you are. We're on hand throughout. Transfers, tuk tuks, extras — all sorted in advance so you can focus on your clients.</div>
           </div>
         </div>
@@ -361,7 +463,7 @@
               <option>Solo — just me teaching</option>
               <option>2–4 people</option>
               <option>5–8 people</option>
-              <option>9–12 people</option>
+              <option>9–16 people</option>
               <option>Not sure yet</option>
             </select>
           </div>

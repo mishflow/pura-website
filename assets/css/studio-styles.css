@@ -26,8 +26,9 @@ nav {
 .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; color: var(--dark); letter-spacing: 0.02em; }
 .nav-logo em { font-style: italic; color: var(--sage); }
 .nav-links { display: flex; align-items: center; gap: 32px; }
-.nav-link { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(61,35,20,0.55); transition: color 0.2s; }
+.nav-link { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(61,35,20,0.55); transition: color 0.2s; display: flex; align-items: center; gap: 7px; }
 .nav-link:hover { color: var(--dark); }
+.nav-gs-badge { font-size: 8px; letter-spacing: 0.12em; text-transform: uppercase; background: rgba(111,122,96,0.15); color: var(--sage-dark); padding: 2px 7px; border-radius: 20px; font-family: 'Jost', sans-serif; white-space: nowrap; }
 .nav-cta { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; padding: 10px 22px; border-radius: 24px; background: var(--sage); color: white; transition: opacity 0.2s; }
 .nav-cta:hover { opacity: 0.85; }
 

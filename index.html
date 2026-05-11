@@ -402,6 +402,48 @@
 </div>
 
 
+<!-- REVIEWS CAROUSEL -->
+<section class="reviews-section">
+  <div class="reviews-inner">
+    <div class="reviews-carousel">
+      <button class="reviews-arrow reviews-prev" aria-label="Previous review">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="reviews-track">
+        <div class="review-slide active">
+          <div class="review-stars">★★★★★</div>
+          <blockquote class="review-quote">"Pura Pilates Studio is a beautifully run Pilates studio with a calm, focused atmosphere. The space is clean, minimal, and thoughtfully designed."</blockquote>
+          <div class="review-author">— Nadine &nbsp;·&nbsp; Google Review</div>
+        </div>
+        <div class="review-slide">
+          <div class="review-stars">★★★★★</div>
+          <blockquote class="review-quote">"I started off with a one on one with Charlotte and have now attended a few reformer classes and love them. Great relaxed space. Clean environment with great reformer beds. Highly recommend."</blockquote>
+          <div class="review-author">— Jennifer R. &nbsp;·&nbsp; Google Review</div>
+        </div>
+        <div class="review-slide">
+          <div class="review-stars">★★★★★</div>
+          <blockquote class="review-quote">"Beautiful studio and amazing teachers. Can recommend it a lot to beginner and advanced. Very friendly and attentive staff."</blockquote>
+          <div class="review-author">— Leonie E. &nbsp;·&nbsp; Google Review</div>
+        </div>
+        <div class="review-slide">
+          <div class="review-stars">★★★★★</div>
+          <blockquote class="review-quote">"Had a great class with Katie. Would definitely recommend. A nice clean cool space for reformer."</blockquote>
+          <div class="review-author">— Kash S. &nbsp;·&nbsp; Google Review</div>
+        </div>
+      </div>
+      <button class="reviews-arrow reviews-next" aria-label="Next review">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+    <div class="reviews-dots">
+      <button class="reviews-dot active" data-index="0"></button>
+      <button class="reviews-dot" data-index="1"></button>
+      <button class="reviews-dot" data-index="2"></button>
+      <button class="reviews-dot" data-index="3"></button>
+    </div>
+  </div>
+</section>
+
 <!-- GREEN SEASON TEASER -->
 <div id="green-season-teaser">
   <div class="retreat-inner">
@@ -422,15 +464,6 @@
     </div>
   </div>
 </div>
-
-<!-- GOOGLE REVIEW -->
-<section class="review-section">
-  <div class="review-inner">
-    <div class="review-stars">★★★★★</div>
-    <blockquote class="review-quote">"Pura Pilates Studio is a beautifully run Pilates studio with a calm, focused atmosphere. The space is clean, minimal, and thoughtfully designed."</blockquote>
-    <div class="review-author">— Nadine &nbsp;·&nbsp; Google Review</div>
-  </div>
-</section>
 
 <!-- FOLLOW US -->
 <section class="follow-section">
@@ -546,6 +579,24 @@ window.addEventListener('scroll', () => {
   const nav = document.querySelector('nav');
   nav.style.borderBottomColor = window.scrollY > 40 ? 'rgba(74,85,56,0.15)' : 'rgba(74,85,56,0.1)';
 });
+
+// Reviews carousel
+(function() {
+  const slides = document.querySelectorAll('.review-slide');
+  const dots = document.querySelectorAll('.reviews-dot');
+  let current = 0;
+  function show(n) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+  document.querySelector('.reviews-prev').addEventListener('click', () => show(current - 1));
+  document.querySelector('.reviews-next').addEventListener('click', () => show(current + 1));
+  dots.forEach(d => d.addEventListener('click', () => show(+d.dataset.index)));
+  setInterval(() => show(current + 1), 5000);
+})();
 </script>
 
 </body>

@@ -114,6 +114,7 @@ nav {
 
 /* RETREAT TEASER */
 #retreat-teaser { background: var(--mauve); padding: 48px 0; }
+#green-season-teaser { background: var(--sage-dark); padding: 48px 0; }
 .retreat-inner { max-width: 1100px; margin: 0 auto; padding: 0 52px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
 .retreat-photo { height: 420px; border-radius: 14px; overflow: hidden; background: linear-gradient(160deg, #c8b0a0 0%, #674d50 100%); }
 .retreat-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }

@@ -343,6 +343,7 @@ footer { background: var(--dark); padding: 48px 52px; }
   .class-card:nth-child(4) { grid-column: span 1; }
   .class-card:nth-child(5) { grid-column: span 2; }
   .class-card-img { height: 200px; }
+  .class-card:nth-child(4) .class-card-img img { object-position: center center; }
   .class-card-body { padding: 14px; }
   .class-name { font-size: 20px; }
 

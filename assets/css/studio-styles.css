@@ -137,7 +137,10 @@ nav {
 /* INSTRUCTORS */
 #instructors { background: var(--sand); padding: 48px 0; }
 .instructors-inner { max-width: 1100px; margin: 0 auto; padding: 0 52px; }
-.instructor-cards { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 40px; }
+.instructor-cards { display: grid; grid-template-columns: repeat(6,1fr); gap: 16px; margin-top: 40px; }
+.instructor-card { grid-column: span 2; }
+.instructor-card:nth-child(4) { grid-column: 2 / 4; }
+.instructor-card:nth-child(5) { grid-column: 4 / 6; }
 .instructor-card { background: var(--white); border-radius: 14px; overflow: hidden; border: 0.5px solid rgba(61,35,20,0.08); }
 .instructor-photo { height: 260px; background: linear-gradient(160deg, #c8b0a0 0%, #8a7060 100%); overflow: hidden; }
 .instructor-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
@@ -358,6 +361,9 @@ footer { background: var(--dark); padding: 48px 52px; }
   #instructors { padding: 36px 0; }
   .instructors-inner { padding: 0 24px; }
   .instructor-cards { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .instructor-card { grid-column: span 1; }
+  .instructor-card:nth-child(4) { grid-column: span 1; }
+  .instructor-card:nth-child(5) { grid-column: span 2; }
   .instructor-photo { height: 200px; }
   .instructor-body { padding: 12px; }
   .instructor-name { font-size: 17px; }

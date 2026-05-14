@@ -144,7 +144,7 @@
 <body>
 
   <!-- ── GREEN SEASON BANNER ── -->
-  <div class="gs-banner">Green Season · May – October · Lush island, quieter studio</div>
+  <div class="gs-banner">Green Season · May – October · Better rates, lush island</div>
 
   <!-- ── NAV ── -->
   <nav class="retreat-nav" style="top: 37px;">
@@ -212,7 +212,7 @@
   <!-- ── PACKAGES ── -->
   <section id="packages">
     <div class="page">
-      <p class="eyebrow">Green season packages</p>
+      <p class="eyebrow">Green season deals</p>
       <h2 class="section-title">Your <em>green season</em> retreat.</h2>
       <p class="pkg-subtext">Click any package to see the full schedule and what's included.</p>
 
@@ -225,7 +225,8 @@
             <h3 class="pkg-name">Taste of Pura</h3>
             <div class="pkg-duration">4 days · 3 nights</div>
             <div class="pkg-stats">1 private · 3 group classes</div>
-            <div class="pkg-price">From <span>LKR 24,000</span></div>
+            <div class="pkg-gs-savings">Green Season Deal</div>
+            <div class="pkg-price">From <span>LKR 20,000</span></div>
             <div class="pkg-toggle">See details ↓</div>
           </div>
         </div>
@@ -237,7 +238,8 @@
             <h3 class="pkg-name">Escape</h3>
             <div class="pkg-duration">7 days · 6 nights</div>
             <div class="pkg-stats">2 privates · 6 group classes</div>
-            <div class="pkg-price">From <span>LKR 48,000</span></div>
+            <div class="pkg-gs-savings">Green Season Deal</div>
+            <div class="pkg-price">From <span>LKR 40,000</span></div>
             <div class="pkg-toggle">See details ↓</div>
           </div>
         </div>
@@ -249,7 +251,8 @@
             <h3 class="pkg-name">Retreat</h3>
             <div class="pkg-duration">10 days · 9 nights</div>
             <div class="pkg-stats">2 privates · 8 group classes · Pura tee</div>
-            <div class="pkg-price">From <span>LKR 55,200</span></div>
+            <div class="pkg-gs-savings">Green Season Deal</div>
+            <div class="pkg-price">From <span>LKR 46,000</span></div>
             <div class="pkg-toggle">See details ↓</div>
           </div>
         </div>
@@ -261,7 +264,8 @@
             <h3 class="pkg-name">Immersion</h3>
             <div class="pkg-duration">14 days · 13 nights</div>
             <div class="pkg-stats">3 privates · 12 group classes · Pura tee</div>
-            <div class="pkg-price">From <span>LKR 81,600</span></div>
+            <div class="pkg-gs-savings">Green Season Deal</div>
+            <div class="pkg-price">From <span>LKR 68,000</span></div>
             <div class="pkg-toggle">See details ↓</div>
           </div>
         </div>
@@ -468,7 +472,7 @@
           <span class="accom-tier">Budget</span>
           <div class="accom-name">8-bed Dorm</div>
           <div class="accom-desc">Deluxe 8-bed mixed · ensuite · A/C · privacy curtain</div>
-          <div class="accom-rate">Starting @ LKR 4,000 <span>/night</span></div>
+          <div class="accom-rate">Starting @ LKR 3,400 <span>/night</span></div>
         </div>
       </div>
       <div class="accom-card">
@@ -480,7 +484,7 @@
           <span class="accom-tier">Mid</span>
           <div class="accom-name">4-bed Superior</div>
           <div class="accom-desc">Superior 4-bed · ensuite · A/C · more privacy</div>
-          <div class="accom-rate">Starting @ LKR 5,200 <span>/night</span></div>
+          <div class="accom-rate">Starting @ LKR 4,400 <span>/night</span></div>
         </div>
       </div>
       <div class="accom-card">
@@ -492,7 +496,7 @@
           <span class="accom-tier">Premium</span>
           <div class="accom-name">Private Ensuite</div>
           <div class="accom-desc">Deluxe double · pool or jungle view · A/C · ensuite</div>
-          <div class="accom-rate">Starting @ LKR 17,000 <span>/night</span></div>
+          <div class="accom-rate">Starting @ LKR 14,000 <span>/night</span></div>
         </div>
       </div>
     </div>
@@ -632,9 +636,9 @@
     const PACKAGES = {
       taste: {
         accent: '#6f7a60',
-        stats: ['4', '1', '3', '24k'],
+        stats: ['4', '1', '3', '20k'],
         statLabels: ['Days', 'Private', 'Classes', 'From LKR'],
-        intro: 'Four days of Pilates dropped into your trip — no fuss, no long commitment. One private session to get you properly set up, three group classes to build momentum.',
+        intro: 'Four days of Pilates dropped into your trip — no fuss, no long commitment. One private session to get you properly set up, three group classes to build momentum. Green season rates.',
         quote: 'Already in Sri Lanka, or just need a quick reset?',
         schedule: [
           { day: 'Day 1', type: 'Private — welcome', tag: '1-on-1', cls: 'is-private', tagCls: 'tag-private' },
@@ -646,13 +650,14 @@
           { dot: '#6f7a60', text: '1 private session — welcome (60 min)' },
           { dot: '#6f7a60', text: '3 group classes — reformer or mat' },
           { dot: '#6f7a60', text: 'All levels welcome' },
+          { dot: '#4a5538', text: 'Green season pricing' },
         ]
       },
       escape: {
         accent: '#97644e',
-        stats: ['7', '2', '6', '48k'],
+        stats: ['7', '2', '6', '40k'],
         statLabels: ['Days', 'Privates', 'Classes', 'From LKR'],
-        intro: 'Seven days is where the practice starts to settle. Two private sessions bookend your week — one to get you calibrated, one to track what\'s shifted.',
+        intro: 'Seven days is where the practice starts to settle. Two private sessions bookend your week — one to get you calibrated, one to track what\'s shifted. Green season rates.',
         quote: 'Long enough to actually feel it.',
         schedule: [
           { day: 'Day 1', type: 'Private — welcome', tag: '1-on-1', cls: 'is-private', tagCls: 'tag-private' },
@@ -667,13 +672,14 @@
           { dot: '#674d50', text: '2 private sessions — welcome + farewell (60 min each)' },
           { dot: '#6f7a60', text: '6 group classes — reformer, mat, or mixed' },
           { dot: '#6f7a60', text: 'All levels welcome' },
+          { dot: '#4a5538', text: 'Green season pricing' },
         ]
       },
       retreat: {
         accent: '#674d50',
-        stats: ['10', '2', '8', '55k'],
+        stats: ['10', '2', '8', '46k'],
         statLabels: ['Days', 'Privates', 'Classes', 'From LKR'],
-        intro: 'Ten days is where the practice becomes a habit. Two privates, eight group classes — enough time to feel genuinely transformed.',
+        intro: 'Ten days is where the practice becomes a habit. Two privates, eight group classes — enough time to feel genuinely transformed. Green season rates.',
         quote: 'The one where people message us from the airport saying they\'re already looking at flights back.',
         schedule: [
           { day: 'Day 1', type: 'Private — welcome', tag: '1-on-1', cls: 'is-private', tagCls: 'tag-private' },
@@ -691,13 +697,14 @@
           { dot: '#674d50', text: '2 private sessions — welcome + mid programme (60 min each)' },
           { dot: '#6f7a60', text: '8 group classes — reformer, mat, or mixed' },
           { dot: '#c4776a', text: '1 Pura tee included' },
+          { dot: '#4a5538', text: 'Green season pricing' },
         ]
       },
       immersion: {
         accent: '#c4776a',
-        stats: ['14', '3', '12', '81k'],
+        stats: ['14', '3', '12', '68k'],
         statLabels: ['Days', 'Privates', 'Classes', 'From LKR'],
-        intro: 'Fourteen days is where something genuinely changes. Three privates track your arc from arrival to departure. Twelve group classes build real consistency.',
+        intro: 'Fourteen days is where something genuinely changes. Three privates track your arc from arrival to departure. Twelve group classes build real consistency. Green season rates.',
         quote: 'Two weeks is long enough that Sri Lanka starts to feel like home.',
         schedule: [
           { day: 'Day 1', type: 'Private — welcome', tag: '1-on-1', cls: 'is-private', tagCls: 'tag-private' },
@@ -719,6 +726,7 @@
           { dot: '#674d50', text: '3 private sessions — welcome, mid, farewell (60 min each)' },
           { dot: '#6f7a60', text: '12 group classes — reformer, mat, or mixed' },
           { dot: '#c4776a', text: '1 Pura tee included' },
+          { dot: '#4a5538', text: 'Green season pricing' },
         ]
       }
     };
@@ -794,16 +802,16 @@
 
     const PRICING = {
       packages: {
-        taste:     { days: 4,  nights: 3,  pilates: 24000, tukTuk: 3000 },
-        escape:    { days: 7,  nights: 6,  pilates: 48000, tukTuk: 7000 },
-        retreat:   { days: 10, nights: 9,  pilates: 55200, tukTuk: 8000 },
-        immersion: { days: 14, nights: 13, pilates: 81600, tukTuk: 12000 },
+        taste:     { days: 4,  nights: 3,  pilates: 20000, tukTuk: 3000 },
+        escape:    { days: 7,  nights: 6,  pilates: 40000, tukTuk: 7000 },
+        retreat:   { days: 10, nights: 9,  pilates: 46000, tukTuk: 8000 },
+        immersion: { days: 14, nights: 13, pilates: 68000, tukTuk: 12000 },
       },
       accom: {
         none:     { 3: 0,     6: 0,     9: 0,     13: 0 },
-        dorm:     { 3: 4200,  6: 4000,  9: 3800,  13: 3600 },
-        fourbed:  { 3: 5200,  6: 5000,  9: 4800,  13: 4600 },
-        ensuite:  { 3: 17000, 6: 16500, 9: 16000, 13: 15500 },
+        dorm:     { 3: 3400,  6: 3200,  9: 3000,  13: 2800 },
+        fourbed:  { 3: 4400,  6: 4200,  9: 4000,  13: 3800 },
+        ensuite:  { 3: 14000, 6: 13500, 9: 13000, 13: 12500 },
       },
       fx: { usd: 300, aud: 195, eur: 320 },
       mgmt: 0.10,

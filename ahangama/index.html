@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Ahangama · Pura Pilates Sri Lanka</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/pura-styles.css">
+
+  <style>
+
+    /* ── LAYOUT ── */
+    .ah-section { padding: 0; }
+    .ah-section .page { padding: 72px 52px; }
+
+    /* ── INTRO ── */
+    #ah-intro { background: var(--ivory); }
+
+    .ah-intro-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .ah-intro-photo {
+      border-radius: 16px;
+      overflow: hidden;
+      height: 520px;
+    }
+
+    .ah-intro-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .ah-intro-text .section-title em { color: var(--sage); }
+
+    /* ── PHOTO STRIP ── */
+    #ah-photos { background: var(--warm-white); padding: 0; }
+
+    .ah-photo-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 4px;
+      height: 480px;
+    }
+
+    .ah-photo-strip-img { overflow: hidden; }
+
+    .ah-photo-strip-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .ah-photo-strip-img img:hover { transform: scale(1.03); }
+
+    /* ── FEEL ── */
+    #ah-feel { background: var(--warm-white); }
+    #ah-feel .section-title em { color: var(--rust); }
+
+    .ah-feel-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .ah-feel-photo {
+      border-radius: 16px;
+      overflow: hidden;
+      height: 440px;
+      order: -1;
+    }
+
+    .ah-feel-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* ── FULL BLEED ── */
+    #ah-fullbleed {
+      height: 500px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #ah-fullbleed img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      display: block;
+    }
+
+    /* ── WHY SRI LANKA ── */
+    #ah-why { background: var(--sand); }
+    #ah-why .section-title em { color: var(--mauve); }
+
+    .ah-why-body {
+      max-width: 680px;
+    }
+
+    .ah-why-body .body-text + .body-text {
+      margin-top: 20px;
+    }
+
+    /* ── DETAILS ── */
+    #ah-details { background: var(--dark-brown); }
+
+    .ah-details-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+    }
+
+    .ah-detail-item {
+      padding: 40px 32px;
+      border-right: 0.5px solid rgba(245, 237, 227, 0.08);
+    }
+
+    .ah-detail-item:last-child { border-right: none; }
+
+    .ah-detail-label {
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(245, 237, 227, 0.35);
+      margin-bottom: 12px;
+    }
+
+    .ah-detail-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.35;
+    }
+
+    /* ── CTA ── */
+    #ah-cta { background: var(--sage); }
+
+    .ah-cta-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      padding: 64px 52px;
+    }
+
+    .ah-cta-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(26px, 3vw, 38px);
+      font-weight: 300;
+      color: white;
+      line-height: 1.2;
+    }
+
+    .ah-cta-text em {
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .ah-cta-btn {
+      flex-shrink: 0;
+      display: inline-block;
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      border-radius: 28px;
+      background: white;
+      color: var(--sage-dark);
+      text-decoration: none;
+      transition: opacity 0.2s;
+      white-space: nowrap;
+    }
+
+    .ah-cta-btn:hover { opacity: 0.85; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .ah-section .page { padding: 48px 24px; }
+      .ah-intro-wrap { grid-template-columns: 1fr; gap: 32px; }
+      .ah-intro-photo { height: 320px; }
+      .ah-photo-strip { grid-template-columns: 1fr 1fr; height: 320px; }
+      .ah-photo-strip-img:last-child { display: none; }
+      .ah-feel-wrap { grid-template-columns: 1fr; gap: 32px; }
+      .ah-feel-photo { height: 280px; order: 0; }
+      #ah-fullbleed { height: 300px; }
+      .ah-details-grid { grid-template-columns: 1fr 1fr; }
+      .ah-detail-item { border-right: none; border-bottom: 0.5px solid rgba(245, 237, 227, 0.08); }
+      .ah-cta-inner { flex-direction: column; align-items: flex-start; padding: 48px 24px; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="retreat-nav">
+    <a class="retreat-nav-logo" href="/"><span>Pura</span> <em>Pilates</em></a>
+    <a class="retreat-nav-back" href="/">← Studio</a>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <img src="../assets/images/ahangama-hero.jpg" alt="Ahangama, Sri Lanka">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">South Coast · Sri Lanka · Ahangama</p>
+      <h1 class="hero-title">
+        Why<br>
+        <em>Ahangama?</em>
+      </h1>
+    </div>
+  </section>
+
+  <!-- ── INTRO ── -->
+  <section id="ah-intro" class="ah-section">
+    <div class="page">
+      <div class="ah-intro-wrap">
+        <div class="ah-intro-text">
+          <p class="eyebrow">The place</p>
+          <h2 class="section-title">Small town.<br><em>Big draw.</em></h2>
+          <p class="body-text">Ahangama sits on the south coast of Sri Lanka, tucked between the colonial city of Galle and the surf breaks of Weligama. It's not a resort town. There's no strip, no package deals, no forced fun.</p>
+          <p class="body-text" style="margin-top:20px;">What there is: a long beach, a slow pace, good food, and a community of people who came for a week and stayed for months. It's the kind of place that gets under your skin.</p>
+        </div>
+        <div class="ah-intro-photo">
+          <img src="../assets/images/ahangama-01.jpg" alt="Ahangama railway tracks">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PHOTO STRIP ── -->
+  <section id="ah-photos">
+    <div class="ah-photo-strip">
+      <div class="ah-photo-strip-img">
+        <img src="../assets/images/ahangama-02.jpg" alt="Ahangama">
+      </div>
+      <div class="ah-photo-strip-img">
+        <img src="../assets/images/ahangama-03.png" alt="Ahangama">
+      </div>
+      <div class="ah-photo-strip-img">
+        <img src="../assets/images/ahangama-04.jpg" alt="Ahangama beach">
+      </div>
+    </div>
+  </section>
+
+  <!-- ── THE FEEL ── -->
+  <section id="ah-feel" class="ah-section">
+    <div class="page">
+      <div class="ah-feel-wrap">
+        <div class="ah-feel-photo">
+          <img src="../assets/images/ahangama-05.jpg" alt="Sri Lanka jungle">
+        </div>
+        <div>
+          <p class="eyebrow">Getting around</p>
+          <h2 class="section-title">Far enough away.<br><em>Close enough to everything.</em></h2>
+          <p class="body-text">Galle is 40 minutes up the coast — Dutch fort, great coffee, good restaurants. Mirissa and Weligama for surf. Sinharaja rainforest an hour inland.</p>
+          <p class="body-text" style="margin-top:20px;">But honestly, most people don't go far. The beach, the studio, the tuk tuk to the café. That loop is enough. That's the point.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FULL BLEED ── -->
+  <section id="ah-fullbleed">
+    <img src="../assets/images/ahangama-hero.jpg" alt="Ahangama, Sri Lanka">
+  </section>
+
+  <!-- ── WHY SRI LANKA ── -->
+  <section id="ah-why" class="ah-section">
+    <div class="page">
+      <div class="ah-why-body">
+        <p class="eyebrow">Why Sri Lanka</p>
+        <h2 class="section-title">Some places make it easy<br>to <em>actually show up.</em></h2>
+        <p class="body-text">Sri Lanka has a way of slowing people down — in the best sense. The light is extraordinary, the food is incredible, the people are warm. It's affordable without feeling cheap. Beautiful without being precious.</p>
+        <p class="body-text" style="margin-top:20px;">The south coast in particular has a rhythm that's hard to find anywhere else. You come to do something — pilates, a retreat, a break — and you find yourself actually doing it. Less distraction. More of the thing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DETAILS ── -->
+  <section id="ah-details">
+    <div class="ah-details-grid">
+      <div class="ah-detail-item">
+        <div class="ah-detail-label">Getting here</div>
+        <div class="ah-detail-value">2.5 hrs from<br>Colombo Airport</div>
+      </div>
+      <div class="ah-detail-item">
+        <div class="ah-detail-label">Nearest city</div>
+        <div class="ah-detail-value">Galle — 40 min<br>up the coast</div>
+      </div>
+      <div class="ah-detail-item">
+        <div class="ah-detail-label">Best time to visit</div>
+        <div class="ah-detail-value">Nov – Apr<br>dry &amp; sunny</div>
+      </div>
+      <div class="ah-detail-item">
+        <div class="ah-detail-label">The vibe</div>
+        <div class="ah-detail-value">Surf town.<br>Slow. Real.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section id="ah-cta">
+    <div class="ah-cta-inner">
+      <div class="ah-cta-text">
+        Ready to come?<br><em>The studio is here when you are.</em>
+      </div>
+      <a class="ah-cta-btn" href="https://bookwhen.com/pura" target="_blank">Book a class</a>
+    </div>
+  </section>
+
+</body>
+</html>

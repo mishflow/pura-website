@@ -144,11 +144,6 @@ nav {
 .instructor-card { background: var(--white); border-radius: 14px; overflow: hidden; border: 0.5px solid rgba(61,35,20,0.08); }
 .instructor-photo { height: 260px; background: linear-gradient(160deg, #c8b0a0 0%, #8a7060 100%); overflow: hidden; }
 .instructor-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
-.instructor-card:nth-child(1) .instructor-photo img { object-position: center 20%; }
-.instructor-card:nth-child(2) .instructor-photo img { object-position: center 15%; }
-.instructor-card:nth-child(3) .instructor-photo img { object-position: center 40%; }
-.instructor-card:nth-child(4) .instructor-photo img { object-position: center 25%; }
-.instructor-card:nth-child(5) .instructor-photo img { object-position: center 30%; }
 .instructor-body { padding: 16px; }
 .instructor-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; color: var(--dark); margin-bottom: 4px; }
 .instructor-role { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(61,35,20,0.4); margin-bottom: 8px; }
@@ -322,16 +317,78 @@ footer { background: var(--dark); padding: 48px 52px; }
 }
 .rental-note a { color: var(--sage); text-decoration: underline; text-underline-offset: 3px; }
 
+/* ── HAMBURGER MENU ─────────────────────────────────── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-hamburger span {
+  display: block;
+  height: 1px;
+  background: var(--dark);
+  transition: all 0.25s ease;
+  transform-origin: center;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+.nav-drawer {
+  display: none;
+  position: fixed;
+  top: 57px;
+  left: 0; right: 0;
+  background: rgba(232,237,228,0.98);
+  backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid rgba(74,85,56,0.12);
+  padding: 20px 24px 28px;
+  z-index: 99;
+  flex-direction: column;
+  gap: 0;
+}
+.nav-drawer.open { display: flex; }
+.nav-drawer .nav-link {
+  display: block;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(61,35,20,0.65);
+  padding: 14px 0;
+  border-bottom: 0.5px solid rgba(74,85,56,0.08);
+}
+.nav-drawer .nav-link:last-of-type { border-bottom: none; }
+.nav-drawer .nav-link-gs { display: flex; align-items: center; gap: 8px; }
+.nav-drawer .nav-cta {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  padding: 14px 24px;
+  border-radius: 28px;
+  background: var(--sage);
+  color: white;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
 /* ── MOBILE ─────────────────────────────────────────── */
 @media (max-width: 768px) {
 
-  /* NAV — keep logo + book button, hide nav links */
+  /* NAV — hamburger replaces link row */
   nav { padding: 16px 24px; }
-  .nav-links { gap: 0; }
-  .nav-link { display: none; }
-  .nav-cta { padding: 9px 18px; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
 
-  /* HERO */
+  /* HERO — reduce height so content is visible sooner */
+  .hero { height: 75vh; min-height: 520px; }
   .hero-content { padding: 0 24px 48px; }
   .hero-sub { font-size: 11px; letter-spacing: 0.12em; }
   .hero-btns { flex-direction: column; gap: 10px; align-items: flex-start; }
@@ -341,19 +398,18 @@ footer { background: var(--dark); padding: 48px 52px; }
 
   /* ABOUT */
   .about-wrap { grid-template-columns: 1fr; gap: 32px; }
-  .about-photo { height: 320px; }
+  .about-photo { height: 320px; order: -1; }
 
-  /* CLASSES */
+  /* CLASSES — single column for readability */
   .classes-full { padding: 36px 0; }
   .classes-inner { padding: 0 24px; }
-  .class-cards { grid-template-columns: 1fr 1fr; gap: 12px; }
-  .class-card { grid-column: span 1; }
-  .class-card:nth-child(4) { grid-column: span 1; }
-  .class-card:nth-child(5) { grid-column: span 2; }
-  .class-card-img { height: 200px; }
-  .class-card:nth-child(4) .class-card-img img { object-position: center center; }
-  .class-card-body { padding: 14px; }
-  .class-name { font-size: 20px; }
+  .class-cards { grid-template-columns: 1fr; gap: 12px; }
+  .class-card,
+  .class-card:nth-child(4),
+  .class-card:nth-child(5) { grid-column: span 1; }
+  .class-card-img { height: 220px; }
+  .class-card-body { padding: 16px; }
+  .class-name { font-size: 22px; }
 
   /* SCHEDULE CTA */
   .schedule-cta { flex-direction: column; align-items: flex-start; gap: 16px; padding: 22px 20px; }
@@ -362,18 +418,16 @@ footer { background: var(--dark); padding: 48px 52px; }
   .book-section { padding: 36px 0; }
   .book-inner { padding: 0 24px; }
 
-  /* INSTRUCTORS */
+  /* INSTRUCTORS — single column */
   #instructors { padding: 36px 0; }
   .instructors-inner { padding: 0 24px; }
-  .instructor-cards { grid-template-columns: 1fr 1fr; gap: 12px; }
-  .instructor-card { grid-column: span 1; }
-  .instructor-card:nth-child(4) { grid-column: span 1; }
-  .instructor-card:nth-child(5) { grid-column: span 2; }
-  .instructor-card:nth-child(5) .instructor-photo { height: 300px; }
-  .instructor-card:nth-child(5) .instructor-photo img { object-position: center 25%; }
-  .instructor-photo { height: 200px; }
-  .instructor-body { padding: 12px; }
-  .instructor-name { font-size: 17px; }
+  .instructor-cards { grid-template-columns: 1fr; gap: 12px; }
+  .instructor-card,
+  .instructor-card:nth-child(4),
+  .instructor-card:nth-child(5) { grid-column: span 1; }
+  .instructor-photo { height: 240px; }
+  .instructor-body { padding: 14px; }
+  .instructor-name { font-size: 18px; }
 
   /* RETREAT TEASER */
   #retreat-teaser { padding: 36px 0; }
@@ -389,11 +443,12 @@ footer { background: var(--dark); padding: 48px 52px; }
   .pricing-cols { grid-template-columns: 1fr; gap: 12px; }
   .pricing-cols-2 { grid-template-columns: 1fr; max-width: none; }
 
-  /* REVIEW */
+  /* REVIEW — move arrows below, use dots only */
   .review-section { padding: 52px 24px; }
   .review-inner { max-width: 100%; }
-  .review-prev { left: -20px; }
-  .review-next { right: -20px; }
+  .review-prev { left: 0; top: auto; bottom: -48px; transform: none; }
+  .review-next { right: 0; top: auto; bottom: -48px; transform: none; }
+  .review-dots { margin-top: 64px; }
   .review-quote { font-size: 20px; }
 
   /* ABOUT FOLLOW */

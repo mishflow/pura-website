@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pura Pilates · Ahangama</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/studio-styles.css?v=4">
+  <link rel="stylesheet" href="/assets/css/studio-styles.css?v=2">
 </head>
 <body>
 
@@ -16,13 +16,26 @@
     <a class="nav-link" href="#about">Studio</a>
     <a class="nav-link" href="#classes">Classes</a>
     <a class="nav-link" href="#book">Schedule</a>
-
     <a class="nav-link" href="#instructors">Instructors</a>
     <a class="nav-link" href="/retreat/">Plan a Retreat</a>
     <a class="nav-link nav-link-gs" href="/green-season/">Join a Retreat <span class="nav-gs-badge">Green Season</span></a>
     <a class="nav-cta" href="#book">Book Now</a>
   </div>
+  <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="nav-drawer" id="nav-drawer">
+  <a class="nav-link" href="#about">Studio</a>
+  <a class="nav-link" href="#classes">Classes</a>
+  <a class="nav-link" href="#book">Schedule</a>
+  <a class="nav-link" href="#instructors">Instructors</a>
+  <a class="nav-link" href="/retreat/">Plan a Retreat</a>
+  <a class="nav-link nav-link-gs" href="/green-season/">Join a Retreat <span class="nav-gs-badge">Green Season</span></a>
+  <a class="nav-cta" href="#book">Book Now</a>
+</div>
 
 <!-- HERO -->
 <div class="hero">
@@ -345,6 +358,22 @@
 </footer>
 
 <script>
+// Hamburger menu
+const hamburger = document.querySelector('.nav-hamburger');
+const drawer = document.getElementById('nav-drawer');
+hamburger.addEventListener('click', () => {
+  const isOpen = drawer.classList.toggle('open');
+  hamburger.classList.toggle('open', isOpen);
+  hamburger.setAttribute('aria-expanded', isOpen);
+});
+drawer.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    drawer.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', false);
+  });
+});
+
 // Smooth scroll for nav links
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {

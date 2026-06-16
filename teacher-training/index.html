@@ -148,6 +148,17 @@
     }
     .tt-teacher-bio { font-family: 'Jost', sans-serif; font-weight: 300; line-height: 1.6; color: #4a3f40; font-size: 0.95rem; }
 
+    /* Footer */
+    footer { background: var(--dark-brown); padding: 48px 52px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300; color: var(--cream); }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-link { font-family: 'Jost', sans-serif; font-size: 11px; color: rgba(245,237,227,0.45); letter-spacing: 0.1em; text-decoration: none; transition: color 0.2s; }
+    .footer-link:hover { color: var(--cream); }
+    .footer-social { display: flex; gap: 20px; }
+    .footer-social a { font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 0.1em; color: rgba(245,237,227,0.45); text-decoration: none; transition: color 0.2s; }
+    .footer-social a:hover { color: var(--cream); }
+
     @media (max-width: 720px) {
       .tt-features { grid-template-columns: 1fr; gap: 18px; }
       .tt-glance { grid-template-columns: 1fr; }
@@ -155,6 +166,8 @@
       .tt-glance-item:last-child { border-bottom: none; }
       .tt-teachers { grid-template-columns: 1fr; gap: 18px; }
       .tt-teacher-photo { height: 320px; }
+      footer { padding: 40px 24px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 24px; }
     }
   </style>
 </head>
@@ -285,7 +298,7 @@
           <div class="tt-teacher-body">
             <div class="tt-teacher-name">Tom</div>
             <div class="tt-teacher-role">Reformer · Mat · Yoga</div>
-            <div class="tt-teacher-bio">A movement teacher with a calm, considered style and a deep feel for how a class should breathe and flow. He brings patience and precision to the mat and reformer, and a steady eye for the small adjustments that make a trainee a teacher.</div>
+            <div class="tt-teacher-bio">Direct, practical and focused on results. Tom teaches the mat and reformer with clear standards and no fluff, and he is just as comfortable on the business side: how to hold a room, build a client base, and actually make a living teaching Pilates. Expect honest feedback and a clear plan for getting better.</div>
           </div>
         </div>
       </div>

@@ -113,11 +113,48 @@
     }
     .tt-glance-sub { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.85rem; color: #6b5f60; margin-top: 6px; }
 
+    /* Your teachers */
+    .tt-teachers {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-top: 36px;
+      max-width: 760px;
+    }
+    .tt-teacher {
+      border: 1px solid var(--sand);
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--white);
+    }
+    .tt-teacher-photo { height: 340px; background: linear-gradient(160deg, #c8b0a0 0%, #8a7060 100%); overflow: hidden; }
+    .tt-teacher-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .tt-teacher-body { padding: 24px 26px 28px; }
+    .tt-teacher-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: var(--mauve);
+      margin-bottom: 6px;
+    }
+    .tt-teacher-role {
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      color: var(--sage);
+      margin-bottom: 14px;
+    }
+    .tt-teacher-bio { font-family: 'Jost', sans-serif; font-weight: 300; line-height: 1.6; color: #4a3f40; font-size: 0.95rem; }
+
     @media (max-width: 720px) {
       .tt-features { grid-template-columns: 1fr; gap: 18px; }
       .tt-glance { grid-template-columns: 1fr; }
       .tt-glance-item { border-right: none; border-bottom: 1px solid var(--sand); }
       .tt-glance-item:last-child { border-bottom: none; }
+      .tt-teachers { grid-template-columns: 1fr; gap: 18px; }
+      .tt-teacher-photo { height: 320px; }
     }
   </style>
 </head>
@@ -150,15 +187,15 @@
     <div class="page">
       <p class="eyebrow">The programme</p>
       <h2 class="section-title">
-        A teacher training,<br>
-        <em>not a certificate mill.</em>
+        Not a certification.<br>
+        <em>A confidence builder.</em>
       </h2>
       <div class="quote-line">
         <p><em>You leave able to run a room, not just pass a test.</em></p>
       </div>
-      <p class="body-text">The Mat &amp; Reformer Foundations Teacher Training is a comprehensive course in how to teach Pilates well, run from our boutique studio on Sri Lanka's south coast. You cover the full foundation: anatomy, the mat repertoire, the reformer repertoire, cueing, programming, and how to read a body in front of you. The setting is part of the method. Ahangama is small, the ocean is close, and the pace lets you actually absorb what you are learning instead of cramming it.</p>
-      <p class="body-text">From the first week you are on the reformer and on your feet. You observe real classes, then teach them. You work with real clients, not just your fellow trainees, under the eye of instructors who teach here every day. Feedback is direct and immediate. Cohorts are deliberately small, so nobody hides at the back and nobody waits their turn for a machine. By the time you graduate you have logged genuine teaching hours and made the mistakes that matter while someone experienced was standing next to you.</p>
-      <p class="body-text">You leave with two things. A recognised foundation certification in mat and reformer Pilates, and the harder thing to find: the confidence and the hours to walk into a studio and teach a class that holds. Graduates of this programme are teachers. The paper just confirms it.</p>
+      <p class="body-text">This is not a certification course. It is a teacher improvement programme, run from our boutique studio on Sri Lanka's south coast, for people who already practise Pilates and want to get genuinely good at teaching it. You sharpen the things that actually matter in front of a class: cueing, programming, reading a body, and the mat and reformer repertoire. The setting is part of it. Ahangama is small, the ocean is close, and the pace lets you absorb what you are learning instead of cramming it.</p>
+      <p class="body-text">From the first week you are on the reformer and on your feet. You observe real classes, then teach them. You work with real clients, not just your fellow trainees, under the eye of instructors who teach here every day. Feedback is direct and immediate. Cohorts are deliberately small, so nobody hides at the back and nobody waits their turn for a machine. The point is simple. Come, enjoy the culture, and walk out far more confident standing in front of a room.</p>
+      <p class="body-text">You will not leave with a piece of paper to hang on a wall. You will leave with the harder thing to find: the hours, the instinct, and the confidence to teach a class that holds.</p>
 
       <div class="tt-glance">
         <div class="tt-glance-item">
@@ -169,7 +206,7 @@
         <div class="tt-glance-item">
           <div class="tt-glance-label">Tuition</div>
           <div class="tt-glance-value">LKR 150,000</div>
-          <div class="tt-glance-sub">Mat &amp; reformer foundation certification</div>
+          <div class="tt-glance-sub">Hands-on mat &amp; reformer training</div>
         </div>
         <div class="tt-glance-item">
           <div class="tt-glance-label">Cohort</div>
@@ -222,6 +259,36 @@
         <li>Career changers and movement professionals who learn by doing and want real hours, not just theory.</li>
         <li>Anyone choosing depth and mentorship over a fast, crowded, online-heavy course.</li>
       </ul>
+    </div>
+  </section>
+
+  <!-- ── YOUR TEACHERS ── -->
+  <section id="teachers" class="alt-section">
+    <div class="page">
+      <p class="eyebrow">Who you'll learn from</p>
+      <h2 class="section-title">Led by <em>Denitsa &amp; Tom.</em></h2>
+      <div class="tt-teachers">
+        <div class="tt-teacher">
+          <div class="tt-teacher-photo">
+            <img src="../assets/images/instructor-denitsa-01.jpg" alt="Denitsa">
+          </div>
+          <div class="tt-teacher-body">
+            <div class="tt-teacher-name">Denitsa</div>
+            <div class="tt-teacher-role">Reformer · Mat · Yoga · Workshops</div>
+            <div class="tt-teacher-bio">Teaching movement for over a decade: reformer, dance, Animal Flow, yoga, water therapy. Her sessions are precise and unhurried, with lots of cues and a genuine belief that the reformer is the most effective tool for getting a body working the way it was designed to.</div>
+          </div>
+        </div>
+        <div class="tt-teacher">
+          <div class="tt-teacher-photo">
+            <img src="../assets/images/instructor-tom-01.jpg" alt="Tom">
+          </div>
+          <div class="tt-teacher-body">
+            <div class="tt-teacher-name">Tom</div>
+            <div class="tt-teacher-role">Reformer · Mat · Yoga</div>
+            <div class="tt-teacher-bio">A movement teacher with a calm, considered style and a deep feel for how a class should breathe and flow. He brings patience and precision to the mat and reformer, and a steady eye for the small adjustments that make a trainee a teacher.</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

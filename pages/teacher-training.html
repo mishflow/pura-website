@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mat & Reformer Foundations Teacher Training · Pura Pilates</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../assets/css/pura-styles.css">
+
+  <style>
+    /* Teacher training — page-specific layout, built on existing tokens */
+    .tt-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-top: 36px;
+    }
+    .tt-feature {
+      border: 1px solid var(--sand);
+      border-radius: 14px;
+      padding: 28px 26px;
+      background: var(--white);
+    }
+    .tt-feature-icon { font-size: 26px; line-height: 1; margin-bottom: 14px; }
+    .tt-feature-label {
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      font-size: 1.05rem;
+      color: var(--mauve);
+      margin-bottom: 8px;
+    }
+    .tt-feature-desc { font-family: 'Jost', sans-serif; font-weight: 300; line-height: 1.6; color: #4a3f40; }
+
+    .tt-who { margin-top: 24px; max-width: 720px; }
+    .tt-who li {
+      list-style: none;
+      position: relative;
+      padding-left: 26px;
+      margin-bottom: 16px;
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      color: #4a3f40;
+    }
+    .tt-who li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 9px;
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--sage);
+    }
+
+    .tt-cta {
+      background: var(--mauve);
+      color: var(--cream);
+      text-align: center;
+      border-radius: 18px;
+      padding: 56px 32px;
+      margin-top: 12px;
+    }
+    .tt-cta h2 { color: var(--cream); margin-bottom: 14px; }
+    .tt-cta p { font-family: 'Jost', sans-serif; font-weight: 300; max-width: 540px; margin: 0 auto 28px; line-height: 1.6; opacity: 0.92; }
+    .tt-cta-btn {
+      display: inline-block;
+      background: var(--white);
+      color: var(--mauve);
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      padding: 16px 38px;
+      border-radius: 999px;
+      transition: transform 0.15s ease;
+    }
+    .tt-cta-btn:hover { transform: translateY(-2px); }
+    .tt-cta-note { font-size: 0.85rem; margin-top: 18px; opacity: 0.75; }
+
+    @media (max-width: 720px) {
+      .tt-features { grid-template-columns: 1fr; gap: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="retreat-nav">
+    <a class="retreat-nav-logo" href="/"><span>Pura</span> <em>Pilates</em></a>
+    <a class="retreat-nav-back" href="/">← Studio</a>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section id="hero" class="hero">
+    <img id="hero-img"
+         src="../assets/images/studio-interior-01.jpg"
+         alt="Mat & Reformer Foundations Teacher Training — Pura Pilates, Ahangama, Sri Lanka">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Mat &amp; Reformer Foundations Teacher Training · Ahangama, Sri Lanka</p>
+      <h1 class="hero-title">
+        Learn to teach<br>
+        <em>where it counts.</em>
+      </h1>
+      <p class="hero-subline">Small cohorts · Real clients · Reformer time from day one</p>
+    </div>
+  </section>
+
+  <!-- ── INTRO ── -->
+  <section id="intro">
+    <div class="page">
+      <p class="eyebrow">The programme</p>
+      <h2 class="section-title">
+        A teacher training,<br>
+        <em>not a certificate mill.</em>
+      </h2>
+      <div class="quote-line">
+        <p><em>You leave able to run a room, not just pass a test.</em></p>
+      </div>
+      <p class="body-text">The Mat &amp; Reformer Foundations Teacher Training is a comprehensive course in how to teach Pilates well, run from our boutique studio on Sri Lanka's south coast. You cover the full foundation: anatomy, the mat repertoire, the reformer repertoire, cueing, programming, and how to read a body in front of you. The setting is part of the method. Ahangama is small, the ocean is close, and the pace lets you actually absorb what you are learning instead of cramming it.</p>
+      <p class="body-text">From the first week you are on the reformer and on your feet. You observe real classes, then teach them. You work with real clients, not just your fellow trainees, under the eye of instructors who teach here every day. Feedback is direct and immediate. Cohorts are deliberately small, so nobody hides at the back and nobody waits their turn for a machine. By the time you graduate you have logged genuine teaching hours and made the mistakes that matter while someone experienced was standing next to you.</p>
+      <p class="body-text">You leave with two things. A recognised foundation certification in mat and reformer Pilates, and the harder thing to find: the confidence and the hours to walk into a studio and teach a class that holds. Graduates of this programme are teachers. The paper just confirms it.</p>
+    </div>
+  </section>
+
+  <!-- ── FEATURES ── -->
+  <section id="features">
+    <div class="page">
+      <p class="eyebrow">What sets it apart</p>
+      <h2 class="section-title">Built for <em>real teachers.</em></h2>
+
+      <div class="tt-features">
+        <div class="tt-feature">
+          <div class="tt-feature-icon">⏱</div>
+          <div class="tt-feature-label">Hands-on hours from day one</div>
+          <div class="tt-feature-desc">You teach real classes early and often, not in a single assessment at the end. Most of your training is spent coaching live bodies, building the instinct that only comes from reps.</div>
+        </div>
+        <div class="tt-feature">
+          <div class="tt-feature-icon">◯</div>
+          <div class="tt-feature-label">Small cohorts</div>
+          <div class="tt-feature-desc">Places are capped so every trainee gets individual attention and direct mentorship. No crowds, no waiting your turn, no falling through the cracks.</div>
+        </div>
+        <div class="tt-feature">
+          <div class="tt-feature-icon">▭</div>
+          <div class="tt-feature-label">Full reformer access</div>
+          <div class="tt-feature-desc">A machine to yourself for the whole course. You practise, cue, and troubleshoot the reformer repertoire until it is second nature, the way a working teacher needs it to be.</div>
+        </div>
+        <div class="tt-feature">
+          <div class="tt-feature-icon">◈</div>
+          <div class="tt-feature-label">Trained in Sri Lanka</div>
+          <div class="tt-feature-desc">Ahangama is the setting, not the backdrop. A focused studio on the south coast, working instructors who teach here daily, and the space to learn properly between sessions in the water and the sun.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHO THIS IS FOR ── -->
+  <section id="who" class="alt-section">
+    <div class="page">
+      <p class="eyebrow">Who this is for</p>
+      <h2 class="section-title">Serious about <em>teaching well.</em></h2>
+      <ul class="tt-who">
+        <li>People who want to genuinely be good at teaching Pilates, not just hold a credential to put on a wall.</li>
+        <li>Practitioners with a solid personal practice who are ready to step to the other side of the room.</li>
+        <li>Career changers and movement professionals who learn by doing and want real hours, not just theory.</li>
+        <li>Anyone choosing depth and mentorship over a fast, crowded, online-heavy course.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section id="apply">
+    <div class="page">
+      <div class="tt-cta">
+        <h2 class="section-title">Train where you'll actually become a teacher.</h2>
+        <p>Cohorts are small and they fill. Reach out to check the next intake dates and reserve your place.</p>
+        <a class="tt-cta-btn" href="https://bookwhen.com/pura" target="_blank">Apply &amp; reserve your place</a>
+        <p class="tt-cta-note">Questions first? Email purapilatessrilanka@gmail.com or message us on Instagram @purapilatessrilanka.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Pura Pilates</div>
+      <div class="footer-links">
+        <a class="footer-link" href="/">Studio</a>
+        <a class="footer-link" href="/retreat/">Plan a Retreat</a>
+        <a class="footer-link" href="/teacher-training/">Teacher Training</a>
+        <a class="footer-link" href="/cancellations/">Cancellations</a>
+        <a class="footer-link" href="mailto:purapilatessrilanka@gmail.com">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://instagram.com/purapilatessrilanka" target="_blank">Instagram</a>
+        <a href="https://bookwhen.com/pura" target="_blank">Book</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

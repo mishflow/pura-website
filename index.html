@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pura Pilates · Ahangama</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/studio-styles.css?v=2">
+  <link rel="stylesheet" href="/assets/css/studio-styles.css?v=4">
 </head>
 <body>
 
@@ -16,26 +16,14 @@
     <a class="nav-link" href="#about">Studio</a>
     <a class="nav-link" href="#classes">Classes</a>
     <a class="nav-link" href="#book">Schedule</a>
+    <a class="nav-link" href="#pricing">Pricing</a>
     <a class="nav-link" href="#instructors">Instructors</a>
-    <a class="nav-link" href="/retreat/">Plan a Retreat</a>
-    <a class="nav-link nav-link-gs" href="/green-season/">Join a Retreat <span class="nav-gs-badge">Green Season</span></a>
+    <a class="nav-link" href="#retreat-teaser">Retreat</a>
+    <a class="nav-link" href="/green-season/">Green Season</a>
+    <a class="nav-link" href="/teacher-training/">Teacher Training</a>
     <a class="nav-cta" href="#book">Book Now</a>
   </div>
-  <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
 </nav>
-
-<!-- MOBILE NAV DRAWER -->
-<div class="nav-drawer" id="nav-drawer">
-  <a class="nav-link" href="#about">Studio</a>
-  <a class="nav-link" href="#classes">Classes</a>
-  <a class="nav-link" href="#book">Schedule</a>
-  <a class="nav-link" href="#instructors">Instructors</a>
-  <a class="nav-link" href="/retreat/">Plan a Retreat</a>
-  <a class="nav-link nav-link-gs" href="/green-season/">Join a Retreat <span class="nav-gs-badge">Green Season</span></a>
-  <a class="nav-cta" href="#book">Book Now</a>
-</div>
 
 <!-- HERO -->
 <div class="hero">
@@ -47,7 +35,7 @@
     <div class="hero-sub">Reformer · Mat · Privates · Retreats</div>
     <div class="hero-btns">
       <button class="hero-btn hero-btn-primary" onclick="window.open('https://bookwhen.com/pura')">Book a class</button>
-      <button class="hero-btn hero-btn-secondary" onclick="window.location.href='/retreat/'">Plan a retreat</button>
+      <button class="hero-btn hero-btn-secondary" onclick="document.getElementById('retreat-teaser').scrollIntoView({behavior:'smooth'})">Explore retreat</button>
     </div>
   </div>
 </div>
@@ -68,17 +56,10 @@
           <span class="pill">Retreats</span>
           <span class="pill">All levels</span>
         </div>
-        <div class="about-follow">
-          <span class="about-follow-label">Follow along</span>
-          <a class="about-ig" href="https://instagram.com/purapilatessrilanka" target="_blank">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
-            @purapilatessrilanka
-          </a>
-          <a class="about-ig" href="https://tiktok.com/@pura.pilates.srilanka" target="_blank">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
-            @pura.pilates.srilanka
-          </a>
-        </div>
+        <a class="about-ig" href="https://instagram.com/purapilatessrilanka" target="_blank">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+          @purapilatessrilanka
+        </a>
       </div>
       <div class="about-photo">
         <img src="/assets/images/studio-interior-01.jpg" alt="Pura Pilates studio interior">
@@ -100,22 +81,7 @@
           <div class="class-name">Reformer</div>
           <div class="class-desc">Small group, big results. Reformer Pilates the way it should be — precise, progressive, and taught by someone who actually watches you move. Joseph would approve.</div>
           <div class="class-detail">Max 8 per class</div>
-          <div class="card-price-hint">Pricing ↗</div>
-        </div>
-        <div class="class-card-peek">
-          <div class="peek-header"><span class="peek-title">Reformer · Pricing</span><span class="peek-close">×</span></div>
-          <div class="peek-group-label">Drop-in</div>
-          <div class="peek-row"><span class="peek-label">Single class</span><span class="peek-price">LKR 6,000</span></div>
-          <div class="peek-group-label">Class Packs</div>
-          <div class="peek-row"><span class="peek-label">3 classes</span><span class="peek-price">LKR 17,000</span></div>
-          <div class="peek-row"><span class="peek-label">5 classes</span><span class="peek-price">LKR 27,000</span></div>
-          <div class="peek-row"><span class="peek-label">10 classes</span><span class="peek-price">LKR 51,000</span></div>
-          <div class="peek-row"><span class="peek-label">30 classes</span><span class="peek-price">LKR 144,000</span></div>
-          <div class="peek-group-label">Unlimited Membership</div>
-          <div class="peek-row"><span class="peek-label">Weekly</span><span class="peek-price">LKR 20,000<em>/wk</em></span></div>
-          <div class="peek-row"><span class="peek-label">Monthly</span><span class="peek-price">LKR 60,000<em>/mo</em></span></div>
-          <div class="peek-footnote">Resident rates available on packs · ask us in studio</div>
-          <a class="peek-link" href="#book">Book a class →</a>
+          <div class="class-price">From <span>LKR 6,000</span> / class</div>
         </div>
       </div>
       <div class="class-card">
@@ -124,42 +90,7 @@
           <span class="class-tag">Group</span>
           <div class="class-name">Mat</div>
           <div class="class-desc">Full props, mat, air con. A Mat Pilates class that builds the kind of foundational strength you feel in everything else you do. Harder than it looks, better than you'd expect.</div>
-          <div class="card-price-hint">Pricing ↗</div>
-        </div>
-        <div class="class-card-peek">
-          <div class="peek-header"><span class="peek-title">Mat · Pricing</span><span class="peek-close">×</span></div>
-          <div class="peek-group-label">Drop-in</div>
-          <div class="peek-row"><span class="peek-label">Single class</span><span class="peek-price">LKR 3,000</span></div>
-          <div class="peek-group-label">Class Packs</div>
-          <div class="peek-row"><span class="peek-label">3 classes</span><span class="peek-price">LKR 8,500</span></div>
-          <div class="peek-row"><span class="peek-label">5 classes</span><span class="peek-price">LKR 13,500</span></div>
-          <div class="peek-row"><span class="peek-label">10 classes</span><span class="peek-price">LKR 22,000</span></div>
-          <div class="peek-group-label">Unlimited Membership</div>
-          <div class="peek-row"><span class="peek-label">Weekly</span><span class="peek-price">LKR 10,000<em>/wk</em></span></div>
-          <div class="peek-row"><span class="peek-label">Monthly</span><span class="peek-price">LKR 30,000<em>/mo</em></span></div>
-          <a class="peek-link" href="#book">Book a class →</a>
-        </div>
-      </div>
-      <div class="class-card">
-        <div class="class-card-img"><img src="/assets/images/lifestyle-yoga-01.jpg" alt="Yoga class" style="object-position: center center;"></div>
-        <div class="class-card-body">
-          <span class="class-tag">Group</span>
-          <div class="class-name">Yoga</div>
-          <div class="class-desc">Slow down, breathe, move. Our yoga classes complement your Pilates practice — great for recovery days, new arrivals, or anyone who just needs an hour of stillness with some structure.</div>
-          <div class="card-price-hint">Pricing ↗</div>
-        </div>
-        <div class="class-card-peek">
-          <div class="peek-header"><span class="peek-title">Yoga · Pricing</span><span class="peek-close">×</span></div>
-          <div class="peek-group-label">Drop-in</div>
-          <div class="peek-row"><span class="peek-label">Single class</span><span class="peek-price">LKR 3,000</span></div>
-          <div class="peek-group-label">Class Packs</div>
-          <div class="peek-row"><span class="peek-label">3 classes</span><span class="peek-price">LKR 8,500</span></div>
-          <div class="peek-row"><span class="peek-label">5 classes</span><span class="peek-price">LKR 13,500</span></div>
-          <div class="peek-row"><span class="peek-label">10 classes</span><span class="peek-price">LKR 22,000</span></div>
-          <div class="peek-group-label">Unlimited Membership</div>
-          <div class="peek-row"><span class="peek-label">Weekly</span><span class="peek-price">LKR 10,000<em>/wk</em></span></div>
-          <div class="peek-row"><span class="peek-label">Monthly</span><span class="peek-price">LKR 30,000<em>/mo</em></span></div>
-          <a class="peek-link" href="#book">Book a class →</a>
+          <div class="class-price">From <span>LKR 3,000</span> / class</div>
         </div>
       </div>
       <div class="class-card">
@@ -169,18 +100,7 @@
           <div class="class-name">Private session</div>
           <div class="class-desc">Your goals, your pace, your practice. Whether you're starting out, coming back from injury, or just want to go deeper — a private gives you the full attention of your teacher and a session built entirely around you.</div>
           <div class="class-detail">60 minutes</div>
-          <div class="card-price-hint">Pricing ↗</div>
-        </div>
-        <div class="class-card-peek">
-          <div class="peek-header"><span class="peek-title">Private · Pricing</span><span class="peek-close">×</span></div>
-          <div class="peek-group-label">1:1 Sessions</div>
-          <div class="peek-row"><span class="peek-label">Single session</span><span class="peek-price">LKR 15,000</span></div>
-          <div class="peek-row"><span class="peek-label">Pack of 5 <span class="peek-badge">save 7k</span></span><span class="peek-price">LKR 68,000</span></div>
-          <div class="peek-row"><span class="peek-label">Pack of 10 <span class="peek-badge">save 20k</span></span><span class="peek-price">LKR 130,000</span></div>
-          <div class="peek-group-label">Semi-Private</div>
-          <div class="peek-row"><span class="peek-label">2 people · Reformer</span><span class="peek-price">LKR 10,000<em>/person</em></span></div>
-          <div class="peek-footnote">60 min sessions · book together or bring a friend</div>
-          <a class="peek-link" href="mailto:purapilatessrilanka@gmail.com">Enquire by email →</a>
+          <div class="class-price">From <span>LKR 15,000</span> / session</div>
         </div>
       </div>
       <div class="class-card">
@@ -189,12 +109,7 @@
           <span class="class-tag">Workshop</span>
           <div class="class-name">Workshops</div>
           <div class="class-desc">Dance, women's circles, special Pilates formats, guest teachers. Whatever is happening at Pura this month, workshops are where the community shows up. Check the schedule for what's next.</div>
-          <div class="card-price-hint">Check schedule ↗</div>
-        </div>
-        <div class="class-card-peek">
-          <div class="peek-header"><span class="peek-title">Workshops</span><span class="peek-close">×</span></div>
-          <div class="peek-note">Pricing varies by event — dance, women's circles, special formats, guest teachers. Check the live schedule for what's on and book your spot directly.</div>
-          <a class="peek-link" href="#book">See schedule →</a>
+          <div class="class-price">Check <span>schedule</span></div>
         </div>
       </div>
     </div>
@@ -208,29 +123,6 @@
   </div>
 </div>
 
-<!-- REVIEW -->
-<section class="review-section">
-  <div class="review-inner">
-    <button class="review-arrow review-prev" aria-label="Previous">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-    </button>
-    <div class="review-content">
-      <div class="review-stars">★★★★★</div>
-      <blockquote class="review-quote"></blockquote>
-      <div class="review-author"></div>
-    </div>
-    <button class="review-arrow review-next" aria-label="Next">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>
-  </div>
-  <div class="review-dots">
-    <span class="review-dot"></span>
-    <span class="review-dot"></span>
-    <span class="review-dot"></span>
-    <span class="review-dot"></span>
-  </div>
-</section>
-
 <!-- BOOK -->
 <div id="book" class="book-section">
   <div class="book-inner">
@@ -238,25 +130,230 @@
     <h2 class="section-title">Book a <em>class.</em></h2>
     <div class="book-embed">
       <iframe
-        src="https://bookwhen.com/pura/iframe?colour=97644e"
+        src="https://bookwhen.com/pura/iframe"
         frameborder="0"
         scrolling="yes"
         seamless="seamless"
         title="Pura Pilates — live class schedule"
-        style="display:block;border:none;width:100%;height:550px;">
+        style="display:block;border:none;width:100%;height:900px;">
       </iframe>
     </div>
-    <a href="/cancellations/" class="book-cancel-banner">
-      <span class="book-cancel-banner-icon">↻</span>
-      <span class="book-cancel-banner-text">
-        <strong>Need to cancel or transfer a class?</strong>
-        <span>Follow our simple step by step guide</span>
-      </span>
-      <span class="book-cancel-banner-arrow">→</span>
-    </a>
   </div>
 </div>
 
+<!-- PRICING -->
+<div id="pricing" class="pricing-section">
+  <div class="pricing-inner">
+    <div class="eyebrow">Transparent pricing</div>
+    <h2 class="section-title">Find your <em>plan.</em></h2>
+
+    <div class="pricing-tabs">
+      <button class="pricing-tab active" data-tab="group">Group Classes</button>
+      <button class="pricing-tab" data-tab="privates">Privates</button>
+      <button class="pricing-tab" data-tab="rental">Studio Rental</button>
+    </div>
+
+    <!-- GROUP CLASSES -->
+    <div class="pricing-panel active" id="tab-group">
+      <div class="class-type-toggle">
+        <button class="ctype-btn active" data-ctype="reformer">Reformer</button>
+        <button class="ctype-btn" data-ctype="mat">Mat &amp; Yoga</button>
+        <button class="ctype-btn" data-ctype="combo">Reformer + Mat &amp; Yoga</button>
+      </div>
+
+      <!-- Green Season deal -->
+      <div class="green-season-deal ctype-reformer">
+        <div class="gs-leaf">🌿</div>
+        <div class="gs-text">
+          <strong>Green Season offer</strong> — Book a Reformer drop-in and get your next Mat &amp; Yoga class at <strong>half price.</strong>
+        </div>
+      </div>
+
+      <div class="pricing-cols">
+
+        <!-- Drop-in -->
+        <div class="pricing-col">
+          <div class="pricing-col-label">Drop-in</div>
+          <div class="pricing-card">
+            <div class="pc-name">Single class</div>
+            <div class="pc-price ctype-reformer ctype-combo">LKR <span>6,000</span></div>
+            <div class="pc-price ctype-mat hidden">LKR <span>3,000</span></div>
+            <div class="pc-note ctype-reformer ctype-combo">Book via live schedule</div>
+            <div class="pc-note ctype-mat hidden">Book via live schedule</div>
+            <!-- Combo note -->
+            <div class="ctype-combo hidden pc-note-combo">+ Mat &amp; Yoga LKR <span style="font-family:'Cormorant Garamond',serif;font-size:16px;">3,000</span></div>
+          </div>
+        </div>
+
+        <!-- Packs -->
+        <div class="pricing-col">
+          <div class="pricing-col-label">Class Packs</div>
+          <!-- Reformer packs -->
+          <div class="ctype-reformer">
+            <div class="pricing-card">
+              <div class="resident-toggle">
+                <button class="res-btn active" data-res="regular">Regular</button>
+                <button class="res-btn" data-res="resident">Resident</button>
+              </div>
+              <div class="pc-divider"></div>
+              <div class="pc-name">3 classes</div>
+              <div class="pc-price res-regular">LKR <span>17,000</span></div>
+              <div class="pc-price res-resident hidden">LKR <span>14,250</span></div>
+              <div class="pc-divider"></div>
+              <div class="pc-name">5 classes</div>
+              <div class="pc-price res-regular">LKR <span>27,000</span></div>
+              <div class="pc-price res-resident hidden">LKR <span>22,500</span></div>
+              <div class="pc-divider"></div>
+              <div class="pc-name">10 classes</div>
+              <div class="pc-price res-regular">LKR <span>51,000</span></div>
+              <div class="pc-price res-resident hidden">LKR <span>42,500</span></div>
+              <div class="pc-divider"></div>
+              <div class="pc-name">30 classes</div>
+              <div class="pc-price res-regular">LKR <span>144,000</span></div>
+              <div class="pc-price res-resident hidden">LKR <span>120,000</span></div>
+            </div>
+          </div>
+          <!-- Mat & Yoga packs -->
+          <div class="ctype-mat hidden">
+            <div class="pricing-card">
+              <div class="pc-name">3 classes</div>
+              <div class="pc-price">LKR <span>8,500</span></div>
+              <div class="pc-divider"></div>
+              <div class="pc-name">5 classes</div>
+              <div class="pc-price">LKR <span>13,500</span></div>
+              <div class="pc-divider"></div>
+              <div class="pc-name">10 classes</div>
+              <div class="pc-price">LKR <span>22,000</span></div>
+            </div>
+          </div>
+          <!-- Combo packs -->
+          <div class="ctype-combo hidden">
+            <div class="pricing-card">
+              <div class="pc-name">5 classes</div>
+              <div class="pc-price">LKR <span>35,000</span></div>
+              <div class="pc-divider"></div>
+              <div class="pc-name">10 classes</div>
+              <div class="pc-price">LKR <span>65,000</span></div>
+              <div class="pc-divider"></div>
+              <div class="pc-name">20 classes</div>
+              <div class="pc-price">LKR <span>120,000</span></div>
+              <div class="pc-note">Mix of Reformer &amp; Mat/Yoga</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Membership -->
+        <div class="pricing-col">
+          <div class="pricing-col-label">Unlimited Membership</div>
+          <div class="pricing-card membership-card">
+            <div class="membership-toggle">
+              <button class="mem-btn active" data-period="weekly">Weekly</button>
+              <button class="mem-btn" data-period="monthly">Monthly</button>
+            </div>
+            <div class="pc-divider"></div>
+            <div class="pc-name">Unlimited access</div>
+            <div class="mem-weekly">
+              <div class="pc-price ctype-reformer">LKR <span>20,000</span> <em>/ week</em></div>
+              <div class="pc-price ctype-mat hidden">LKR <span>10,000</span> <em>/ week</em></div>
+              <div class="pc-price ctype-combo hidden">LKR <span>25,000</span> <em>/ week</em></div>
+            </div>
+            <div class="mem-monthly hidden">
+              <div class="pc-price ctype-reformer">LKR <span>60,000</span> <em>/ month</em></div>
+              <div class="pc-price ctype-mat hidden">LKR <span>30,000</span> <em>/ month</em></div>
+              <div class="pc-price ctype-combo hidden">LKR <span>75,000</span> <em>/ month</em></div>
+            </div>
+            <div class="pc-note ctype-reformer">Up to 1 class per day</div>
+            <div class="pc-note ctype-mat hidden">Up to 1 class per day</div>
+            <div class="pc-note ctype-combo hidden">Up to 2 classes per day · one of each format</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PRIVATES -->
+    <div class="pricing-panel hidden" id="tab-privates">
+      <div class="pricing-cols">
+
+        <div class="pricing-col">
+          <div class="pricing-col-label">1:1 Sessions</div>
+          <div class="pricing-card">
+            <div class="pc-name">Single session</div>
+            <div class="pc-price">LKR <span>15,000</span></div>
+            <div class="pc-note">60 minutes</div>
+            <div class="pc-divider"></div>
+            <div class="pc-name">Pack of 5</div>
+            <div class="pc-price">LKR <span>68,000</span></div>
+            <div class="pc-badge">Save LKR 7,000</div>
+            <div class="pc-divider"></div>
+            <div class="pc-name">Pack of 10</div>
+            <div class="pc-price">LKR <span>130,000</span></div>
+            <div class="pc-badge">Save LKR 20,000</div>
+          </div>
+        </div>
+
+        <div class="pricing-col">
+          <div class="pricing-col-label">Semi-Private</div>
+          <div class="pricing-card">
+            <div class="pc-name">2 people</div>
+            <div class="pc-price">LKR <span>10,000</span> <em>/ person</em></div>
+            <div class="pc-note">60 minutes · Reformer<br>Book together or bring a friend</div>
+          </div>
+        </div>
+
+        <div class="pricing-col">
+          <div class="pricing-col-label">Good to know</div>
+          <div class="pricing-card pricing-card-soft">
+            <p class="pc-info">Private sessions are tailored entirely to you — your goals, your pace, your practice.</p>
+            <p class="pc-info">Great for beginners, post-injury rehab, or going deeper into your existing practice.</p>
+            <a class="pc-link" href="mailto:purapilatessrilanka@gmail.com">Enquire by email →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- STUDIO RENTAL -->
+    <div class="pricing-panel hidden" id="tab-rental">
+      <div class="pricing-cols pricing-cols-2">
+
+        <div class="pricing-col">
+          <div class="pricing-col-label">With teacher · per hour</div>
+          <div class="pricing-card">
+            <div class="pc-name">1 hour</div>
+            <div class="pc-price">LKR <span>42,000</span></div>
+            <div class="pc-divider"></div>
+            <div class="pc-name">3+ hours</div>
+            <div class="pc-price">LKR <span>38,000</span></div>
+            <div class="pc-divider"></div>
+            <div class="pc-name">5+ hours</div>
+            <div class="pc-price">LKR <span>34,000</span></div>
+          </div>
+        </div>
+
+        <div class="pricing-col">
+          <div class="pricing-col-label">Without teacher · per hour</div>
+          <div class="pricing-card">
+            <div class="pc-name">1 hour</div>
+            <div class="pc-price">LKR <span>20,000</span></div>
+            <div class="pc-divider"></div>
+            <div class="pc-name">3+ hours</div>
+            <div class="pc-price">LKR <span>18,000</span></div>
+            <div class="pc-divider"></div>
+            <div class="pc-name">5+ hours</div>
+            <div class="pc-price">LKR <span>15,000</span></div>
+            <div class="pc-divider"></div>
+            <div class="pc-name">1 machine rental</div>
+            <div class="pc-price">LKR <span>9,000</span></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="rental-note">All prices in LKR · Cash or card in studio · Non-peak hours (13:00–16:00) · Subject to studio &amp; teacher availability. <a href="mailto:purapilatessrilanka@gmail.com">Get in touch</a> to book.</div>
+    </div>
+
+  </div>
+</div>
 
 <!-- INSTRUCTORS -->
 <div id="instructors">
@@ -323,6 +420,26 @@
   </div>
 </div>
 
+<!-- RETREAT TEASER -->
+<div id="retreat-teaser">
+  <div class="retreat-inner">
+    <div class="retreat-photo">
+      <img src="/assets/images/retreat-package-escape.jpg" alt="Pura Pilates retreat">
+    </div>
+    <div class="retreat-text">
+      <div class="eyebrow">Pura Bliss Retreat</div>
+      <h2 class="section-title">Stay longer.<br><em>Go deeper.</em></h2>
+      <p class="body-text">Four days to fourteen. Pilates, accommodation, transfers, activities — all sorted. Come for the practice. Stay for Sri Lanka.</p>
+      <div class="retreat-pkgs">
+        <div class="retreat-pkg"><div class="retreat-pkg-name">Taste of Pura</div><div class="retreat-pkg-days">4 days · from LKR 24,000</div></div>
+        <div class="retreat-pkg"><div class="retreat-pkg-name">Escape</div><div class="retreat-pkg-days">7 days · from LKR 48,000</div></div>
+        <div class="retreat-pkg"><div class="retreat-pkg-name">Retreat</div><div class="retreat-pkg-days">10 days · from LKR 55,200</div></div>
+        <div class="retreat-pkg"><div class="retreat-pkg-name">Immersion</div><div class="retreat-pkg-days">14 days · from LKR 81,600</div></div>
+      </div>
+      <a class="retreat-btn" href="/retreat/">Explore the retreat →</a>
+    </div>
+  </div>
+</div>
 
 <!-- GREEN SEASON TEASER -->
 <div id="green-season-teaser">
@@ -332,19 +449,18 @@
     </div>
     <div class="retreat-text">
       <div class="eyebrow">Green Season · May – October</div>
-      <h2 class="section-title">Lush island.<br><em>Quieter studio.</em></h2>
-      <p class="body-text">Off-peak Sri Lanka is a secret worth knowing. The south coast turns lush, the crowds thin out, and groups are smaller — more instructor time, more space, more Sri Lanka.</p>
+      <h2 class="section-title">Lush island.<br><em>Better rates.</em></h2>
+      <p class="body-text">Off-peak Sri Lanka is a secret worth knowing. Smaller groups, greener landscape, and our best prices of the year — across all four retreat packages.</p>
       <div class="retreat-pkgs">
-        <div class="retreat-pkg"><div class="retreat-pkg-name">Taste of Pura</div><div class="retreat-pkg-days">4 days · from LKR 24,000</div></div>
-        <div class="retreat-pkg"><div class="retreat-pkg-name">Escape</div><div class="retreat-pkg-days">7 days · from LKR 48,000</div></div>
-        <div class="retreat-pkg"><div class="retreat-pkg-name">Retreat</div><div class="retreat-pkg-days">10 days · from LKR 55,200</div></div>
-        <div class="retreat-pkg"><div class="retreat-pkg-name">Immersion</div><div class="retreat-pkg-days">14 days · from LKR 81,600</div></div>
+        <div class="retreat-pkg"><div class="retreat-pkg-name">Taste of Pura</div><div class="retreat-pkg-days">4 days · from LKR 20,000</div></div>
+        <div class="retreat-pkg"><div class="retreat-pkg-name">Escape</div><div class="retreat-pkg-days">7 days · from LKR 40,000</div></div>
+        <div class="retreat-pkg"><div class="retreat-pkg-name">Retreat</div><div class="retreat-pkg-days">10 days · from LKR 46,000</div></div>
+        <div class="retreat-pkg"><div class="retreat-pkg-name">Immersion</div><div class="retreat-pkg-days">14 days · from LKR 68,000</div></div>
       </div>
       <a class="retreat-btn" href="/green-season/">Explore green season →</a>
     </div>
   </div>
 </div>
-
 
 <!-- FOOTER -->
 <footer>
@@ -354,35 +470,18 @@
       <a class="footer-link" href="#classes">Classes</a>
       <a class="footer-link" href="#book">Schedule</a>
       <a class="footer-link" href="#instructors">Instructors</a>
-      <a class="footer-link" href="/retreat/">Plan a Retreat</a>
+      <a class="footer-link" href="/retreat/">Retreat</a>
       <a class="footer-link" href="/green-season/">Green Season</a>
-      <a class="footer-link" href="/cancellations/">Cancellations</a>
+      <a class="footer-link" href="/teacher-training/">Teacher Training</a>
       <a class="footer-link" href="mailto:purapilatessrilanka@gmail.com">Contact</a>
     </div>
     <div class="footer-social">
-      <a href="https://instagram.com/purapilatessrilanka" target="_blank">Instagram</a>
-      <a href="https://tiktok.com/@pura.pilates.srilanka" target="_blank">TikTok</a>
+      <a href="https://instagram.com/purapilatessrilanka" target="_blank">@purapilatessrilanka</a>
     </div>
   </div>
 </footer>
 
 <script>
-// Hamburger menu
-const hamburger = document.querySelector('.nav-hamburger');
-const drawer = document.getElementById('nav-drawer');
-hamburger.addEventListener('click', () => {
-  const isOpen = drawer.classList.toggle('open');
-  hamburger.classList.toggle('open', isOpen);
-  hamburger.setAttribute('aria-expanded', isOpen);
-});
-drawer.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => {
-    drawer.classList.remove('open');
-    hamburger.classList.remove('open');
-    hamburger.setAttribute('aria-expanded', false);
-  });
-});
-
 // Smooth scroll for nav links
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
@@ -453,47 +552,6 @@ window.addEventListener('scroll', () => {
   const nav = document.querySelector('nav');
   nav.style.borderBottomColor = window.scrollY > 40 ? 'rgba(74,85,56,0.15)' : 'rgba(74,85,56,0.1)';
 });
-
-// Reviews
-(function() {
-  const reviews = [
-    { quote: '"Pura Pilates Studio is a beautifully run Pilates studio with a calm, focused atmosphere. The space is clean, minimal, and thoughtfully designed."', author: '— Nadine · Google Review' },
-    { quote: '"I started off with a one on one with Charlotte and have now attended a few reformer classes and love them. Great relaxed space. Clean environment with great reformer beds. Highly recommend."', author: '— Jennifer R. · Google Review' },
-    { quote: '"Beautiful studio and amazing teachers. Can recommend it a lot to beginner and advanced. Very friendly and attentive staff."', author: '— Leonie E. · Google Review' },
-    { quote: '"Had a great class with Katie. Would definitely recommend. A nice clean cool space for reformer."', author: '— Kash S. · Google Review' }
-  ];
-  const quoteEl = document.querySelector('.review-quote');
-  const authorEl = document.querySelector('.review-author');
-  const dots = document.querySelectorAll('.review-dot');
-  let idx = 0;
-  function show(n) {
-    idx = (n + reviews.length) % reviews.length;
-    quoteEl.style.opacity = '0';
-    setTimeout(() => {
-      quoteEl.textContent = reviews[idx].quote;
-      authorEl.textContent = reviews[idx].author;
-      quoteEl.style.opacity = '1';
-    }, 180);
-    dots.forEach((d, i) => d.classList.toggle('active', i === idx));
-  }
-  show(0);
-  document.querySelector('.review-prev').addEventListener('click', () => show(idx - 1));
-  document.querySelector('.review-next').addEventListener('click', () => show(idx + 1));
-  dots.forEach((d, i) => d.addEventListener('click', () => show(i)));
-  setInterval(() => show(idx + 1), 5000);
-})();
-
-// Pricing peek — tap to open/close on touch devices
-if (window.matchMedia('(hover: none)').matches) {
-  document.querySelectorAll('.class-card').forEach(card => {
-    card.addEventListener('click', e => {
-      if (e.target.closest('a')) return;
-      const isOpen = card.classList.contains('peek-open');
-      document.querySelectorAll('.class-card').forEach(c => c.classList.remove('peek-open'));
-      if (!isOpen) card.classList.add('peek-open');
-    });
-  });
-}
 </script>
 
 </body>

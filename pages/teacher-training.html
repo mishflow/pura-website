@@ -83,8 +83,41 @@
     .tt-cta-btn:hover { transform: translateY(-2px); }
     .tt-cta-note { font-size: 0.85rem; margin-top: 18px; opacity: 0.75; }
 
+    /* At a glance */
+    .tt-glance {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-top: 32px;
+      border: 1px solid var(--sand);
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--white);
+    }
+    .tt-glance-item { padding: 30px 26px; border-right: 1px solid var(--sand); }
+    .tt-glance-item:last-child { border-right: none; }
+    .tt-glance-label {
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      color: var(--sage);
+      margin-bottom: 10px;
+    }
+    .tt-glance-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      color: var(--mauve);
+      line-height: 1.1;
+    }
+    .tt-glance-sub { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.85rem; color: #6b5f60; margin-top: 6px; }
+
     @media (max-width: 720px) {
       .tt-features { grid-template-columns: 1fr; gap: 18px; }
+      .tt-glance { grid-template-columns: 1fr; }
+      .tt-glance-item { border-right: none; border-bottom: 1px solid var(--sand); }
+      .tt-glance-item:last-child { border-bottom: none; }
     }
   </style>
 </head>
@@ -126,6 +159,24 @@
       <p class="body-text">The Mat &amp; Reformer Foundations Teacher Training is a comprehensive course in how to teach Pilates well, run from our boutique studio on Sri Lanka's south coast. You cover the full foundation: anatomy, the mat repertoire, the reformer repertoire, cueing, programming, and how to read a body in front of you. The setting is part of the method. Ahangama is small, the ocean is close, and the pace lets you actually absorb what you are learning instead of cramming it.</p>
       <p class="body-text">From the first week you are on the reformer and on your feet. You observe real classes, then teach them. You work with real clients, not just your fellow trainees, under the eye of instructors who teach here every day. Feedback is direct and immediate. Cohorts are deliberately small, so nobody hides at the back and nobody waits their turn for a machine. By the time you graduate you have logged genuine teaching hours and made the mistakes that matter while someone experienced was standing next to you.</p>
       <p class="body-text">You leave with two things. A recognised foundation certification in mat and reformer Pilates, and the harder thing to find: the confidence and the hours to walk into a studio and teach a class that holds. Graduates of this programme are teachers. The paper just confirms it.</p>
+
+      <div class="tt-glance">
+        <div class="tt-glance-item">
+          <div class="tt-glance-label">Duration</div>
+          <div class="tt-glance-value">2 months</div>
+          <div class="tt-glance-sub">Full-time, in studio at Ahangama</div>
+        </div>
+        <div class="tt-glance-item">
+          <div class="tt-glance-label">Tuition</div>
+          <div class="tt-glance-value">LKR 150,000</div>
+          <div class="tt-glance-sub">Mat &amp; reformer foundation certification</div>
+        </div>
+        <div class="tt-glance-item">
+          <div class="tt-glance-label">Cohort</div>
+          <div class="tt-glance-value">Small group</div>
+          <div class="tt-glance-sub">Places capped for direct mentorship</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -179,7 +230,7 @@
     <div class="page">
       <div class="tt-cta">
         <h2 class="section-title">Train where you'll actually become a teacher.</h2>
-        <p>Cohorts are small and they fill. Reach out to check the next intake dates and reserve your place.</p>
+        <p>Two months, LKR 150,000, places capped. Reach out to check the next intake dates and reserve your spot.</p>
         <a class="tt-cta-btn" href="https://bookwhen.com/pura" target="_blank">Apply &amp; reserve your place</a>
         <p class="tt-cta-note">Questions first? Email purapilatessrilanka@gmail.com or message us on Instagram @purapilatessrilanka.</p>
       </div>

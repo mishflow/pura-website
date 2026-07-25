@@ -1,0 +1,32 @@
+:root {
+  /* Pura brand palette */
+  --rust: #97644e;
+  --sage: #8f997f;
+  --mauve: #b49492;
+  --peach-pale: #f4ddd4;
+  --sage-pale: #cdd3c4;
+  --blush-pale: #f7e6e5;
+  --special-pale: #efe2ea;
+  --tx-rust: #5e3a2b;
+  --tx-sage: #414b34;
+  --tx-mauve: #6d4744;
+  --ink: #5a4a44;
+  --white: #fdfaf7;
+  --line: #ece0d6;
+  --muted: #8c7a6c;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body { min-height: 100%; }
+
+body {
+  background: #e7ded2;
+  font-family: 'Jost', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root { min-height: 100%; }
+
+a { color: inherit; text-decoration: none; }

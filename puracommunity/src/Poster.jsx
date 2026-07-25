@@ -38,6 +38,27 @@ export default function Poster() {
     return () => window.removeEventListener('resize', fit)
   }, [format, data, week])
 
+  // Shrink class/teacher text just enough that no block clips at whatever
+  // row height a given week produces. Writes plain px so the PNG stays clean.
+  useLayoutEffect(() => {
+    const frame = frameRef.current
+    if (!frame || format === 'story') return
+    const isSq = format === 'square'
+    const baseN = isSq ? 22 : 25
+    const baseT = isSq ? 15 : 17
+    const names = [...frame.querySelectorAll('.blk .n')]
+    const teas = [...frame.querySelectorAll('.blk .tea')]
+    const blks = [...frame.querySelectorAll('.blk')]
+    const apply = (fs) => {
+      names.forEach((e) => { e.style.fontSize = (baseN * fs).toFixed(2) + 'px' })
+      teas.forEach((e) => { e.style.fontSize = (baseT * fs).toFixed(2) + 'px' })
+    }
+    const clips = () => blks.some((b) => b.scrollHeight > b.clientHeight + 1)
+    let fs = 1
+    apply(fs)
+    while (fs > 0.55 && clips()) { fs -= 0.04; apply(fs) }
+  }, [format, data, week])
+
   async function download() {
     if (!frameRef.current) return
     setBusy(true)

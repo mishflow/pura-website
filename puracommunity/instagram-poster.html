@@ -95,12 +95,23 @@
   .story .eyebrow { font-size:24px; margin-bottom:24px; }
   .story h1 { font-weight:400; font-size:104px; color:var(--rust); line-height:1; }
   .story .sub { font-size:36px; margin-top:18px; }
-  .story .grid { grid-template-columns:92px repeat(7,1fr); gap:14px; }
-  .story .dh { font-size:33px; padding-bottom:16px; }
-  .story .th { font-size:20px; letter-spacing:0.05em; padding-right:12px; }
-  .story .blk { border-radius:12px; padding:18px 8px; min-height:96px; }
-  .story .blk .n { font-size:28px; } .story .blk .tea { font-size:19px; margin-top:5px; }
-  .story .brk { grid-column:2/9; padding:4px 0; } .story .brk span { font-size:18px; }
+  .story .cols { display:grid; grid-template-columns:repeat(3,1fr); gap:26px; align-items:start; }
+  .story .col { display:flex; flex-direction:column; }
+  .story .chead { text-align:center; padding-bottom:22px; margin-bottom:24px; border-bottom:1px solid var(--line); }
+  .story .badge { display:inline-block; font-size:18px; letter-spacing:0.18em; text-transform:uppercase; color:var(--rust); border:1px solid var(--rust); border-radius:999px; padding:7px 18px; margin-bottom:18px; }
+  .story .badge.ghost { border-color:transparent; color:transparent; }
+  .story .dfull { font-family:'Cormorant Garamond',serif; font-size:44px; color:var(--ink); line-height:1; }
+  .story .ddate { font-size:20px; letter-spacing:0.14em; text-transform:uppercase; color:var(--rust); font-weight:500; margin-top:12px; }
+  .story .cbody { display:flex; flex-direction:column; gap:22px; }
+  .story .rcard { border-radius:16px; padding:30px 16px; text-align:center; }
+  .story .rcard .rtime { font-size:19px; letter-spacing:0.06em; text-transform:uppercase; opacity:0.85; font-weight:500; margin-bottom:9px; }
+  .story .rcard .rname { font-family:'Cormorant Garamond',serif; font-size:35px; font-weight:500; line-height:1.05; }
+  .story .rcard .rmeta { font-size:20px; font-style:italic; margin-top:9px; }
+  .story .rcard.reformer { background:var(--peach-pale); color:var(--tx-rust); }
+  .story .rcard.mat { background:var(--sage-pale); color:var(--tx-sage); }
+  .story .rcard.yoga { background:var(--blush-pale); color:var(--tx-mauve); } .story .rcard.yoga .rname { font-style:italic; }
+  .story .rcard.special { background:var(--special-pale); color:var(--tx-mauve); } .story .rcard.special .rname { font-style:italic; }
+  .story .rest { font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--muted); text-align:center; padding-top:42px; font-size:28px; }
   .story .info { margin-top:70px; border-left:2px solid var(--rust); padding-left:36px; }
   .story .info-h { font-size:24px; letter-spacing:0.28em; text-transform:uppercase; color:var(--rust); font-weight:500; margin-bottom:26px; }
   .story .irow { display:grid; grid-template-columns:210px 1fr; align-items:baseline; }
@@ -173,8 +184,9 @@ async function load(){
   const weeks={};
   for(let r=1;r<rows.length;r++){const row=rows[r];if(!row||!/^\d{4}-\d{2}-\d{2}/.test(row[ci.date]||''))continue;if((row[ci.status]||'').trim().toLowerCase()!=='scheduled')continue;const ty=(row[ci.type]||'').trim();if(ty.startsWith('Private')||ty.startsWith('Studio Rental'))continue;const day=DFL[(row[ci.day]||'').trim()];if(!day)continue;const w=(row[ci.week]||'').trim();(weeks[w]=weeks[w]||{items:[],dates:[]});weeks[w].items.push({day,date:row[ci.date].slice(0,10),time:(row[ci.time]||'').trim(),cls:short(ty),tea:(row[ci.teacher]||'').trim(),cat:cat(ty)});weeks[w].dates.push(row[ci.date].slice(0,10));}
   const order=Object.keys(weeks).sort((a,b)=>+a-+b);
-  order.forEach(w=>{const ds=weeks[w].dates.sort();weeks[w].start=ds[0];weeks[w].end=ds[ds.length-1];weeks[w].label=fday(ds[0])+' – '+fday(ds[ds.length-1]);});
-  DATA={weeks,order};
+  const byDate={};
+  order.forEach(w=>{const ds=weeks[w].dates.sort();weeks[w].start=ds[0];weeks[w].end=ds[ds.length-1];weeks[w].label=fday(ds[0])+' – '+fday(ds[ds.length-1]);weeks[w].items.forEach(it=>{(byDate[it.date]=byDate[it.date]||[]).push(it);});});
+  DATA={weeks,order,byDate};
   const iso=new Date().toISOString().slice(0,10);
   week=order.find(w=>weeks[w].start<=iso&&iso<=weeks[w].end)||order.find(w=>weeks[w].start>iso)||order[order.length-1];
   const sel=document.getElementById('wk');
@@ -200,18 +212,34 @@ function gridHTML(items){
   });
   return h;
 }
+const WD=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const isoLocal=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+function upcomingDays(n,today){
+  today=today||new Date();
+  const base=new Date(today.getFullYear(),today.getMonth(),today.getDate());
+  const out=[];
+  for(let i=0;i<n;i++){const d=new Date(base);d.setDate(base.getDate()+i);const iso=isoLocal(d);
+    const items=(DATA.byDate[iso]||[]).slice().sort((a,b)=>mins(a.time)-mins(b.time));
+    out.push({iso,dayLong:WD[d.getDay()],dateLabel:fday(iso),badge:i===0?'Today':i===1?'Tomorrow':'',items});}
+  return out;
+}
+function foot(){return `<div class="foot"><div class="foot-handle">${HANDLE}</div><div class="foot-book">Book · link in bio</div></div>`;}
 function frameHTML(f,w){
+  if(f==='story'){
+    const mast=`<div class="mast"><div class="eyebrow">Pura Pilates · Ahangama</div><h1>What&rsquo;s On</h1><div class="sub">the next few days</div></div>`;
+    const cols=upcomingDays(3).map(day=>{
+      const bh=day.badge?`<span class="badge">${day.badge}</span>`:`<span class="badge ghost">&nbsp;</span>`;
+      const body=day.items.length? day.items.map(it=>`<div class="rcard ${it.cat}"><div class="rtime">${to12(it.time)}</div><div class="rname">${esc(it.cls)}</div><div class="rmeta">with ${esc(it.tea)}</div></div>`).join('') : '<div class="rest">Rest day</div>';
+      return `<div class="col"><div class="chead">${bh}<div class="dfull">${day.dayLong}</div><div class="ddate">${day.dateLabel}</div></div><div class="cbody">${body}</div></div>`;
+    }).join('');
+    const info=`<div class="info"><div class="info-h">Good to know</div>${INFO.map(([k,v])=>`<div class="irow"><div class="ik">${esc(k)}</div><div class="iv">${esc(v)}</div></div>`).join('')}</div>`;
+    return `<div class="frame story">${mast}<div class="cols">${cols}</div>${info}${foot()}</div>`;
+  }
   const wk=DATA.weeks[w]; const items=wk.items;
   const mast=`<div class="mast"><div class="eyebrow">Pura Pilates · Ahangama</div><h1>Weekly Schedule</h1><div class="sub">${esc(wk.label)}</div></div>`;
   const grid=`<div class="grid">${gridHTML(items)}</div>`;
-  if(f==='story'){
-    const info=`<div class="info"><div class="info-h">Good to know</div>${INFO.map(([k,v])=>`<div class="irow"><div class="ik">${esc(k)}</div><div class="iv">${esc(v)}</div></div>`).join('')}</div>`;
-    const foot=`<div class="foot"><div class="foot-handle">${HANDLE}</div><div class="foot-book">Book · link in bio</div></div>`;
-    return `<div class="frame story">${mast}${grid}${info}${foot}</div>`;
-  }
   const cls=f==='sq'?'sq':'post';
-  const foot=`<div class="foot"><div class="foot-handle">${HANDLE}</div><div class="foot-book">Book · link in bio</div></div>`;
-  return `<div class="frame ${cls}">${mast}${grid}${foot}</div>`;
+  return `<div class="frame ${cls}">${mast}${grid}${foot()}</div>`;
 }
 
 function fitScale(){

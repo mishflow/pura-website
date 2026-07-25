@@ -59,17 +59,48 @@ function Foot() {
   )
 }
 
+// A single day column for the Story (3-day) format.
+function DayColumn({ day }) {
+  return (
+    <div className="col">
+      <div className="chead">
+        <span className={'badge' + (day.badge ? '' : ' ghost')}>{day.badge || ' '}</span>
+        <div className="dfull">{day.dayLong}</div>
+        <div className="ddate">{day.dateLabel}</div>
+      </div>
+      <div className="cbody">
+        {day.items.length === 0 ? (
+          <div className="rest">Rest day</div>
+        ) : (
+          day.items.map((it, i) => (
+            <div className={`rcard ${it.cat}`} key={i}>
+              <div className="rtime">{to12h(it.time)}</div>
+              <div className="rname">{it.cls}</div>
+              <div className="rmeta">with {it.teacher}</div>
+            </div>
+          ))
+        )}
+      </div>
+    </div>
+  )
+}
+
 // The exported frame. `frameRef` is attached to the true-pixel node so the
 // PNG export captures it at full resolution.
-export default function Frame({ format, weekData, frameRef }) {
-  const { items, label } = weekData
-  const cls = format === 'story' ? 'story' : format === 'square' ? 'sq' : 'post'
-
+// - post / square: full week grid of `weekData`
+// - story: rolling 3-day view (`storyDays`) + "Good to know"
+export default function Frame({ format, weekData, storyDays, frameRef }) {
   if (format === 'story') {
     return (
       <div className="frame story" ref={frameRef}>
-        <Mast label={label} />
-        <WeekGrid items={items} />
+        <div className="mast">
+          <div className="eyebrow">{STUDIO.eyebrow}</div>
+          <h1>What&rsquo;s On</h1>
+          <div className="sub">the next few days</div>
+        </div>
+        <div className="cols">
+          {storyDays.map((d) => <DayColumn key={d.iso} day={d} />)}
+        </div>
         <div className="info">
           <div className="info-h">Good to know</div>
           {INFO.map(([k, v]) => (
@@ -84,10 +115,11 @@ export default function Frame({ format, weekData, frameRef }) {
     )
   }
 
+  const cls = format === 'square' ? 'sq' : 'post'
   return (
     <div className={`frame ${cls}`} ref={frameRef}>
-      <Mast label={label} />
-      <WeekGrid items={items} />
+      <Mast label={weekData.label} />
+      <WeekGrid items={weekData.items} />
       <Foot />
     </div>
   )

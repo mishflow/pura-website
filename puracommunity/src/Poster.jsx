@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { toPng } from 'html-to-image'
-import { fetchSchedule, pickCurrentWeek } from './sheet'
+import { fetchSchedule, pickCurrentWeek, upcomingDays } from './sheet'
 import { FORMATS } from './config'
 import Frame from './Frames'
 import './Poster.css'
@@ -60,6 +60,7 @@ export default function Poster() {
 
   const { w, h } = FORMATS[format]
   const weekData = data && week ? data.weeks[week] : null
+  const storyDays = data ? upcomingDays(data, 3) : []
 
   return (
     <div className="poster">
@@ -71,7 +72,7 @@ export default function Poster() {
       <div className="poster-controls">
         <div className="grp">
           <label htmlFor="wk">Week</label>
-          <select id="wk" value={week ?? ''} disabled={!data}
+          <select id="wk" value={week ?? ''} disabled={!data || format === 'story'}
             onChange={(e) => setWeek(e.target.value)}>
             {data?.order.map((wn) => (
               <option key={wn} value={wn}>{`Week ${wn} · ${data.weeks[wn].label}`}</option>
@@ -95,14 +96,16 @@ export default function Poster() {
       <div className="poster-status">
         {error ? error
           : !data ? 'Loading live schedule…'
-          : `Week ${week} · ${weekData?.label} — ${format.toUpperCase()} (${w}×${h})`}
+          : format === 'story'
+            ? `Next 3 days from today (${storyDays[0]?.dateLabel} – ${storyDays[2]?.dateLabel}) — STORY (${w}×${h})`
+            : `Week ${week} · ${weekData?.label} — ${format.toUpperCase()} (${w}×${h})`}
       </div>
 
       <div className="poster-stage" ref={stageRef}>
         {weekData && (
           <div className="poster-scaler" style={{ width: w * scale, height: h * scale }}>
             <div style={{ transform: `scale(${scale})`, transformOrigin: 'top left', width: w, height: h }}>
-              <Frame format={format} weekData={weekData} frameRef={frameRef} />
+              <Frame format={format} weekData={weekData} storyDays={storyDays} frameRef={frameRef} />
             </div>
           </div>
         )}

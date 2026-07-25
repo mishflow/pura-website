@@ -97,13 +97,39 @@ export async function fetchSchedule() {
   }
 
   const order = Object.keys(weeks).sort((a, b) => Number(a) - Number(b))
+  const byDate = {}
   for (const w of order) {
     const ds = weeks[w].dates.sort()
     weeks[w].start = ds[0]
     weeks[w].end = ds[ds.length - 1]
     weeks[w].label = `${fmtDay(weeks[w].start)} – ${fmtDay(weeks[w].end)}`
+    for (const it of weeks[w].items) (byDate[it.date] ||= []).push(it)
   }
-  return { weeks, order }
+  return { weeks, order, byDate }
+}
+
+const WEEKDAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+const isoLocal = (d) =>
+  `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+
+// The next `n` calendar days from `today`, each with that date's classes.
+export function upcomingDays(data, n = 3, today = new Date()) {
+  const base = new Date(today.getFullYear(), today.getMonth(), today.getDate())
+  const out = []
+  for (let i = 0; i < n; i++) {
+    const d = new Date(base)
+    d.setDate(base.getDate() + i)
+    const iso = isoLocal(d)
+    const items = (data.byDate[iso] || []).slice().sort((a, b) => toMinutes(a.time) - toMinutes(b.time))
+    out.push({
+      iso,
+      dayLong: WEEKDAYS[d.getDay()],
+      dateLabel: fmtDay(iso),
+      badge: i === 0 ? 'Today' : i === 1 ? 'Tomorrow' : '',
+      items,
+    })
+  }
+  return out
 }
 
 // Pick the week whose range contains `today`, else the next upcoming week,

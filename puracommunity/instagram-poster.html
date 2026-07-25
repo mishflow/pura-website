@@ -65,11 +65,11 @@
   .post .eyebrow { font-size:21px; margin-bottom:22px; }
   .post h1 { font-weight:400; font-size:84px; color:var(--rust); line-height:1; }
   .post .sub { font-size:32px; margin-top:14px; }
-  .post .grid { grid-template-columns:84px repeat(7,1fr); gap:13px; flex:1; }
+  .post .grid { grid-template-columns:84px repeat(7,1fr); column-gap:13px; row-gap:20px; flex:1; align-content:center; }
   .post .dh { font-size:31px; padding-bottom:14px; }
   .post .th { font-size:19px; letter-spacing:0.05em; padding-right:12px; }
-  .post .blk { border-radius:12px; padding:14px 8px; }
-  .post .blk .n { font-size:27px; } .post .blk .tea { font-size:18px; margin-top:5px; }
+  .post .blk { border-radius:12px; padding:12px 8px; }
+  .post .blk .n { font-size:25px; } .post .blk .tea { font-size:17px; margin-top:5px; }
   .post .brk { grid-column:2/9; padding:2px 0; } .post .brk span { font-size:16px; }
   .post .foot { margin-top:40px; display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--line); padding-top:28px; }
   .post .foot-handle { font-size:23px; } .post .foot-book { font-size:21px; }
@@ -80,17 +80,17 @@
   .sq .eyebrow { font-size:19px; margin-bottom:16px; }
   .sq h1 { font-weight:400; font-size:70px; color:var(--rust); line-height:1; }
   .sq .sub { font-size:28px; margin-top:10px; }
-  .sq .grid { grid-template-columns:72px repeat(7,1fr); column-gap:11px; flex:1; align-content:space-between; }
+  .sq .grid { grid-template-columns:72px repeat(7,1fr); column-gap:11px; row-gap:16px; flex:1; align-content:center; }
   .sq .dh { font-size:28px; padding-bottom:12px; }
   .sq .th { font-size:17px; letter-spacing:0.05em; padding-right:11px; }
-  .sq .blk { border-radius:11px; padding:16px 6px; min-height:96px; }
-  .sq .blk .n { font-size:24px; } .sq .blk .tea { font-size:16px; margin-top:4px; }
+  .sq .blk { border-radius:11px; padding:12px 6px; min-height:84px; }
+  .sq .blk .n { font-size:22px; } .sq .blk .tea { font-size:15px; margin-top:4px; }
   .sq .brk { grid-column:2/9; padding:2px 0; } .sq .brk span { font-size:15px; }
   .sq .foot { margin-top:28px; display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--line); padding-top:22px; }
   .sq .foot-handle { font-size:21px; } .sq .foot-book { font-size:19px; }
 
   /* ---- STORY 1080x1920 (grid + good to know) ---- */
-  .story { width:1080px; height:1920px; padding:110px 74px 96px; display:flex; flex-direction:column; }
+  .story { width:1080px; height:1920px; padding:110px 74px 96px; display:flex; flex-direction:column; justify-content:space-between; }
   .story .mast { text-align:center; margin-bottom:56px; }
   .story .eyebrow { font-size:24px; margin-bottom:24px; }
   .story h1 { font-weight:400; font-size:104px; color:var(--rust); line-height:1; }
@@ -112,13 +112,13 @@
   .story .rcard.yoga { background:var(--blush-pale); color:var(--tx-mauve); } .story .rcard.yoga .rname { font-style:italic; }
   .story .rcard.special { background:var(--special-pale); color:var(--tx-mauve); } .story .rcard.special .rname { font-style:italic; }
   .story .rest { font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--muted); text-align:center; padding-top:42px; font-size:28px; }
-  .story .info { margin-top:70px; border-left:2px solid var(--rust); padding-left:36px; }
+  .story .info { border-left:2px solid var(--rust); padding-left:36px; }
   .story .info-h { font-size:24px; letter-spacing:0.28em; text-transform:uppercase; color:var(--rust); font-weight:500; margin-bottom:26px; }
   .story .irow { display:grid; grid-template-columns:210px 1fr; align-items:baseline; }
   .story .irow + .irow { margin-top:18px; }
   .story .ik { font-size:19px; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); font-weight:500; }
   .story .iv { font-family:'Cormorant Garamond',serif; font-size:30px; color:var(--ink); }
-  .story .foot { margin-top:auto; text-align:center; padding-top:60px; }
+  .story .foot { text-align:center; padding-top:60px; }
   .story .foot-handle { font-size:24px; } .story .foot-book { display:block; font-size:22px; margin-top:14px; }
 </style>
 </head>

@@ -9,7 +9,7 @@
 .frame .dh { color: var(--ink); text-align: center; border-bottom: 1px solid var(--line); }
 .frame .dh.rest { color: var(--muted); }
 .frame .th { text-transform: uppercase; color: var(--muted); font-weight: 500; display: flex; align-items: center; justify-content: flex-end; }
-.frame .cell { display: flex; min-height: 0; }
+.frame .cell { display: flex; min-height: 0; align-items: center; }
 .frame .blk { flex: 1; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; }
 .frame .blk .n { font-weight: 500; line-height: 1.05; }
 .frame .blk .tea { font-style: italic; white-space: nowrap; }
@@ -22,8 +22,8 @@
 .frame .brk span { letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
 .frame .eyebrow { letter-spacing: 0.34em; text-transform: uppercase; color: var(--rust); }
 .frame .sub { font-style: italic; color: var(--sage); font-family: 'Cormorant Garamond', serif; }
-.frame .foot-handle { text-transform: uppercase; letter-spacing: 0.16em; color: var(--rust); font-weight: 500; }
-.frame .foot-book { text-transform: uppercase; letter-spacing: 0.2em; color: var(--muted); }
+.frame .foot-handle { text-transform: uppercase; letter-spacing: 0.16em; color: var(--rust); font-weight: 500; white-space: nowrap; }
+.frame .foot-book { text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); white-space: nowrap; }
 
 /* POST 1080x1350 */
 .post { width: 1080px; height: 1350px; padding: 76px 66px 60px; display: flex; flex-direction: column; }
@@ -34,7 +34,7 @@
 .post .grid { grid-template-columns: 84px repeat(7, 1fr); grid-template-rows: auto; grid-auto-rows: 1fr; column-gap: 13px; row-gap: 14px; flex: 1; }
 .post .dh { font-size: 31px; padding-bottom: 14px; }
 .post .th { font-size: 19px; letter-spacing: 0.05em; padding-right: 12px; }
-.post .blk { border-radius: 12px; padding: 12px 8px; }
+.post .blk { border-radius: 12px; padding: 12px 8px; max-height: 180px; align-self: stretch; }
 .post .blk .n { font-size: 25px; } .post .blk .tea { font-size: 17px; margin-top: 5px; }
 .post .brk { grid-column: 2 / 9; padding: 2px 0; } .post .brk span { font-size: 16px; }
 .post .foot { margin-top: 40px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 28px; }

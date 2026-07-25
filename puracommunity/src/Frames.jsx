@@ -54,7 +54,7 @@ function Foot() {
   return (
     <div className="foot">
       <div className="foot-handle">{STUDIO.handle}</div>
-      <div className="foot-book">Book · link in bio</div>
+      <div className="foot-book">Book · bookwhen.com/pura</div>
     </div>
   )
 }

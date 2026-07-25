@@ -61,7 +61,8 @@ const fmtDay = (iso) => {
 
 // Fetch the sheet and group scheduled, public classes by week number.
 export async function fetchSchedule() {
-  const res = await fetch(CSV_URL)
+  // Cache-bust so we always read the current sheet, never a stale copy.
+  const res = await fetch(`${CSV_URL}&_=${Date.now()}`, { cache: 'no-store' })
   if (!res.ok) throw new Error(`Sheet fetch failed (${res.status})`)
   const rows = parseCSV(await res.text())
   const header = rows[0].map((h) => h.trim())

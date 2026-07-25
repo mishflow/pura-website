@@ -7,7 +7,7 @@ export const SHEET_ID = '1KMnwah9GyzJisURDDVrosugYndyWHKghFqejJcVv3tM'
 export const SHEET_TAB = 'Schedule_Master'
 export const CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(SHEET_TAB)}`
 
-// Booking link (placeholder — swap for the real Bookwhen URL).
+// Booking link (Bookwhen).
 export const BOOKING_URL = 'https://bookwhen.com/pura'
 
 export const STUDIO = {
@@ -22,7 +22,7 @@ export const BREAK_GAP_MINUTES = 90
 // "Good to know" panel shown on the Story format.
 export const INFO = [
   ['Pricing', 'Reformer 6,000 · Mat & Yoga 3,000'],
-  ['Booking', 'purapilatessrilanka.com · walk-ins welcome'],
+  ['Booking', 'bookwhen.com/pura · walk-ins welcome'],
   ['Policy', 'Cancel 72h before · transfer up to 12h'],
   ['Arrive', '10 minutes early to settle in'],
   ['Sunday', 'Rest day, studio closed'],

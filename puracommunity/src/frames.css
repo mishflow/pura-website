@@ -15,7 +15,7 @@
 .frame .blk .tea { font-style: italic; white-space: nowrap; }
 .frame .blk.reformer { background: var(--peach-pale); color: var(--tx-rust); }
 .frame .blk.mat { background: var(--sage-pale); color: var(--tx-sage); }
-.frame .blk.yoga { background: var(--blush-pale); color: var(--tx-mauve); } .frame .blk.yoga .n { font-style: italic; }
+.frame .blk.yoga { background: var(--blush-pale); color: var(--tx-yoga); } .frame .blk.yoga .n { font-style: italic; }
 .frame .blk.special { background: var(--special-pale); color: var(--tx-mauve); } .frame .blk.special .n { font-style: italic; }
 .frame .brk { display: flex; align-items: center; gap: 12px; }
 .frame .brk::before, .frame .brk::after { content: ""; flex: 1; border-top: 1px dashed var(--line); }
@@ -74,7 +74,7 @@
 .story .rcard .rmeta { font-size: 20px; font-style: italic; margin-top: 9px; }
 .story .rcard.reformer { background: var(--peach-pale); color: var(--tx-rust); }
 .story .rcard.mat { background: var(--sage-pale); color: var(--tx-sage); }
-.story .rcard.yoga { background: var(--blush-pale); color: var(--tx-mauve); } .story .rcard.yoga .rname { font-style: italic; }
+.story .rcard.yoga { background: var(--blush-pale); color: var(--tx-yoga); } .story .rcard.yoga .rname { font-style: italic; }
 .story .rcard.special { background: var(--special-pale); color: var(--tx-mauve); } .story .rcard.special .rname { font-style: italic; }
 .story .rest { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--muted); text-align: center; padding-top: 42px; font-size: 28px; }
 .story .info { border-left: 2px solid var(--rust); padding-left: 36px; }

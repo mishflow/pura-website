@@ -61,14 +61,13 @@
 .story .eyebrow { font-size: 24px; margin-bottom: 24px; }
 .story h1 { font-weight: 400; font-size: 104px; color: var(--rust); line-height: 1; }
 .story .sub { font-size: 36px; margin-top: 18px; }
-.story .cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; align-items: start; }
-.story .col { display: flex; flex-direction: column; }
-.story .chead { text-align: center; padding-bottom: 22px; margin-bottom: 24px; border-bottom: 1px solid var(--line); }
+.story .sgrid { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 26px; row-gap: 22px; align-items: stretch; }
+.story .rslot { }
+.story .chead { text-align: center; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
 .story .badge { display: inline-block; font-size: 18px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rust); border: 1px solid var(--rust); border-radius: 999px; padding: 7px 18px; margin-bottom: 18px; }
 .story .badge.ghost { border-color: transparent; color: transparent; }
 .story .dfull { font-family: 'Cormorant Garamond', serif; font-size: 44px; color: var(--ink); line-height: 1; }
 .story .ddate { font-size: 20px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rust); font-weight: 500; margin-top: 12px; }
-.story .cbody { display: flex; flex-direction: column; gap: 22px; }
 .story .rcard { border-radius: 16px; padding: 30px 16px; text-align: center; }
 .story .rcard .rtime { font-size: 19px; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.85; font-weight: 500; margin-bottom: 9px; }
 .story .rcard .rname { font-family: 'Cormorant Garamond', serif; font-size: 35px; font-weight: 500; line-height: 1.05; }

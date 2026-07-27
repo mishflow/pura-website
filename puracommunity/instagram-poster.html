@@ -97,14 +97,13 @@
   .story .eyebrow { font-size:24px; margin-bottom:24px; }
   .story h1 { font-weight:400; font-size:104px; color:var(--rust); line-height:1; }
   .story .sub { font-size:36px; margin-top:18px; }
-  .story .cols { display:grid; grid-template-columns:repeat(3,1fr); gap:26px; align-items:start; }
-  .story .col { display:flex; flex-direction:column; }
-  .story .chead { text-align:center; padding-bottom:22px; margin-bottom:24px; border-bottom:1px solid var(--line); }
+  .story .sgrid { display:grid; grid-template-columns:repeat(3,1fr); column-gap:26px; row-gap:22px; align-items:stretch; }
+  .story .rslot { }
+  .story .chead { text-align:center; padding-bottom:22px; border-bottom:1px solid var(--line); }
   .story .badge { display:inline-block; font-size:18px; letter-spacing:0.18em; text-transform:uppercase; color:var(--rust); border:1px solid var(--rust); border-radius:999px; padding:7px 18px; margin-bottom:18px; }
   .story .badge.ghost { border-color:transparent; color:transparent; }
   .story .dfull { font-family:'Cormorant Garamond',serif; font-size:44px; color:var(--ink); line-height:1; }
   .story .ddate { font-size:20px; letter-spacing:0.14em; text-transform:uppercase; color:var(--rust); font-weight:500; margin-top:12px; }
-  .story .cbody { display:flex; flex-direction:column; gap:22px; }
   .story .rcard { border-radius:16px; padding:30px 16px; text-align:center; }
   .story .rcard .rtime { font-size:19px; letter-spacing:0.06em; text-transform:uppercase; opacity:0.85; font-weight:500; margin-bottom:9px; }
   .story .rcard .rname { font-family:'Cormorant Garamond',serif; font-size:35px; font-weight:500; line-height:1.05; }
@@ -229,13 +228,15 @@ function foot(){return `<div class="foot"><div class="foot-handle">${HANDLE}</di
 function frameHTML(f,w){
   if(f==='story'){
     const mast=`<div class="mast"><div class="eyebrow">Pura Pilates · Ahangama</div><h1>What&rsquo;s On</h1><div class="sub">the next few days</div></div>`;
-    const cols=upcomingDays(3).map(day=>{
-      const bh=day.badge?`<span class="badge">${day.badge}</span>`:`<span class="badge ghost">&nbsp;</span>`;
-      const body=day.items.length? day.items.map(it=>`<div class="rcard ${it.cat}"><div class="rtime">${to12(it.time)}</div><div class="rname">${esc(it.cls)}</div><div class="rmeta">with ${esc(it.tea)}</div></div>`).join('') : '<div class="rest">Rest day</div>';
-      return `<div class="col"><div class="chead">${bh}<div class="dfull">${day.dayLong}</div><div class="ddate">${day.dateLabel}</div></div><div class="cbody">${body}</div></div>`;
-    }).join('');
+    const days=upcomingDays(3);
+    // Shared, time-sorted rows so the same start time lines up across all days;
+    // a day with no class at a given time gets an empty slot in that row.
+    const times=[...new Set(days.flatMap(d=>d.items.map(i=>i.time)))].sort((a,b)=>mins(a)-mins(b));
+    let cells=days.map(day=>{const bh=day.badge?`<span class="badge">${day.badge}</span>`:`<span class="badge ghost">&nbsp;</span>`;return `<div class="chead">${bh}<div class="dfull">${day.dayLong}</div><div class="ddate">${day.dateLabel}</div></div>`;}).join('');
+    times.forEach((t,ti)=>{cells+=days.map(day=>{const it=day.items.find(i=>i.time===t);if(it)return `<div class="rcard ${it.cat}"><div class="rtime">${to12(it.time)}</div><div class="rname">${esc(it.cls)}</div><div class="rmeta">with ${esc(it.tea)}</div></div>`;if(day.items.length===0&&ti===0)return '<div class="rest">Rest day</div>';return '<div class="rslot"></div>';}).join('');});
+    const cols=`<div class="sgrid">${cells}</div>`;
     const info=`<div class="info"><div class="info-h">Good to know</div>${INFO.map(([k,v])=>`<div class="irow"><div class="ik">${esc(k)}</div><div class="iv">${esc(v)}</div></div>`).join('')}</div>`;
-    return `<div class="frame story">${mast}<div class="cols">${cols}</div>${info}${foot()}</div>`;
+    return `<div class="frame story">${mast}${cols}${info}${foot()}</div>`;
   }
   const wk=DATA.weeks[w]; const items=wk.items;
   const mast=`<div class="mast"><div class="eyebrow">Pura Pilates · Ahangama</div><h1>Weekly Schedule</h1><div class="sub">${esc(wk.label)}</div></div>`;

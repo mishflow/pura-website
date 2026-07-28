@@ -89,7 +89,25 @@ async function postStory(imageUrl) {
     throw new Error(`media create failed: ${JSON.stringify(create)}`)
   }
 
-  // 2) Publish it.
+  // 2) Wait for the container to finish processing. Instagram rejects
+  // media_publish with code 9007 ("media is not ready") if called too soon,
+  // so poll status_code until FINISHED before publishing.
+  for (let attempt = 0; attempt < 20; attempt++) {
+    await new Promise((r) => setTimeout(r, 3000))
+    const statusRes = await fetch(
+      `${base}/${create.id}?fields=status_code&access_token=${encodeURIComponent(token)}`,
+    )
+    const status = await statusRes.json()
+    if (status.status_code === 'FINISHED') break
+    if (status.status_code === 'ERROR' || status.error) {
+      throw new Error(`media processing failed: ${JSON.stringify(status)}`)
+    }
+    if (attempt === 19) {
+      throw new Error(`media not ready after polling: ${JSON.stringify(status)}`)
+    }
+  }
+
+  // 3) Publish it.
   const pubRes = await fetch(`${base}/${igUser}/media_publish`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

@@ -6,9 +6,13 @@ name: Daily Instagram Story
 
 on:
   schedule:
-    # 01:30 UTC = 07:00 Asia/Colombo (Sri Lanka, UTC+5:30).
-    # Note: GitHub cron can be delayed several minutes under load.
-    - cron: '30 1 * * *'
+    # 00:07 UTC = 05:37 Asia/Colombo (Sri Lanka, UTC+5:30). This is the
+    # earliest date-safe slot: the Story's "today" is the runner's UTC date,
+    # so scheduling before 00:00 UTC would flip it to the previous day.
+    # The :07 minute (off the top of the hour) shortens GitHub's queue delay,
+    # and the early time buffers against it so the post lands in the morning.
+    # Note: GitHub cron can still be delayed; it is not exact-to-the-minute.
+    - cron: '7 0 * * *'
   workflow_dispatch:
     inputs:
       dry_run:

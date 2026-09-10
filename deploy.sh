@@ -47,9 +47,12 @@ for pair in "${PAGES[@]}"; do
   echo "  $SRC -> $DEST"
 done
 
-git add -A pages/ index.html retreat/ green-season/ ahangama/ cancellations/ assets/ CNAME .gitignore
+git add -A pages/ index.html retreat/ green-season/ ahangama/ cancellations/ assets/ \
+        CNAME .gitignore favicon.svg favicon.ico apple-touch-icon.png sitemap.xml robots.txt
 git commit -m "$MESSAGE"
-git push
+# Push explicitly to main so this works from a worktree branch too,
+# which is how we deploy (see the worktree-only rule).
+git push origin HEAD:main
 
 echo ""
 echo "✓ Live at purapilatessrilanka.com in ~1 min"

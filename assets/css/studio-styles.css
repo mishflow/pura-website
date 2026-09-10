@@ -354,6 +354,57 @@ footer { background: var(--dark); padding: 48px 52px; }
 }
 .rental-note a { color: var(--sage); text-decoration: underline; text-underline-offset: 3px; }
 
+/* ── CREDIT PRICING ── */
+.credit-lede {
+  font-family: 'Jost', sans-serif;
+  font-size: 15px; line-height: 1.75;
+  color: rgba(61,35,20,0.66);
+  max-width: 620px; margin: 0 auto 30px; text-align: center;
+}
+.credit-lede strong { color: var(--dark); font-weight: 500; }
+
+.credit-ladder { display: flex; flex-direction: column; }
+.cl-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "qty total" "each total";
+  align-items: center;
+  column-gap: 16px;
+  padding: 13px 0;
+  border-bottom: 0.5px solid rgba(74,85,56,0.12);
+}
+.cl-row:last-child { border-bottom: none; }
+.cl-qty {
+  grid-area: qty;
+  font-family: 'Jost', sans-serif; font-size: 14px; color: var(--dark);
+  display: flex; align-items: baseline; gap: 9px;
+}
+.cl-qty span {
+  font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(61,35,20,0.38);
+}
+.cl-each {
+  grid-area: each;
+  font-family: 'Jost', sans-serif; font-size: 12px;
+  color: rgba(61,35,20,0.45); margin-top: 3px;
+}
+.cl-total {
+  grid-area: total;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 26px; color: var(--dark); line-height: 1;
+}
+.cl-total::before {
+  content: 'Rs ';
+  font-family: 'Jost', sans-serif; font-size: 11px;
+  color: rgba(61,35,20,0.4); letter-spacing: 0.06em;
+}
+.cl-foot { margin-top: 18px; }
+.pc-price-enquire {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic; color: var(--sage-dark);
+}
+.pricing-card-soft .pc-link + .pc-link { margin-top: 10px; }
+
 /* ── BOOKING CTA (replaces the old embedded timetable) ── */
 .book-cta {
   display: flex; align-items: center; gap: 28px; flex-wrap: wrap;

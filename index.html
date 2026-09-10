@@ -29,7 +29,7 @@
   <meta name="twitter:description" content="Boutique reformer and mat Pilates studio on Sri Lanka's south coast. Small group classes, private sessions and retreats in Ahangama. All levels welcome.">
   <meta name="twitter:image" content="https://purapilatessrilanka.com/assets/images/og-image.jpg">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/studio-styles.css?v=5">
+  <link rel="stylesheet" href="/assets/css/studio-styles.css?v=6">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -259,14 +259,11 @@
 
     <!-- GROUP CLASSES -->
     <div class="pricing-panel active" id="tab-group">
-      <div class="class-type-toggle">
-        <button class="ctype-btn active" data-ctype="reformer">Reformer</button>
-        <button class="ctype-btn" data-ctype="mat">Mat &amp; Yoga</button>
-        <button class="ctype-btn" data-ctype="combo">Reformer + Mat &amp; Yoga</button>
-      </div>
+
+      <p class="credit-lede">Classes run on credits. One credit is <strong>LKR 3,000</strong>, and the more you buy the less each one costs. Credits work on any class in the timetable.</p>
 
       <!-- Green Season deal -->
-      <div class="green-season-deal ctype-reformer">
+      <div class="green-season-deal">
         <div class="gs-leaf">🌿</div>
         <div class="gs-text">
           <strong>Green Season offer</strong> — Book a Reformer drop-in and get your next Mat &amp; Yoga class at <strong>half price.</strong>
@@ -275,100 +272,72 @@
 
       <div class="pricing-cols">
 
-        <!-- Drop-in -->
+        <!-- What a class costs -->
         <div class="pricing-col">
-          <div class="pricing-col-label">Drop-in</div>
+          <div class="pricing-col-label">What a class costs</div>
           <div class="pricing-card">
-            <div class="pc-name">Single class</div>
-            <div class="pc-price ctype-reformer ctype-combo">LKR <span>6,000</span></div>
-            <div class="pc-price ctype-mat hidden">LKR <span>3,000</span></div>
-            <div class="pc-note ctype-reformer ctype-combo">Book via live schedule</div>
-            <div class="pc-note ctype-mat hidden">Book via live schedule</div>
-            <!-- Combo note -->
-            <div class="ctype-combo hidden pc-note-combo">+ Mat &amp; Yoga LKR <span style="font-family:'Cormorant Garamond',serif;font-size:16px;">3,000</span></div>
-          </div>
-        </div>
-
-        <!-- Packs -->
-        <div class="pricing-col">
-          <div class="pricing-col-label">Class Packs</div>
-          <!-- Reformer packs -->
-          <div class="ctype-reformer">
-            <div class="pricing-card">
-              <div class="resident-toggle">
-                <button class="res-btn active" data-res="regular">Regular</button>
-                <button class="res-btn" data-res="resident">Resident</button>
-              </div>
-              <div class="pc-divider"></div>
-              <div class="pc-name">3 classes</div>
-              <div class="pc-price res-regular">LKR <span>17,000</span></div>
-              <div class="pc-price res-resident hidden">LKR <span>14,250</span></div>
-              <div class="pc-divider"></div>
-              <div class="pc-name">5 classes</div>
-              <div class="pc-price res-regular">LKR <span>27,000</span></div>
-              <div class="pc-price res-resident hidden">LKR <span>22,500</span></div>
-              <div class="pc-divider"></div>
-              <div class="pc-name">10 classes</div>
-              <div class="pc-price res-regular">LKR <span>51,000</span></div>
-              <div class="pc-price res-resident hidden">LKR <span>42,500</span></div>
-              <div class="pc-divider"></div>
-              <div class="pc-name">30 classes</div>
-              <div class="pc-price res-regular">LKR <span>144,000</span></div>
-              <div class="pc-price res-resident hidden">LKR <span>120,000</span></div>
-            </div>
-          </div>
-          <!-- Mat & Yoga packs -->
-          <div class="ctype-mat hidden">
-            <div class="pricing-card">
-              <div class="pc-name">3 classes</div>
-              <div class="pc-price">LKR <span>8,500</span></div>
-              <div class="pc-divider"></div>
-              <div class="pc-name">5 classes</div>
-              <div class="pc-price">LKR <span>13,500</span></div>
-              <div class="pc-divider"></div>
-              <div class="pc-name">10 classes</div>
-              <div class="pc-price">LKR <span>22,000</span></div>
-            </div>
-          </div>
-          <!-- Combo packs -->
-          <div class="ctype-combo hidden">
-            <div class="pricing-card">
-              <div class="pc-name">5 classes</div>
-              <div class="pc-price">LKR <span>35,000</span></div>
-              <div class="pc-divider"></div>
-              <div class="pc-name">10 classes</div>
-              <div class="pc-price">LKR <span>65,000</span></div>
-              <div class="pc-divider"></div>
-              <div class="pc-name">20 classes</div>
-              <div class="pc-price">LKR <span>120,000</span></div>
-              <div class="pc-note">Mix of Reformer &amp; Mat/Yoga</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Membership -->
-        <div class="pricing-col">
-          <div class="pricing-col-label">Unlimited Membership</div>
-          <div class="pricing-card membership-card">
-            <div class="membership-toggle">
-              <button class="mem-btn active" data-period="weekly">Weekly</button>
-              <button class="mem-btn" data-period="monthly">Monthly</button>
-            </div>
+            <div class="pc-name">Reformer</div>
+            <div class="pc-price">2 <span>credits</span></div>
+            <div class="pc-note">Small group, 8 spots</div>
             <div class="pc-divider"></div>
-            <div class="pc-name">Unlimited access</div>
-            <div class="mem-weekly">
-              <div class="pc-price ctype-reformer">LKR <span>20,000</span> <em>/ week</em></div>
-              <div class="pc-price ctype-mat hidden">LKR <span>10,000</span> <em>/ week</em></div>
-              <div class="pc-price ctype-combo hidden">LKR <span>25,000</span> <em>/ week</em></div>
+            <div class="pc-name">Mat</div>
+            <div class="pc-price">1 <span>credit</span></div>
+            <div class="pc-note">Up to 15 spots</div>
+            <div class="pc-divider"></div>
+            <div class="pc-name">Yoga</div>
+            <div class="pc-price">1 <span>credit</span></div>
+            <div class="pc-note">Up to 15 spots</div>
+          </div>
+        </div>
+
+        <!-- The credit ladder -->
+        <div class="pricing-col">
+          <div class="pricing-col-label">Buying credits</div>
+          <div class="pricing-card">
+            <div class="credit-ladder">
+              <div class="cl-row">
+                <div class="cl-qty">1 credit<span>30 days</span></div>
+                <div class="cl-each">Rs 3,000 each</div>
+                <div class="cl-total">3,000</div>
+              </div>
+              <div class="cl-row">
+                <div class="cl-qty">3 credits<span>30 days</span></div>
+                <div class="cl-each">Rs 2,850 each</div>
+                <div class="cl-total">8,500</div>
+              </div>
+              <div class="cl-row">
+                <div class="cl-qty">5 credits<span>30 days</span></div>
+                <div class="cl-each">Rs 2,700 each</div>
+                <div class="cl-total">13,500</div>
+              </div>
+              <div class="cl-row">
+                <div class="cl-qty">10 credits<span>60 days</span></div>
+                <div class="cl-each">Rs 2,550 each</div>
+                <div class="cl-total">25,500</div>
+              </div>
+              <div class="cl-row">
+                <div class="cl-qty">20 credits<span>90 days</span></div>
+                <div class="cl-each">Rs 2,500 each</div>
+                <div class="cl-total">50,000</div>
+              </div>
+              <div class="cl-row">
+                <div class="cl-qty">30 credits<span>90 days</span></div>
+                <div class="cl-each">Rs 2,350 each</div>
+                <div class="cl-total">70,500</div>
+              </div>
             </div>
-            <div class="mem-monthly hidden">
-              <div class="pc-price ctype-reformer">LKR <span>60,000</span> <em>/ month</em></div>
-              <div class="pc-price ctype-mat hidden">LKR <span>30,000</span> <em>/ month</em></div>
-              <div class="pc-price ctype-combo hidden">LKR <span>75,000</span> <em>/ month</em></div>
-            </div>
-            <div class="pc-note ctype-reformer">Up to 1 class per day</div>
-            <div class="pc-note ctype-mat hidden">Up to 1 class per day</div>
-            <div class="pc-note ctype-combo hidden">Up to 2 classes per day · one of each format</div>
+            <div class="pc-note cl-foot">Totals in LKR. Card payments are charged in USD at Rs 300 to the dollar.</div>
+          </div>
+        </div>
+
+        <!-- Good to know -->
+        <div class="pricing-col">
+          <div class="pricing-col-label">Good to know</div>
+          <div class="pricing-card pricing-card-soft">
+            <p class="pc-info">10 credits is five Reformer classes, or ten Mat or Yoga classes, or any mix of the two.</p>
+            <p class="pc-info">Credits start counting from the day you buy them. Bigger bundles get longer to use.</p>
+            <p class="pc-info"><strong>Resident in Sri Lanka?</strong> We have resident prices. Show us your card at the studio or message us and we will sort your discount.</p>
+            <a class="pc-link" href="https://www.puracommunity.com" target="_blank" rel="noopener">Buy credits &rarr;</a>
           </div>
         </div>
 
@@ -380,37 +349,33 @@
       <div class="pricing-cols">
 
         <div class="pricing-col">
-          <div class="pricing-col-label">1:1 Sessions</div>
+          <div class="pricing-col-label">1:1 and semi-private</div>
           <div class="pricing-card">
-            <div class="pc-name">Single session</div>
-            <div class="pc-price">LKR <span>15,000</span></div>
-            <div class="pc-note">60 minutes</div>
+            <div class="pc-name">Private session</div>
+            <div class="pc-price pc-price-enquire">On enquiry</div>
+            <div class="pc-note">60 minutes, Reformer or Mat</div>
             <div class="pc-divider"></div>
-            <div class="pc-name">Pack of 5</div>
-            <div class="pc-price">LKR <span>68,000</span></div>
-            <div class="pc-badge">Save LKR 7,000</div>
-            <div class="pc-divider"></div>
-            <div class="pc-name">Pack of 10</div>
-            <div class="pc-price">LKR <span>130,000</span></div>
-            <div class="pc-badge">Save LKR 20,000</div>
-          </div>
-        </div>
-
-        <div class="pricing-col">
-          <div class="pricing-col-label">Semi-Private</div>
-          <div class="pricing-card">
-            <div class="pc-name">2 people</div>
-            <div class="pc-price">LKR <span>10,000</span> <em>/ person</em></div>
-            <div class="pc-note">60 minutes · Reformer<br>Book together or bring a friend</div>
+            <div class="pc-name">Semi-private</div>
+            <div class="pc-price pc-price-enquire">On enquiry</div>
+            <div class="pc-note">Two people, book together or bring a friend</div>
           </div>
         </div>
 
         <div class="pricing-col">
           <div class="pricing-col-label">Good to know</div>
           <div class="pricing-card pricing-card-soft">
-            <p class="pc-info">Private sessions are tailored entirely to you — your goals, your pace, your practice.</p>
-            <p class="pc-info">Great for beginners, post-injury rehab, or going deeper into your existing practice.</p>
-            <a class="pc-link" href="mailto:purapilatessrilanka@gmail.com">Enquire by email →</a>
+            <p class="pc-info">Private sessions are tailored entirely to you. Your goals, your pace, your practice.</p>
+            <p class="pc-info">Great for beginners, post-injury rehab, or going deeper into an existing practice.</p>
+            <p class="pc-info">Pricing depends on the teacher and how often you come, so get in touch and we will find the right fit.</p>
+          </div>
+        </div>
+
+        <div class="pricing-col">
+          <div class="pricing-col-label">Get in touch</div>
+          <div class="pricing-card pricing-card-soft">
+            <p class="pc-info">Message us and we will talk through what you are after and what it costs.</p>
+            <a class="pc-link" href="https://wa.me/94784724956" target="_blank" rel="noopener">WhatsApp us &rarr;</a>
+            <a class="pc-link" href="mailto:purapilatessrilanka@gmail.com">Enquire by email &rarr;</a>
           </div>
         </div>
 
@@ -600,51 +565,6 @@ document.querySelectorAll('.pricing-tab').forEach(btn => {
     btn.classList.add('active');
     const panel = document.getElementById('tab-' + btn.dataset.tab);
     panel.classList.remove('hidden'); panel.classList.add('active');
-  });
-});
-
-// Class type toggle (Reformer / Mat / Combo)
-document.querySelectorAll('.ctype-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.ctype-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const type = btn.dataset.ctype;
-    // Elements that belong to exactly one type
-    document.querySelectorAll('[class*="ctype-"]:not(.ctype-btn)').forEach(el => {
-      const classes = [...el.classList];
-      const types = classes.filter(c => c.startsWith('ctype-')).map(c => c.replace('ctype-', ''));
-      el.classList.toggle('hidden', !types.includes(type));
-    });
-    // Green season deal only shows on reformer
-    document.querySelectorAll('.green-season-deal').forEach(el => el.classList.toggle('hidden', type !== 'reformer'));
-    // Combo-only note
-    document.querySelectorAll('.pc-note-combo').forEach(el => el.classList.toggle('hidden', type !== 'combo'));
-  });
-});
-
-// Resident / Regular toggle
-document.querySelectorAll('.resident-toggle').forEach(toggle => {
-  toggle.querySelectorAll('.res-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      toggle.querySelectorAll('.res-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const res = btn.dataset.res;
-      const card = toggle.closest('.pricing-col');
-      card.querySelectorAll('.res-regular').forEach(el => el.classList.toggle('hidden', res !== 'regular'));
-      card.querySelectorAll('.res-resident').forEach(el => el.classList.toggle('hidden', res !== 'resident'));
-    });
-  });
-});
-
-// Membership weekly/monthly toggle
-document.querySelectorAll('.mem-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const card = btn.closest('.pricing-col');
-    card.querySelectorAll('.mem-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const period = btn.dataset.period;
-    card.querySelectorAll('.mem-weekly').forEach(el => el.classList.toggle('hidden', period !== 'weekly'));
-    card.querySelectorAll('.mem-monthly').forEach(el => el.classList.toggle('hidden', period !== 'monthly'));
   });
 });
 

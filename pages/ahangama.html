@@ -70,7 +70,27 @@
     #ah-feel { background: var(--warm-white); }
     #ah-feel .section-title em { color: var(--rust); }
 
-    .ah-feel-text { max-width: 640px; }
+    .ah-feel-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .ah-feel-photo {
+      border-radius: 16px;
+      overflow: hidden;
+      height: 440px;
+      order: -1;
+    }
+
+    .ah-feel-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
 
     /* ── FULL BLEED ── */
     #ah-fullbleed {
@@ -83,7 +103,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 60%;
+      object-position: center 40%;
       display: block;
     }
 
@@ -116,10 +136,10 @@
     .ah-detail-item:last-child { border-right: none; }
 
     .ah-detail-label {
-      font-size: 10px;
-      letter-spacing: 0.18em;
+      font-size: 9px;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: rgba(245, 237, 227, 0.6);
+      color: rgba(245, 237, 227, 0.35);
       margin-bottom: 12px;
     }
 
@@ -217,9 +237,9 @@
       <div class="ah-intro-wrap">
         <div class="ah-intro-text">
           <p class="eyebrow">The place</p>
-          <h2 class="section-title">The south coast's<br><em>worst-kept secret.</em></h2>
-          <p class="body-text">For years, Ahangama was a place people drove through. A busy bus stop and some local shops squeezed between the sea and the jungle, on the road to Mirissa or Weligama. Then surfers figured out it had some of the best breaks on the island. Word spread. People came. And a sleepy fishing village quietly became Sri Lanka's most interesting beach town.</p>
-          <p class="body-text" style="margin-top:20px;">The stilt fishermen are still here. So is the fish. What's arrived around them: slow-drip coffee, good food, surf schools, co-working spaces, boutique guesthouses, and a community of people who intended to stay two weeks and are still here a year later.</p>
+          <h2 class="section-title">Small town.<br><em>Big draw.</em></h2>
+          <p class="body-text">Ahangama sits on the south coast of Sri Lanka, tucked between the colonial city of Galle and the surf breaks of Weligama. It's not a resort town. There's no strip, no package deals, no forced fun.</p>
+          <p class="body-text" style="margin-top:20px;">What there is: a long beach, a slow pace, good food, and a community of people who came for a week and stayed for months. It's the kind of place that gets under your skin.</p>
         </div>
         <div class="ah-intro-photo">
           <img src="../assets/images/ahangama-01.jpg" alt="Ahangama railway tracks">
@@ -232,13 +252,13 @@
   <section id="ah-photos">
     <div class="ah-photo-strip">
       <div class="ah-photo-strip-img">
-        <img src="../assets/images/ahangama-02.jpg" alt="Ahangama" style="object-position: center center;">
+        <img src="../assets/images/ahangama-02.jpg" alt="Ahangama">
       </div>
       <div class="ah-photo-strip-img">
-        <img src="../assets/images/ahangama-03.png" alt="Ahangama" style="object-position: center center;">
+        <img src="../assets/images/ahangama-03.png" alt="Ahangama">
       </div>
       <div class="ah-photo-strip-img">
-        <img src="../assets/images/ahangama-05.jpg" alt="Ahangama jungle" style="object-position: center center;">
+        <img src="../assets/images/ahangama-04.jpg" alt="Ahangama beach">
       </div>
     </div>
   </section>
@@ -246,18 +266,23 @@
   <!-- ── THE FEEL ── -->
   <section id="ah-feel" class="ah-section">
     <div class="page">
-      <div class="ah-feel-text">
-        <p class="eyebrow">The rhythm</p>
-        <h2 class="section-title">Far enough away.<br><em>Close enough to everything.</em></h2>
-        <p class="body-text">Midigama Beach is a short walk. Consistent breaks, good for all levels. Kabalana, known locally as The Rock, is just around the corner for the more experienced. Galle is 40 minutes up the coast: Dutch fort, colonial architecture, the best coffee on the south coast. Mirissa for whale watching. Sinharaja rainforest an hour inland.</p>
-        <p class="body-text" style="margin-top:20px;">But honestly, most people don't go far. The beach, the studio, the tuk tuk to the café, fresh seafood from a beachside shack. That loop is enough. That's the point.</p>
+      <div class="ah-feel-wrap">
+        <div class="ah-feel-photo">
+          <img src="../assets/images/ahangama-05.jpg" alt="Sri Lanka jungle">
+        </div>
+        <div>
+          <p class="eyebrow">Getting around</p>
+          <h2 class="section-title">Far enough away.<br><em>Close enough to everything.</em></h2>
+          <p class="body-text">Galle is 40 minutes up the coast. Dutch fort, great coffee, good restaurants. Mirissa and Weligama for surf. Sinharaja rainforest an hour inland.</p>
+          <p class="body-text" style="margin-top:20px;">But honestly, most people don't go far. The beach, the studio, the tuk tuk to the café. That loop is enough. That's the point.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ── FULL BLEED ── -->
   <section id="ah-fullbleed">
-    <img src="../assets/images/ahangama-04.jpg" alt="Ahangama beach, Sri Lanka">
+    <img src="../assets/images/ahangama-hero.jpg" alt="Ahangama, Sri Lanka">
   </section>
 
   <!-- ── WHY SRI LANKA ── -->
@@ -266,8 +291,8 @@
       <div class="ah-why-body">
         <p class="eyebrow">Why Sri Lanka</p>
         <h2 class="section-title">Some places make it easy<br>to <em>actually show up.</em></h2>
-        <p class="body-text">Sri Lanka has a way of slowing people down, in the best sense. The light is extraordinary, the food is incredible, the people are warm. It's affordable without feeling cheap. Beautiful without being precious. And the south coast still has something a lot of places have lost: stilt fishermen casting at sunrise, local fish markets, a pace that doesn't apologise for itself.</p>
-        <p class="body-text" style="margin-top:20px;">You come to do something. Pilates, surf, a retreat, a break. And you find yourself actually doing it. Less distraction. More of the thing you came for.</p>
+        <p class="body-text">Sri Lanka has a way of slowing people down, in the best sense. The light is extraordinary, the food is incredible, the people are warm. It's affordable without feeling cheap. Beautiful without being precious.</p>
+        <p class="body-text" style="margin-top:20px;">The south coast in particular has a rhythm that's hard to find anywhere else. You come to do something, pilates, a retreat, a break, and you find yourself actually doing it. Less distraction. More of the thing.</p>
       </div>
     </div>
   </section>
@@ -298,9 +323,9 @@
   <section id="ah-cta">
     <div class="ah-cta-inner">
       <div class="ah-cta-text">
-        This is where Pura lives.<br><em>We built the studio here because we couldn't imagine it anywhere else.</em>
+        Ready to come?<br><em>The studio is here when you are.</em>
       </div>
-      <a class="ah-cta-btn" href="/" >See the studio</a>
+      <a class="ah-cta-btn" href="https://bookwhen.com/pura" target="_blank">Book a class</a>
     </div>
   </section>
 

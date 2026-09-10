@@ -20,9 +20,28 @@
     <a class="nav-link" href="#instructors">Instructors</a>
     <a class="nav-link" href="#retreat-teaser">Retreat</a>
     <a class="nav-link" href="/green-season/">Green Season</a>
+    <a class="nav-link" href="/ahangama/">Ahangama</a>
+    <a class="nav-link" href="/cancellations/">Cancellations</a>
     <a class="nav-cta" href="#book">Book Now</a>
   </div>
+  <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="nav-drawer" id="nav-drawer">
+  <a class="nav-link" href="#about">Studio</a>
+  <a class="nav-link" href="#classes">Classes</a>
+  <a class="nav-link" href="#book">Schedule</a>
+  <a class="nav-link" href="#pricing">Pricing</a>
+  <a class="nav-link" href="#instructors">Instructors</a>
+  <a class="nav-link" href="#retreat-teaser">Retreat</a>
+  <a class="nav-link" href="/green-season/">Green Season</a>
+  <a class="nav-link" href="/ahangama/">Ahangama</a>
+  <a class="nav-link" href="/cancellations/">Cancellations</a>
+  <a class="nav-cta" href="#book">Book Now</a>
+</div>
 
 <!-- HERO -->
 <div class="hero">
@@ -137,6 +156,14 @@
         style="display:block;border:none;width:100%;height:900px;">
       </iframe>
     </div>
+    <a href="/cancellations/" class="book-cancel-banner">
+      <span class="book-cancel-banner-icon">↻</span>
+      <span class="book-cancel-banner-text">
+        <strong>Need to cancel or transfer a class?</strong>
+        <span>Follow our simple step by step guide</span>
+      </span>
+      <span class="book-cancel-banner-arrow">→</span>
+    </a>
   </div>
 </div>
 
@@ -449,6 +476,8 @@
       <a class="footer-link" href="#instructors">Instructors</a>
       <a class="footer-link" href="/retreat/">Retreat</a>
       <a class="footer-link" href="/green-season/">Green Season</a>
+      <a class="footer-link" href="/ahangama/">Ahangama</a>
+      <a class="footer-link" href="/cancellations/">Cancellations</a>
       <a class="footer-link" href="mailto:purapilatessrilanka@gmail.com">Contact</a>
     </div>
     <div class="footer-social">
@@ -458,6 +487,24 @@
 </footer>
 
 <script>
+// Hamburger menu
+const hamburger = document.querySelector('.nav-hamburger');
+const drawer = document.getElementById('nav-drawer');
+if (hamburger && drawer) {
+  hamburger.addEventListener('click', () => {
+    const isOpen = drawer.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+  drawer.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      drawer.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', false);
+    });
+  });
+}
+
 // Smooth scroll for nav links
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {

@@ -65,7 +65,7 @@ a.hero-btn { display: inline-flex; align-items: center; justify-content: center;
 .section { padding: var(--sp-section) 52px; max-width: 1100px; margin: 0 auto; }
 .eyebrow { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mauve); margin-bottom: 10px; }
 .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 48px); font-weight: 300; line-height: 1.08; color: var(--dark); margin-bottom: 20px; }
-.section-title em { font-style: italic; color: var(--dusty); }
+.section-title em { font-style: italic; color: var(--rust); }
 .body-text { font-size: 14px; line-height: 1.85; color: var(--dark); max-width: 580px; }
 .quote-line { border-left: 2px solid var(--dusty); padding-left: 14px; margin: 16px 0; }
 .quote-line p { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-style: italic; color: var(--mauve); line-height: 1.6; }
@@ -133,9 +133,9 @@ a.hero-btn { display: inline-flex; align-items: center; justify-content: center;
 .peek-link:hover { color: white; border-bottom-color: white; }
 
 /* SCHEDULE CTA */
-.schedule-cta { background: var(--sage); border-radius: 14px; padding: 28px 32px; margin-top: 24px; display: flex; align-items: center; justify-content: space-between; }
+.schedule-cta { background: var(--sage-dark); border-radius: 14px; padding: 28px 32px; margin-top: 24px; display: flex; align-items: center; justify-content: space-between; }
 .schedule-cta-text { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 400; color: white; }
-.schedule-cta-text span { font-size: 14px; font-family: 'Jost', sans-serif; font-weight: 400; display: block; color: rgba(255,255,255,0.55); margin-top: 3px; }
+.schedule-cta-text span { font-size: 14px; font-family: 'Jost', sans-serif; font-weight: 400; display: block; color: rgba(255,255,255,0.88); margin-top: 3px; }
 .btn-white { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; padding: 12px 24px; border-radius: 999px; background: white; color: var(--sage-dark); border: none; cursor: pointer; font-family: 'Jost', sans-serif; }
 
 /* BOOK */
@@ -163,14 +163,14 @@ a.hero-btn { display: inline-flex; align-items: center; justify-content: center;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: rgba(255,255,255,0.18);
+  background: rgba(0,0,0,0.14);
   color: #fff;
   font-size: 21px;
   line-height: 1;
 }
 .book-cancel-banner-text { display: flex; flex-direction: column; gap: 3px; font-family: 'Jost', sans-serif; }
 .book-cancel-banner-text strong { color: #fff; font-size: 17px; font-weight: 500; letter-spacing: 0.02em; }
-.book-cancel-banner-text span { color: rgba(255,255,255,0.8); font-size: 14px; }
+.book-cancel-banner-text span { color: #fff; font-size: 14px; }
 .book-cancel-banner-arrow { margin-left: auto; color: #fff; font-size: 21px; transition: transform 0.2s ease; }
 .book-cancel-banner:hover .book-cancel-banner-arrow { transform: translateX(4px); }
 @media (max-width: 768px) {
@@ -209,7 +209,7 @@ a.hero-btn { display: inline-flex; align-items: center; justify-content: center;
 .retreat-pkgs { display: grid; grid-template-columns: repeat(2,1fr); gap: 8px; margin: 24px 0; }
 .retreat-pkg { background: rgba(245,237,227,0.08); border: 0.5px solid rgba(245,237,227,0.12); border-radius: 4px; padding: 12px 16px; }
 .retreat-pkg-name { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 400; color: var(--cream); margin-bottom: 2px; }
-.retreat-pkg-days { font-size: 12px; color: rgba(245,237,227,0.78); }
+.retreat-pkg-days { font-size: 12px; color: var(--cream); }
 .retreat-btn { display: inline-block; margin-top: 8px; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; padding: 14px 28px; border-radius: 999px; background: var(--cream); color: var(--mauve); font-family: 'Jost', sans-serif; }
 
 /* REVIEW */

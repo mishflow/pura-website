@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movement Mentors · Pura Pilates</title>
+  <meta name="description" content="Six sessions on the craft of teaching Pilates, led by Denitsa in Ahangama. How a class is built, how to see a body, how to cue it, then teaching under observation.">
+  <link rel="canonical" href="https://purapilatessrilanka.com/movement-mentors/">
+
+  <!-- Icons -->
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#6f7a60">
+
+  <!-- Social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Pura Pilates">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:title" content="Movement Mentors · Teaching craft at Pura">
+  <meta property="og:description" content="Six sessions on the craft of teaching Pilates, led by Denitsa in Ahangama. How a class is built, how to see a body, how to cue it, then teaching under observation.">
+  <meta property="og:url" content="https://purapilatessrilanka.com/movement-mentors/">
+  <meta property="og:image" content="https://purapilatessrilanka.com/assets/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Pura Pilates studio in Ahangama, Sri Lanka">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Movement Mentors · Teaching craft at Pura">
+  <meta name="twitter:description" content="Six sessions on the craft of teaching Pilates, led by Denitsa in Ahangama. How a class is built, how to see a body, how to cue it, then teaching under observation.">
+  <meta name="twitter:image" content="https://purapilatessrilanka.com/assets/images/og-image.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/pura-styles.css?v=3">
+
+  <style>
+    /* ── MOVEMENT MENTORS ── Linen system, brand palette only ── */
+    .mm-section { padding: 0; }
+    .mm-section .page { padding: var(--sp-section) 52px; }
+    .mm-section--tight .page { padding: var(--sp-section-tight) 52px; }
+
+    #mm-hero {
+      position: relative;
+      min-height: clamp(360px, 52vw, 540px);
+      display: flex;
+      background: var(--sage-dark);
+      overflow: hidden;
+    }
+    .mm-hero-img { position: absolute; inset: 0; }
+    .mm-hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 42%; display: block; }
+    .mm-hero-veil { position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(61,35,20,0.34) 0%, rgba(61,35,20,0.68) 100%); }
+    .mm-hero-in { position: relative; z-index: 2; margin: auto; text-align: center; padding: 0 32px; }
+    .mm-hero-eye { font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 500;
+      letter-spacing: 0.16em; text-transform: uppercase; color: rgba(245,237,227,0.88); margin: 0; }
+    .mm-hero-title { font-family: 'Cormorant Garamond', serif; font-weight: 300;
+      font-size: clamp(42px, 8vw, 84px); line-height: 1; color: var(--cream); margin: 16px 0 0; }
+    .mm-hero-title em { font-style: italic; }
+    .mm-hair { width: 72px; height: 1px; background: rgba(245,237,227,0.55); margin: 26px auto; }
+    .mm-hero-sub { font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 500;
+      letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,237,227,0.9); margin: 0; }
+
+    .mm-split { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(30px, 5.5vw, 80px); align-items: center; }
+    .mm-split--flip { grid-template-columns: 7fr 5fr; }
+    .mm-photo { overflow: hidden; }
+    .mm-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .mm-photo.tall { aspect-ratio: 4/5; }
+    .mm-lede { font-family: 'Cormorant Garamond', serif; font-size: 21px; line-height: 1.6;
+      color: var(--dark); margin: 22px 0 0; max-width: 36ch; }
+
+    /* the six sessions, as a typeset index */
+    .mm-index { margin-top: var(--sp-section-tight); border-top: 1px solid rgba(61,35,20,0.16); }
+    .mm-row { display: grid; grid-template-columns: auto minmax(0,4fr) minmax(0,6fr);
+      gap: clamp(14px, 3.5vw, 44px); align-items: baseline;
+      padding: 26px 0; border-bottom: 1px solid rgba(61,35,20,0.16); }
+    .mm-num { font-family: 'Cormorant Garamond', serif; font-size: 21px; color: var(--rust);
+      font-variant-numeric: tabular-nums; }
+    .mm-row h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 24px;
+      margin: 0; line-height: 1.2; color: var(--dark); }
+    .mm-row p { margin: 0; color: var(--mauve); font-size: 17px; }
+    @media (max-width: 760px) {
+      .mm-row { grid-template-columns: auto 1fr; gap: 10px 16px; }
+      .mm-row p { grid-column: 1 / -1; }
+    }
+
+    .mm-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 28px; margin-top: var(--sp-section-tight);
+      border-top: 1px solid rgba(61,35,20,0.16); padding-top: 32px; }
+    .mm-fact b { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 300;
+      display: block; line-height: 1; color: var(--dark); }
+    .mm-fact span { font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 500;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage-dark);
+      display: block; margin-top: 10px; }
+
+    .mm-cta { display: inline-block; margin-top: 30px; font-family: 'Jost', sans-serif;
+      font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
+      background: var(--sage-dark); color: var(--cream); padding: 16px 34px; border-radius: 2px;
+      transition: background 0.2s ease; }
+    .mm-cta:hover { background: var(--dark); }
+
+    #mm-apply { background: var(--dark); color: var(--cream); }
+    #mm-apply .eyebrow { color: var(--sand); }
+    #mm-apply .section-title { color: var(--cream); }
+    #mm-apply .section-title em { font-style: italic; color: var(--dusty-rose); }
+    #mm-apply .body-text { color: rgba(245,237,227,0.82); }
+    .mm-contact { display: flex; gap: 32px; flex-wrap: wrap; margin-top: 34px;
+      padding-top: 26px; border-top: 1px solid rgba(245,237,227,0.18); }
+    .mm-contact a { font-family: 'Jost', sans-serif; font-size: 15px; color: var(--cream);
+      text-decoration: underline; text-underline-offset: 4px; }
+
+    @media (max-width: 860px) {
+      .mm-split, .mm-split--flip { grid-template-columns: 1fr; gap: 34px; }
+      .mm-section .page, .mm-section--tight .page { padding: var(--sp-section-tight) 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="retreat-nav">
+    <a class="retreat-nav-logo" href="/"><span>Pura</span> <em>Pilates</em></a>
+    <a class="retreat-nav-back" href="/">&larr; Studio</a>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section id="mm-hero">
+    <div class="mm-hero-img">
+      <img src="../assets/images/studio-interior-01.jpg" alt="The Pura Pilates studio in Ahangama" fetchpriority="high" decoding="async">
+    </div>
+    <div class="mm-hero-veil"></div>
+    <div class="mm-hero-in">
+      <p class="mm-hero-eye">For teachers &middot; Ahangama</p>
+      <h1 class="mm-hero-title">Movement<br><em>Mentors.</em></h1>
+      <div class="mm-hair"></div>
+      <p class="mm-hero-sub">Six sessions on the craft of teaching</p>
+    </div>
+  </section>
+
+  <!-- ── THE IDEA ── -->
+  <section class="mm-section">
+    <div class="page">
+      <div class="mm-split">
+        <div class="mm-photo tall">
+          <img src="../assets/images/instructor-denitsa-01.jpg" alt="Denitsa teaching at Pura" loading="lazy" decoding="async">
+        </div>
+        <div>
+          <p class="eyebrow">The idea</p>
+          <h2 class="section-title">Not another <em>certificate.</em></h2>
+          <p class="mm-lede">Most teacher training hands you an anatomy syllabus and an exam. This is about the part nobody teaches you.</p>
+          <p class="body-text">How a class is actually built. Where you stand and what your voice is doing. How to look at a body and know what it is telling you. How to choose the right cue for the person in front of you, under pressure, in the moment. And then teaching, watched and corrected, until it holds.</p>
+          <p class="body-text">It is led by Denitsa, who has been teaching movement for over a decade, and it runs in small groups so that everyone actually gets taught.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── THE SIX SESSIONS ── -->
+  <section class="mm-section" style="background: var(--ivory);">
+    <div class="page">
+      <p class="eyebrow">The programme</p>
+      <h2 class="section-title">Six sessions, <em>in order.</em></h2>
+      <p class="body-text">Each one builds on the last, and the sixth is the one the others were for.</p>
+      <div class="mm-index">
+        <div class="mm-row">
+          <div class="mm-num">01</div>
+          <h3>The art of the class</h3>
+          <p>A class is not a list of exercises. It is a shape someone is taken through, and that shape is what they feel afterwards. Most teachers build from what they like teaching. This is about noticing that, then choosing.</p>
+        </div>
+        <div class="mm-row">
+          <div class="mm-num">02</div>
+          <h3>The teacher's presence</h3>
+          <p>Where you stand, what your voice does, when you demonstrate and when you say nothing. The part of teaching that is not the content, and decides whether the content lands at all.</p>
+        </div>
+        <div class="mm-row">
+          <div class="mm-num">03</div>
+          <h3>Learning to see, part one</h3>
+          <p>Seeing is a skill, not a talent. The lower half first: what the spine, pelvis, hips and legs are actually doing, and how you know when they are not.</p>
+        </div>
+        <div class="mm-row">
+          <div class="mm-num">04</div>
+          <h3>Learning to see, part two</h3>
+          <p>The upper half, then the whole. This one ends on integration, reading a body as one thing rather than a stack of separate regions.</p>
+        </div>
+        <div class="mm-row">
+          <div class="mm-num">05</div>
+          <h3>The art of cueing</h3>
+          <p>Three channels: what you say, what you show, what you touch. Most teachers rely on one and default to it under pressure. This is about choosing, in the moment, the channel the person in front of you actually needs.</p>
+        </div>
+        <div class="mm-row">
+          <div class="mm-num">06</div>
+          <h3>The apprenticeship</h3>
+          <p>You teach. Everything from the first five sessions, used on real bodies, watched and corrected. The session the other five were building towards.</p>
+        </div>
+      </div>
+
+      <div class="mm-facts">
+        <div class="mm-fact"><b>6</b><span>Sessions</span></div>
+        <div class="mm-fact"><b>2 hrs</b><span>Each session</span></div>
+        <div class="mm-fact"><b>3</b><span>Weeks</span></div>
+        <div class="mm-fact"><b>6&ndash;8</b><span>People only</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHO IT IS FOR ── -->
+  <section class="mm-section mm-section--tight">
+    <div class="page">
+      <div class="mm-split mm-split--flip">
+        <div>
+          <p class="eyebrow">Who it is for</p>
+          <h2 class="section-title">Teachers who want to <em>teach better.</em></h2>
+          <p class="body-text">You are already teaching, or you have finished a certification and feel it did not prepare you for a real room. You want to be watched by someone who will tell you the truth, and you are willing to teach in front of other teachers and be corrected.</p>
+          <p class="body-text">You do not need years behind you. You do need to want this more than you want another certificate for the wall.</p>
+        </div>
+        <div class="mm-photo tall">
+          <img src="../assets/images/lifestyle-workshops-01.jpg" alt="Teachers working together at the studio" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── APPLY ── -->
+  <section class="mm-section" id="mm-apply">
+    <div class="page">
+      <p class="eyebrow">Register interest</p>
+      <h2 class="section-title">The first group runs <em>in 2027.</em></h2>
+      <p class="body-text">Six to eight people, in Ahangama. Tell us where you are teaching now and what you want to get better at, and we will come back to you with dates and what it costs as soon as the group is set.</p>
+      <div class="mm-contact">
+        <a href="https://wa.me/94784724956" target="_blank" rel="noopener">WhatsApp +94 78 472 4956</a>
+        <a href="mailto:purapilatessrilanka@gmail.com?subject=Movement%20Mentors">purapilatessrilanka@gmail.com</a>
+        <a href="https://instagram.com/purapilatessrilanka" target="_blank" rel="noopener">@purapilatessrilanka</a>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

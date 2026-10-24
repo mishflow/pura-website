@@ -19,6 +19,11 @@
   --rust:        #97644e;   /* Retreat accent, double tags */
   --cream:       #f5ede3;   /* light text on dark bg */
   --white:       #fdfaf7;   /* button fills */
+  /* Added by the Linen pass. --dark mirrors the name used in studio-styles.css;
+     --sage-dark is brand sage darkened so it passes AA as small text on light
+     grounds, where plain --sage reads only 3.9:1. */
+  --dark:        #3d2314;
+  --sage-dark:   #4a5538;
 }
 
 /* ── LINEN SPACING ── generous section rhythm, two tiers */

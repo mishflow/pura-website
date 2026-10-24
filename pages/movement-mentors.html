@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../assets/css/pura-styles.css?v=5">
+  <link rel="stylesheet" href="../assets/css/pura-styles.css?v=6">
 
   <style>
     .mm-sec { padding: 0; }
@@ -74,11 +74,13 @@
     .mm-lede { font-family: 'Cormorant Garamond', serif; font-size: 21px; line-height: 1.6; color: var(--dark); margin: 22px 0 0; max-width: 36ch; }
 
     .mm-list { list-style: none; padding: 0; margin: 30px 0 0; border-top: 1px solid rgba(61,35,20,0.16); }
-    .mm-list li { display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: baseline;
-      padding: 16px 0; border-bottom: 1px solid rgba(61,35,20,0.16);
-      font-family: 'Jost', sans-serif; font-size: 17px; color: var(--dark); }
-    .mm-list li::before { content: ''; width: 5px; height: 5px; border-radius: 999px;
-      background: var(--sage-dark); transform: translateY(-3px); }
+    /* block flow, not grid: a nested <span> sub-line must sit under the text,
+       and in a grid every child becomes its own cell instead */
+    .mm-list li { position: relative; padding: 16px 0 16px 22px;
+      border-bottom: 1px solid rgba(61,35,20,0.16);
+      font-family: 'Jost', sans-serif; font-size: 17px; line-height: 1.6; color: var(--dark); }
+    .mm-list li::before { content: ''; position: absolute; left: 0; top: 27px;
+      width: 5px; height: 5px; border-radius: 999px; background: var(--sage-dark); }
     .mm-list li span { display: block; font-size: 15px; color: var(--mauve); margin-top: 5px; }
 
     /* ── DETAILS ── */

@@ -55,7 +55,7 @@ nav {
 .hero-title em { font-style: italic; color: #c8d4b8; }
 .hero-sub { font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(245,237,227,0.78); margin-bottom: 32px; }
 .hero-btns { display: flex; gap: 12px; }
-.hero-btn { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; padding: 13px 28px; border-radius: 999px; border: none; cursor: pointer; font-family: 'Jost', sans-serif; transition: all 0.2s; }
+.hero-btn { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; padding: 14px 28px; border-radius: 999px; border: none; cursor: pointer; font-family: 'Jost', sans-serif; transition: all 0.2s; }
 /* the primary CTA is an <a> (real link); match the sibling <button> box */
 a.hero-btn { display: inline-flex; align-items: center; justify-content: center; line-height: normal; }
 .hero-btn-primary { background: white; color: var(--dark); }
@@ -78,7 +78,7 @@ a.hero-btn { display: inline-flex; align-items: center; justify-content: center;
 .about-photo-label { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
 .about-pills { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 24px; }
 .pill { font-size: 12px; padding: 5px 14px; border-radius: 14px; background: rgba(111,122,96,0.15); color: var(--sage-dark); }
-.about-ig { display: inline-flex; align-items: center; gap: 7px; margin-top: 20px; font-size: 12px; letter-spacing: 0.08em; color: var(--sage-dark); transition: opacity 0.2s; }
+.about-ig { display: inline-flex; align-items: center; gap: 7px; margin-top: 14px; padding: 12px 0; min-height: 44px; font-size: 12px; letter-spacing: 0.08em; color: var(--sage-dark); transition: opacity 0.2s; }
 .about-ig:hover { opacity: 0.7; }
 
 /* CLASSES */
@@ -195,7 +195,26 @@ a.hero-btn { display: inline-flex; align-items: center; justify-content: center;
 .instructor-ig { font-size: 12px; letter-spacing: 0.08em; color: var(--sage-dark); display: inline-block; }
 .instructors-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 28px; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage-dark); }
 
+/* MOVEMENT MENTORS TEASER — its own sand palette, borrowed from the
+   Movement Mentors page, so a teacher reads it as a separate offer and not
+   as more studio marketing. */
+#mentors-teaser { background: #f7e4d9; padding: 48px 0; }
+.mentors-inner { max-width: 1100px; margin: 0 auto; padding: 0 52px; display: grid; grid-template-columns: 1.15fr 1fr; gap: 64px; align-items: center; }
+#mentors-teaser .eyebrow { color: #7a4a30; }
+#mentors-teaser .section-title { color: #4d2c1a; }
+#mentors-teaser .section-title em { color: #97644e; }
+#mentors-teaser .body-text { color: #5c4036; max-width: 54ch; }
+.mentors-facts { display: flex; flex-direction: column; gap: 2px; margin: 26px 0 28px; border-top: 1px solid #ead9cd; }
+.mentors-fact { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; padding: 13px 0; border-bottom: 1px solid #ead9cd; }
+.mentors-fact b { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 400; color: #4d2c1a; }
+.mentors-fact span { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #7a4a30; text-align: right; }
+.mentors-btn { display: inline-block; font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; padding: 15px 30px; border-radius: 999px; background: #4d2c1a; color: #f7e4d9; font-family: 'Jost', sans-serif; transition: background 0.2s ease; }
+.mentors-btn:hover { background: #7a4a30; }  /* #97644e gave 4.01:1 on this 12px label, under AA */
+.mentors-photo { height: 420px; border-radius: 14px; overflow: hidden; background: linear-gradient(160deg, #ebc7b7 0%, #97644e 100%); }
+.mentors-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 28%; display: block; }
+
 /* RETREAT TEASER */
+.retreat-from { font-size: 14px; line-height: 1.7; color: var(--cream); margin: 0 0 24px; }
 #retreat-teaser { background: var(--mauve); padding: 48px 0; }
 #green-season-teaser { background: var(--sage-dark); padding: 48px 0; }
 .retreat-inner { max-width: 1100px; margin: 0 auto; padding: 0 52px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
@@ -235,9 +254,9 @@ footer { background: var(--dark); padding: 48px 52px; }
 .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
 .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300; color: var(--cream); }
 .footer-links { display: flex; gap: 24px; }
-.footer-link { font-size: 12px; color: rgba(245,237,227,0.78); letter-spacing: 0.08em; text-decoration: none; }
+.footer-link { font-size: 14px; color: rgba(245,237,227,0.82); letter-spacing: 0.06em; text-decoration: none; padding: 12px 0; display: inline-block; }
 .footer-social { display: flex; gap: 20px; }
-.footer-social a { font-size: 12px; letter-spacing: 0.08em; color: rgba(245,237,227,0.78); text-decoration: none; transition: color 0.2s; }
+.footer-social a { font-size: 14px; letter-spacing: 0.06em; color: rgba(245,237,227,0.82); text-decoration: none; padding: 12px 0; display: inline-block; transition: color 0.2s; }
 .footer-social a:hover { color: var(--cream); }
 
 /* PRICING */
@@ -330,7 +349,7 @@ footer { background: var(--dark); padding: 48px 52px; }
 }
 .pc-divider { border: none; border-top: 0.5px solid rgba(111,122,96,0.15); margin: 16px 0; }
 .pc-info { font-size: 12px; color: var(--mauve); line-height: 1.7; margin-bottom: 10px; }
-.pc-link { font-size: 12px; letter-spacing: 0.08em; color: var(--sage-dark); display: inline-block; margin-top: 6px; }
+.pc-link { font-size: 12px; letter-spacing: 0.08em; color: var(--sage-dark); display: inline-block; margin-top: 2px; padding: 14px 0; }
 .hidden { display: none !important; }
 
 /* Green Season deal */
@@ -456,12 +475,12 @@ footer { background: var(--dark); padding: 48px 52px; }
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
+  padding: 10px 4px;
 }
 .nav-hamburger span {
   display: block;
@@ -562,6 +581,14 @@ footer { background: var(--dark); padding: 48px 52px; }
   .instructor-body { padding: 14px; }
   .instructor-name { font-size: 17px; }
 
+  /* MOVEMENT MENTORS TEASER */
+  #mentors-teaser { padding: 36px 0; }
+  .mentors-inner { grid-template-columns: 1fr; gap: 32px; padding: 0 24px; }
+  .mentors-photo { height: 300px; order: -1; }
+  .mentors-fact { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .mentors-fact span { text-align: left; }
+  .mentors-btn { display: block; text-align: center; }
+
   /* RETREAT TEASER */
   #retreat-teaser { padding: 36px 0; }
   .retreat-inner { grid-template-columns: 1fr; gap: 32px; padding: 0 24px; }
@@ -592,4 +619,40 @@ footer { background: var(--dark); padding: 48px 52px; }
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 24px; }
   .footer-links { flex-wrap: wrap; gap: 16px; }
 
+}
+
+
+/* ── FOCUS ── this stylesheet defined no focus styles at all. ── */
+.nav-link:focus-visible,
+.nav-cta:focus-visible,
+.nav-hamburger:focus-visible,
+.hero-btn:focus-visible,
+.pricing-tab:focus-visible,
+.pc-link:focus-visible,
+.book-cta-btn:focus-visible,
+.book-cancel-banner:focus-visible,
+.retreat-btn:focus-visible,
+.mentors-btn:focus-visible,
+.about-ig:focus-visible,
+.footer-link:focus-visible,
+.footer-social a:focus-visible {
+  outline: 2px solid var(--sage-dark);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+footer .footer-link:focus-visible,
+.footer-social a:focus-visible { outline-color: var(--cream); }
+
+/* ── ANCHOR OFFSET ── the nav is position:fixed, so every jump landed its
+   heading underneath the bar. ── */
+#about, #book, #pricing, #mentors-teaser, #retreat-teaser { scroll-margin-top: 92px; }
+
+/* ── REDUCED MOTION ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

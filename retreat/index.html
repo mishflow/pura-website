@@ -35,21 +35,40 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="../assets/css/pura-styles.css?v=11">
+  <link rel="stylesheet" href="../assets/css/pura-styles.css?v=17">
 </head>
 <body>
 
   <!-- ── NAV ── -->
   <nav class="retreat-nav">
     <a class="retreat-nav-logo" href="/"><span>Pura</span> <em>Pilates</em></a>
-    <a class="retreat-nav-back" href="/">← Studio</a>
+    <div class="retreat-nav-links">
+      <a class="retreat-nav-link" href="/">Studio</a>
+      <a class="retreat-nav-link" href="/retreat/" aria-current="page">Retreat</a>
+      <a class="retreat-nav-link" href="/movement-mentors/">Mentors</a>
+      <a class="retreat-nav-link" href="/ahangama/">Ahangama</a>
+      <a class="retreat-nav-link" href="/cancellations/">Cancellations</a>
+      <a class="retreat-nav-cta" href="https://www.puracommunity.com" target="_blank" rel="noopener">Book</a>
+    </div>
+    <button class="retreat-nav-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-drawer">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <div class="retreat-nav-drawer" id="site-drawer">
+    <a href="/">Studio</a>
+    <a href="/retreat/" aria-current="page">Retreat</a>
+    <a href="/movement-mentors/">Mentors</a>
+    <a href="/ahangama/">Ahangama</a>
+    <a href="/cancellations/">Cancellations</a>
+    <a class="retreat-nav-cta" href="https://www.puracommunity.com" target="_blank" rel="noopener">Book a class</a>
+  </div>
 
   <!-- ── HERO ── -->
   <section id="hero" class="hero">
     <img id="hero-img"
          src="../assets/images/retreat-package-escape.jpg"
-         alt="Pura Pilates Retreat — Ahangama, Sri Lanka" fetchpriority="high" decoding="async">
+         alt="A morning Pilates session outdoors at the Pura retreat in Ahangama, Sri Lanka" fetchpriority="high" decoding="async">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-eyebrow">Pura Bliss Retreat · Ahangama, Sri Lanka</p>
@@ -73,7 +92,7 @@
       <div class="quote-line">
         <p><em>Come for the Pilates. Stay for the feeling.</em></p>
       </div>
-      <p class="body-text">Four to fourteen days of Pilates. Reformer, mat, or both. Private sessions to set you up, group classes to build momentum. Accommodation and transfers if you need them — or just Pilates, dropped into your trip. You decide.</p>
+      <p class="body-text">Four to fourteen days of Pilates. Reformer, mat, or both. Private sessions to set you up, group classes to build momentum. Accommodation and transfers if you need them, or just Pilates, dropped into your trip. You decide.</p>
     </div>
   </section>
 
@@ -154,7 +173,7 @@
           <span>Pool or jungle view, room to spread out, for longer stays.</span>
         </div>
       </div>
-      <p class="body-text rp-small">You book and pay the guest house directly, so there is nothing added on our side. Run a guest house near the studio? <a href="https://wa.me/94784724956" target="_blank" rel="noopener">Get in touch</a> and we will add you to the list.</p>
+      <p class="body-text rp-small">You book and pay the guest house directly, so there is nothing added on our side. Run a guest house near the studio? <a href="https://instagram.com/purapilatessrilanka" target="_blank" rel="noopener">Message us on Instagram</a> and we will add you to the list.</p>
     </div>
   </section>
 <section id="addons">
@@ -196,7 +215,7 @@
     <div data-id="surfing">
       <p class="popup-eyebrow">Activity</p>
       <h3 class="popup-title">Surfing</h3>
-      <p class="popup-body">Ahangama has a reef break that works for beginners and improves fast. Boards and lessons are available right on the beach — most people pick it up within a day or two. A good counterbalance to the reformer.</p>
+      <p class="popup-body">Ahangama has a reef break that works for beginners and improves fast. Boards and lessons are available right on the beach, and most people pick it up within a day or two. A good counterbalance to the reformer.</p>
     </div>
     <div data-id="yoga">
       <p class="popup-eyebrow">Activity</p>
@@ -206,7 +225,7 @@
     <div data-id="cooking">
       <p class="popup-eyebrow">Activity</p>
       <h3 class="popup-title">Cooking class</h3>
-      <p class="popup-body">Sri Lankan food is genuinely one of the best things about being here. A local cooking class will teach you rice and curry from scratch — the kind you'll spend years trying to recreate at home.</p>
+      <p class="popup-body">Sri Lankan food is genuinely one of the best things about being here. A local cooking class will teach you rice and curry from scratch. The kind you'll spend years trying to recreate at home.</p>
     </div>
     <div data-id="daytrips">
       <p class="popup-eyebrow">Activity</p>
@@ -216,7 +235,7 @@
     <div data-id="townpass">
       <p class="popup-eyebrow">Activity</p>
       <h3 class="popup-title">Ahangama town pass</h3>
-      <p class="popup-body">A discount card that gets you savings across local cafes, restaurants and activities around Ahangama. We can sort it for you — $30, pays for itself fast.</p>
+      <p class="popup-body">A discount card that gets you savings across local cafes, restaurants and activities around Ahangama. We can sort it for you. $30, and it pays for itself fast.</p>
     </div>
   </div>
     <p class="addons-note">All optional. Add any of them when you enquire, or decide once you are here. Nothing is bundled in without you asking.</p>
@@ -231,25 +250,25 @@
         <div class="eyebrow">How it works</div>
         <h2 class="section-title">Six simple <em>steps.</em></h2>
         <div class="hiw-steps">
-          <div class="hiw-step"><div class="hiw-num">01</div><div><div class="hiw-step-title">Pick your dates</div><div class="hiw-step-desc">Choose 4, 7, 10 or 14 days. Mat, reformer or both.</div></div></div>
-          <div class="hiw-step"><div class="hiw-num">02</div><div><div class="hiw-step-title">Check availability</div><div class="hiw-step-desc">We confirm your room at LuckyU and hold it while you sort your flight.</div></div></div>
-          <div class="hiw-step"><div class="hiw-num">03</div><div><div class="hiw-step-title">Reserve & deposit</div><div class="hiw-step-desc">Lock in your place. Transfer the 65% deposit. Balance paid on arrival.</div></div></div>
-          <div class="hiw-step"><div class="hiw-num">04</div><div><div class="hiw-step-title">Book your flight</div><div class="hiw-step-desc">Fly into Colombo (CMB). We arrange your return transfer — 2.5 hrs south.</div></div></div>
-          <div class="hiw-step"><div class="hiw-num">05</div><div><div class="hiw-step-title">Get your schedule</div><div class="hiw-step-desc">Personalised class schedule sent before arrival. Private welcome on day one.</div></div></div>
-          <div class="hiw-step"><div class="hiw-num">06</div><div><div class="hiw-step-title">Arrive & enjoy</div><div class="hiw-step-desc">Come to Sri Lanka. Don't stress. Move, rest, explore. Everything is sorted.</div></div></div>
+          <div class="hiw-step"><div class="hiw-num">01</div><div><div class="hiw-step-title">Build your retreat</div><div class="hiw-step-desc">Choose your class credits and private sessions above. Reformer, mat, yoga, or any mix.</div></div></div>
+          <div class="hiw-step"><div class="hiw-num">02</div><div><div class="hiw-step-title">Tell us your dates</div><div class="hiw-step-desc">Send us your plan and when you want to come, and we will check we have the space.</div></div></div>
+          <div class="hiw-step"><div class="hiw-num">03</div><div><div class="hiw-step-title">Sort somewhere to stay</div><div class="hiw-step-desc">Tell us your budget and we will match you with a guest house near the studio. You book and pay them directly.</div></div></div>
+          <div class="hiw-step"><div class="hiw-num">04</div><div><div class="hiw-step-title">Reserve & deposit</div><div class="hiw-step-desc">A 65% deposit on your Pura total holds your place. The balance is paid on arrival.</div></div></div>
+          <div class="hiw-step"><div class="hiw-num">05</div><div><div class="hiw-step-title">Book your flight</div><div class="hiw-step-desc">Fly into Colombo (CMB). We arrange your transfer, 2.5 hrs south down the coast.</div></div></div>
+          <div class="hiw-step"><div class="hiw-num">06</div><div><div class="hiw-step-title">Arrive and start</div><div class="hiw-step-desc">Your class schedule comes through before you land, with a private welcome on day one. Move, rest, explore.</div></div></div>
         </div>
       </div>
       <div class="hiw-right">
         <div class="eyebrow">Booking conditions</div>
         <ul class="conditions-list">
-          <li>Full package booked and paid as one</li>
-          <li>65% deposit to secure your spot — balance due on arrival</li>
-          <li>Deposit refundable if cancelled 30+ days before start date</li>
-          <li>After 30 days — non-refundable</li>
-          <li>Missed sessions are non-refundable</li>
-          <li>Package must be completed within booked dates — no extensions</li>
-          <li>Accommodation subject to availability at booking</li>
-          <li>Last minute is always encouraged — reach out and we'll make it work</li>
+          <li>Last minute is always encouraged. Reach out and we will make it work</li>
+          <li>Your class credits and private sessions are booked and paid as one</li>
+          <li>A 65% deposit on that total holds your place. The balance is due on arrival</li>
+          <li>Accommodation is separate. You book and pay the guest house directly</li>
+          <li>Deposit fully refundable if you cancel 30 or more days before you start</li>
+          <li>Inside 30 days the deposit is non-refundable, and so are missed sessions</li>
+          <li>Credits are used during your stay and do not carry over afterwards</li>
+          <li>Guest house rooms are subject to availability when you book</li>
         </ul>
       </div>
     </div>
@@ -260,8 +279,8 @@
   <div class="page">
     <div class="eyebrow">Get in touch</div>
     <h2 class="section-title">Ready to start <em>planning?</em></h2>
-    <p class="form-subtext">Tell us your dates and what you need — we'll come back within 2 business days.</p>
-    <form class="enquiry-form" action="https://formspree.io/f/xbdpvqww" method="POST">
+    <p class="form-subtext">Tell us your dates and what you need, and we'll come back within 2 business days.</p>
+    <form class="enquiry-form" action="https://formspree.io/f/xbdpvqww" method="POST" novalidate>
       <!-- Redirect back to site after Formspree submission -->
       <input type="hidden" name="_next" value="https://purapilatessrilanka.com/retreat/?sent=1">
       <!-- What the planner above selected, sent with the enquiry -->
@@ -271,16 +290,16 @@
       <input type="hidden" name="retreat_total"    id="bh-total">
       <div class="form-grid">
         <div class="form-group">
-          <label class="form-label">Your name</label>
-          <input class="form-input" type="text" name="name" placeholder="First name" required>
+          <label class="form-label" for="f-name">Your name</label>
+          <input class="form-input" type="text" id="f-name" name="name" placeholder="First name" required>
         </div>
         <div class="form-group">
-          <label class="form-label">Email address</label>
-          <input class="form-input" type="email" name="email" placeholder="your@email.com" required>
+          <label class="form-label" for="f-email">Email address</label>
+          <input class="form-input" type="email" id="f-email" name="email" placeholder="your@email.com" required>
         </div>
         <div class="form-group">
-          <label class="form-label">Preferred dates / month</label>
-          <select class="form-select" name="dates">
+          <label class="form-label" for="f-dates">Preferred dates / month</label>
+          <select class="form-select" id="f-dates" name="dates">
             <option value="">Select a month</option>
             <option>November 2026</option>
             <option>December 2026</option>
@@ -295,24 +314,30 @@
           </select>
         </div>
         <div class="form-group full">
-          <label class="form-label">Your retreat</label>
-          <textarea class="form-textarea form-textarea-readonly" name="builder_summary" id="f-message" readonly placeholder="Choose your credits and privates above and this fills in by itself."></textarea>
+          <span class="form-label" id="f-recap-label">Your retreat</span>
+          <!-- The planner's numbers, shown in full. This used to be a readonly
+               textarea 99px tall holding 138px of text, so the grand total was
+               scrolled out of sight at the exact moment of submission. The text
+               still travels to Formspree, now in a hidden input. -->
+          <div class="form-recap" id="f-recap" role="group" aria-labelledby="f-recap-label">
+            <p class="form-recap-empty">Choose your credits and privates above and this fills in by itself.</p>
+          </div>
+          <input type="hidden" name="builder_summary" id="f-message">
         </div>
         <div class="form-group full">
-          <label class="form-label">Anything else we should know</label>
-          <textarea class="form-textarea" name="message" id="f-extra" placeholder="Anything you want us to know — Pilates experience, injuries, goals, what you're running from (or toward). Pet name optional but encouraged."></textarea>
+          <label class="form-label" for="f-extra">Anything else we should know</label>
+          <textarea class="form-textarea" id="f-extra" name="message" placeholder="Pilates experience, injuries, goals, what you're running from (or toward). Pet name optional but encouraged."></textarea>
         </div>
       </div>
       <button type="submit" class="form-submit">Start planning</button>
       <p class="form-note">We typically respond within 2 business days. Your details are never shared.</p>
+    </form>
       <div class="form-success" id="form-success" style="display:none;">
-        <strong>Thank you — we've got your enquiry.</strong><br><br>
+        <strong>Thank you. We've got your enquiry.</strong><br><br>
         We'll be in touch within 2 business days. Follow us on Instagram <strong>@purapilatessrilanka</strong> in the meantime.
       </div>
-    </form>
     <div class="enquire-contact">
       <a href="https://instagram.com/purapilatessrilanka" target="_blank">@purapilatessrilanka</a>
-      <a href="https://wa.me/94784724956">WhatsApp</a>
       <a href="mailto:purapilatessrilanka@gmail.com">purapilatessrilanka@gmail.com</a>
     </div>
   </div>
@@ -396,12 +421,26 @@
       set('bh-credits',  plan.credits);
       set('bh-privates', plan.privates);
       set('bh-total',    total ? fmt(total) : '');
+      const privateWord = plan.privates === 1 ? 'session' : 'sessions';
+
+      // What travels to Formspree.
       if ($('f-message')) {
         $('f-message').value =
           `${presetName()}\n` +
           `${plan.credits} class credits (${ref} Reformer, or ${plan.credits} Mat or Yoga)  ${fmt(crAmt)}\n` +
-          `${plan.privates} private ${plan.privates === 1 ? 'session' : 'sessions'}  ${fmt(prAmt)}\n` +
+          `${plan.privates} private ${privateWord}  ${fmt(prAmt)}\n` +
           `Estimate  ${fmt(total)}`;
+      }
+
+      // What the visitor sees, in full, with the total never clipped.
+      if ($('f-recap')) {
+        $('f-recap').innerHTML =
+          `<p class="form-recap-preset">${presetName()}</p>` +
+          `<div class="form-recap-line"><span>${plan.credits} class credits` +
+            `<em>${ref} Reformer, or ${plan.credits} Mat or Yoga</em></span><b>${fmt(crAmt)}</b></div>` +
+          `<div class="form-recap-line"><span>${plan.privates} private ${privateWord}</span>` +
+            `<b>${fmt(prAmt)}</b></div>` +
+          `<div class="form-recap-line form-recap-total"><span>Estimate</span><b>${fmt(total)}</b></div>`;
       }
     }
 
@@ -427,17 +466,77 @@
     renderPlan();
 
     const enquiryForm = document.querySelector('.enquiry-form');
+
+    // Inline errors beside the offending field. The old version used alert(),
+    // which names no field and leaves nothing behind once dismissed.
+    function clearError(field) {
+      const msg = field.parentNode.querySelector('.form-err');
+      if (msg) msg.remove();
+      field.removeAttribute('aria-invalid');
+      field.removeAttribute('aria-describedby');
+    }
+
+    function showError(field, text) {
+      clearError(field);
+      const id = field.id + '-err';
+      const msg = document.createElement('p');
+      msg.className = 'form-err';
+      msg.id = id;
+      msg.textContent = text;
+      field.parentNode.appendChild(msg);
+      field.setAttribute('aria-invalid', 'true');
+      field.setAttribute('aria-describedby', id);
+    }
+
     if (enquiryForm) {
+      const nameField  = $('f-name');
+      const emailField = $('f-email');
+
+      [nameField, emailField].forEach(field => {
+        field.addEventListener('input', () => {
+          if (field.value.trim()) clearError(field);
+        });
+      });
+
       enquiryForm.addEventListener('submit', function (e) {
-        const name  = this.querySelector('input[name="name"]').value.trim();
-        const email = this.querySelector('input[name="email"]').value.trim();
-        if (!name || !email) {
+        let bad = null;
+        if (!nameField.value.trim()) {
+          showError(nameField, 'Please tell us your name.');
+          bad = bad || nameField;
+        } else {
+          clearError(nameField);
+        }
+        if (!emailField.value.trim()) {
+          showError(emailField, 'We need an email address to reply to.');
+          bad = bad || emailField;
+        } else {
+          clearError(emailField);
+        }
+        if (bad) {
           e.preventDefault();
-          alert('Please enter your name and email address.');
+          bad.focus();
         }
         // otherwise it POSTs to Formspree as normal
       });
     }
+
+    // Formspree redirects back here with ?sent=1. Without this the visitor
+    // lands at the top of the page with a cleared form and no word either way,
+    // which reads exactly like a failure.
+    (function () {
+      if (!new URLSearchParams(location.search).has('sent')) return;
+      const done = $('form-success');
+      if (!done || !enquiryForm) return;
+      enquiryForm.hidden = true;
+      done.style.display = 'block';
+      done.setAttribute('tabindex', '-1');
+      // Wait for images to settle, or the scroll lands against a layout that
+      // is still growing underneath it.
+      addEventListener('load', function () {
+        done.scrollIntoView({ block: 'center' });
+        done.focus({ preventScroll: true });
+      });
+    })();
 
 // ── ACTIVITY POPUPS ──
   const overlay = document.getElementById('popup-overlay');
@@ -464,6 +563,58 @@
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') overlay.classList.remove('open');
   });
+  </script>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-logo">Pura Pilates</div>
+      <nav class="site-footer-nav" aria-label="Footer">
+        <a href="/">Studio</a>
+        <a href="/retreat/" aria-current="page">Retreat</a>
+        <a href="/movement-mentors/">Movement Mentors</a>
+        <a href="/ahangama/">Ahangama</a>
+        <a href="/cancellations/">Cancellations</a>
+      </nav>
+      <div class="site-footer-social">
+        <a href="https://instagram.com/purapilatessrilanka" target="_blank" rel="noopener">@purapilatessrilanka</a>
+        <a href="mailto:purapilatessrilanka@gmail.com">purapilatessrilanka@gmail.com</a>
+      </div>
+    </div>
+    <p class="site-footer-note">Pura Pilates, Ahangama, Sri Lanka. Reformer, mat and yoga classes, private sessions and retreats.</p>
+  </footer>
+
+  <script>
+    // Shared site nav. The drawer's top is read off the nav itself rather than
+    // hard-coded, because the green season page pushes the bar down 37px for
+    // its banner and a fixed value would leave a gap there.
+    (function () {
+      var burger = document.querySelector('.retreat-nav-burger');
+      var drawer = document.getElementById('site-drawer');
+      var nav    = document.querySelector('.retreat-nav');
+      if (!burger || !drawer || !nav) return;
+
+      function setOpen(open) {
+        drawer.classList.toggle('open', open);
+        burger.setAttribute('aria-expanded', String(open));
+        if (open) drawer.style.top = Math.round(nav.getBoundingClientRect().bottom) + 'px';
+      }
+
+      burger.addEventListener('click', function () {
+        setOpen(burger.getAttribute('aria-expanded') !== 'true');
+      });
+      drawer.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () { setOpen(false); });
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && drawer.classList.contains('open')) {
+          setOpen(false);
+          burger.focus();
+        }
+      });
+      addEventListener('resize', function () {
+        if (drawer.classList.contains('open')) setOpen(true);
+      });
+    })();
   </script>
 
 </body>

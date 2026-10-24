@@ -36,7 +36,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="../assets/css/pura-styles.css?v=11">
+  <link rel="stylesheet" href="../assets/css/pura-styles.css?v=17">
 
   <style>
     /* ── GREEN SEASON OVERRIDES ── */
@@ -174,8 +174,27 @@
   <!-- ── NAV ── -->
   <nav class="retreat-nav" style="top: 37px;">
     <a class="retreat-nav-logo" href="/"><span>Pura</span> <em>Pilates</em></a>
-    <a class="retreat-nav-back" href="/">← Studio</a>
+    <div class="retreat-nav-links">
+      <a class="retreat-nav-link" href="/">Studio</a>
+      <a class="retreat-nav-link" href="/retreat/">Retreat</a>
+      <a class="retreat-nav-link" href="/movement-mentors/">Mentors</a>
+      <a class="retreat-nav-link" href="/ahangama/">Ahangama</a>
+      <a class="retreat-nav-link" href="/cancellations/">Cancellations</a>
+      <a class="retreat-nav-cta" href="https://www.puracommunity.com" target="_blank" rel="noopener">Book</a>
+    </div>
+    <button class="retreat-nav-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-drawer">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <div class="retreat-nav-drawer" id="site-drawer">
+    <a href="/">Studio</a>
+    <a href="/retreat/">Retreat</a>
+    <a href="/movement-mentors/">Mentors</a>
+    <a href="/ahangama/">Ahangama</a>
+    <a href="/cancellations/">Cancellations</a>
+    <a class="retreat-nav-cta" href="https://www.puracommunity.com" target="_blank" rel="noopener">Book a class</a>
+  </div>
 
   <!-- ── HERO ── -->
   <section id="hero" class="hero" style="margin-top: 37px;">
@@ -651,7 +670,6 @@
     </form>
     <div class="enquire-contact">
       <a href="https://instagram.com/purapilatessrilanka" target="_blank">@purapilatessrilanka</a>
-      <a href="https://wa.me/94784724956">WhatsApp</a>
       <a href="mailto:purapilatessrilanka@gmail.com">purapilatessrilanka@gmail.com</a>
     </div>
   </div>
@@ -1009,6 +1027,58 @@
       const s = document.getElementById('form-success');
       if (s) s.style.display = 'block';
     }
+  </script>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-logo">Pura Pilates</div>
+      <nav class="site-footer-nav" aria-label="Footer">
+        <a href="/">Studio</a>
+        <a href="/retreat/">Retreat</a>
+        <a href="/movement-mentors/">Movement Mentors</a>
+        <a href="/ahangama/">Ahangama</a>
+        <a href="/cancellations/">Cancellations</a>
+      </nav>
+      <div class="site-footer-social">
+        <a href="https://instagram.com/purapilatessrilanka" target="_blank" rel="noopener">@purapilatessrilanka</a>
+        <a href="mailto:purapilatessrilanka@gmail.com">purapilatessrilanka@gmail.com</a>
+      </div>
+    </div>
+    <p class="site-footer-note">Pura Pilates, Ahangama, Sri Lanka. Reformer, mat and yoga classes, private sessions and retreats.</p>
+  </footer>
+
+  <script>
+    // Shared site nav. The drawer's top is read off the nav itself rather than
+    // hard-coded, because the green season page pushes the bar down 37px for
+    // its banner and a fixed value would leave a gap there.
+    (function () {
+      var burger = document.querySelector('.retreat-nav-burger');
+      var drawer = document.getElementById('site-drawer');
+      var nav    = document.querySelector('.retreat-nav');
+      if (!burger || !drawer || !nav) return;
+
+      function setOpen(open) {
+        drawer.classList.toggle('open', open);
+        burger.setAttribute('aria-expanded', String(open));
+        if (open) drawer.style.top = Math.round(nav.getBoundingClientRect().bottom) + 'px';
+      }
+
+      burger.addEventListener('click', function () {
+        setOpen(burger.getAttribute('aria-expanded') !== 'true');
+      });
+      drawer.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () { setOpen(false); });
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && drawer.classList.contains('open')) {
+          setOpen(false);
+          burger.focus();
+        }
+      });
+      addEventListener('resize', function () {
+        if (drawer.classList.contains('open')) setOpen(true);
+      });
+    })();
   </script>
 
 </body>

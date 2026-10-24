@@ -61,10 +61,100 @@ body {
   backdrop-filter: blur(8px);
   border-bottom: 0.5px solid rgba(74,85,56,0.1);
 }
-.retreat-nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 400; color: #3d2314; letter-spacing: 0.02em; text-decoration: none; }
-.retreat-nav-logo em { font-style: italic; color: #6f7a60; }
+.retreat-nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 400; color: #3d2314; letter-spacing: 0.02em; text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; }
+.retreat-nav-logo em { font-style: italic; color: var(--sage-dark); }  /* #6f7a60 was 3.91:1 on ivory at 21px */
 .retreat-nav-back { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mauve); text-decoration: none; transition: color 0.2s; }
 .retreat-nav-back:hover { color: #3d2314; }
+
+/* ── SITE NAV ── the inner pages used to carry a logo and a lone "← Studio",
+   so every one of them was a dead end. Same link set on all five. ── */
+.retreat-nav-links { display: flex; align-items: center; gap: 26px; }
+.retreat-nav-link { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mauve); text-decoration: none; transition: color 0.2s; }
+.retreat-nav-link:hover { color: var(--dark-brown); }
+.retreat-nav-link[aria-current="page"] { color: var(--dark-brown); border-bottom: 1px solid var(--sage-dark); padding-bottom: 2px; }
+.retreat-nav-cta { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; padding: 10px 22px; border-radius: 999px; background: var(--sage-dark); color: var(--white); text-decoration: none; transition: background 0.2s; }
+.retreat-nav-cta:hover { background: var(--dark-brown); }
+
+.retreat-nav-burger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 44px; height: 44px; padding: 10px 4px; background: none; border: none; cursor: pointer; }
+.retreat-nav-burger span { display: block; height: 1px; background: var(--dark-brown); transition: transform 0.25s ease, opacity 0.25s ease; transform-origin: center; }
+.retreat-nav-burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.retreat-nav-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.retreat-nav-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+.retreat-nav-drawer { display: none; position: fixed; top: 61px; left: 0; right: 0; z-index: 99;
+  background: rgba(245,237,227,0.98); backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid rgba(74,85,56,0.12); padding: 8px 24px 24px; flex-direction: column; }
+.retreat-nav-drawer.open { display: flex; }
+.retreat-nav-drawer a { font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dark-brown); text-decoration: none; padding: 15px 0; border-bottom: 0.5px solid rgba(74,85,56,0.1); }
+.retreat-nav-drawer a[aria-current="page"] { color: var(--sage-dark); }
+.retreat-nav-drawer .retreat-nav-cta { margin-top: 18px; text-align: center; padding: 15px 24px; border-bottom: none; color: var(--white); }
+
+/* ── CANCELLATIONS ── this page was built from 23 inline style attributes and
+   four hexes that are not tokens (#2c2c2a, #3d2e22, #d3d1c7, #5f5e5a), one of
+   them a near-miss of --dark. Same layout, on the system. ── */
+#intro.cx-intro .page { padding-top: calc(var(--sp-section) + 28px); }
+@media (max-width: 768px) {
+  #intro.cx-intro .page { padding-top: calc(var(--sp-section-tight) + 44px); }
+}
+
+.help-section { background: var(--ivory); padding: 0; }
+.help-section .page { padding: var(--sp-section-tight) 52px var(--sp-section); max-width: 780px; }
+
+.cx-outcomes { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin: 0 0 44px; }
+.cx-outcome { background: var(--warm-white); border: 0.5px solid rgba(61,35,20,0.1); border-radius: 14px; padding: 22px 24px; }
+.cx-outcome-keeps { border-left: 3px solid var(--sage-dark); }
+.cx-outcome-uses  { border-left: 3px solid var(--rust); }
+.cx-outcome dt { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500; margin-bottom: 10px; }
+.cx-outcome-keeps dt { color: var(--sage-dark); }
+.cx-outcome-uses  dt { color: var(--rust); }
+.cx-outcome dd { font-size: 14px; line-height: 1.7; color: var(--dark); margin: 0; }
+
+.cx-steps { list-style: none; counter-reset: cx; margin: 20px 0 0; padding: 0; }
+.cx-steps li { counter-increment: cx; position: relative; background: var(--warm-white);
+  border: 0.5px solid rgba(61,35,20,0.1); border-radius: 14px;
+  padding: 18px 22px 18px 58px; margin-bottom: 12px; font-size: 14px; line-height: 1.7; color: var(--dark); }
+.cx-steps li::before { content: counter(cx); position: absolute; left: 22px; top: 17px;
+  font-family: 'Cormorant Garamond', serif; font-size: 21px; color: var(--mauve); line-height: 1.2; }
+.cx-steps strong { font-weight: 500; color: var(--dark-brown); }
+.cx-steps a { color: var(--sage-dark); text-decoration: underline; text-underline-offset: 3px; }
+
+.cx-switch { background: var(--sand); border-radius: 14px; padding: 20px 24px; margin-top: 28px;
+  font-size: 14px; line-height: 1.7; color: var(--dark); }
+
+.cx-help { margin-top: 44px; padding-top: 28px; border-top: 0.5px solid rgba(61,35,20,0.12); }
+.cx-help-label { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mauve); margin-bottom: 6px; }
+.cx-help-links { display: flex; flex-direction: column; }
+/* These were three lines of plain text on the one page whose job is "message
+   us if you get stuck". 44px targets so a thumb can hit them. */
+.cx-help-links a { font-size: 15px; color: var(--sage-dark); text-decoration: underline;
+  text-underline-offset: 3px; padding: 12px 0; display: inline-block; width: fit-content; }
+.cx-help-links a:hover { color: var(--dark-brown); }
+
+@media (max-width: 768px) {
+  .help-section .page { padding: var(--sp-section-tight) 20px; }
+}
+
+/* ── SITE FOOTER ── none of the inner pages had one, so a long page simply
+   stopped. Mirrors the homepage footer, with 44px tap targets. ── */
+.site-footer { background: var(--dark-brown); padding: 52px 52px 44px; }
+.site-footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: flex-start; justify-content: space-between; gap: 36px; flex-wrap: wrap; }
+.site-footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300; color: var(--cream); }
+.site-footer-nav { display: flex; flex-wrap: wrap; gap: 4px 26px; }
+.site-footer-nav a, .site-footer-social a { font-size: 14px; letter-spacing: 0.06em; color: rgba(245,237,227,0.82); text-decoration: none; padding: 12px 0; display: inline-block; transition: color 0.2s; }
+.site-footer-nav a:hover, .site-footer-social a:hover { color: var(--cream); }
+.site-footer-nav a[aria-current="page"] { color: var(--cream); }
+.site-footer-social { display: flex; flex-direction: column; }
+.site-footer-note { max-width: 1100px; margin: 26px auto 0; padding-top: 22px; border-top: 0.5px solid rgba(245,237,227,0.14);
+  font-size: 12px; color: rgba(245,237,227,0.7); }
+
+@media (max-width: 768px) {
+  .retreat-nav { padding: 8px 20px; }  /* 44px burger + 16px = the bar's original height */
+  .retreat-nav-links { display: none; }
+  .retreat-nav-burger { display: flex; }
+  .site-footer { padding: 40px 24px 32px; }
+  .site-footer-inner { flex-direction: column; gap: 10px; }
+  .site-footer-nav { flex-direction: column; gap: 0; }
+}
 
 /* ── PAGE WRAPPER ── */
 .page {
@@ -107,7 +197,11 @@ body {
   background: linear-gradient(135deg, #3d2e2e 0%, #674d50 50%, #97644e 100%);
 }
 
-#hero-img {
+/* Matches the id, the class, and any bare <img> dropped straight into .hero,
+   so a hero image can never lay out as a flex item and push the
+   headline out of the viewport. */
+#hero-img,
+.hero > img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -630,9 +724,64 @@ body {
 .form-submit { font-family: 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; padding: 16px 40px; background: var(--dusty-rose); color: white; border: none; border-radius: 999px; cursor: pointer; transition: opacity 0.2s; margin-bottom: 16px; }
 .form-submit:hover { opacity: 0.85; }
 .form-note { font-size: 12px; color: rgba(245,237,227,0.78); font-style: italic; }
+
+/* ── ENQUIRY RECAP ── the planner's numbers on the dark enquiry ground.
+   Replaces a readonly textarea that clipped the grand total out of view. ── */
+.form-recap { background: rgba(245,237,227,0.06); border: 0.5px solid rgba(245,237,227,0.15); border-radius: 4px; padding: 18px 20px; }
+.form-recap-empty { font-size: 14px; line-height: 1.6; color: rgba(245,237,227,0.6); font-style: italic; margin: 0; }
+.form-recap-preset { font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dusty-rose); margin: 0 0 12px; }
+.form-recap-line { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; }
+.form-recap-line span { font-size: 14px; color: rgba(245,237,227,0.78); line-height: 1.45; }
+.form-recap-line span em { display: block; font-size: 12px; font-style: normal; color: rgba(245,237,227,0.6); margin-top: 3px; }
+.form-recap-line b { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 21px; color: var(--cream); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.form-recap-total { border-top: 0.5px solid rgba(245,237,227,0.18); margin-top: 6px; padding-top: 14px; }
+.form-recap-total span { font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(245,237,227,0.78); }
+.form-recap-total b { font-size: 32px; }
+
+/* ── INLINE FIELD ERRORS ── replaces alert() ── */
+.form-err { font-size: 12px; font-weight: 500; letter-spacing: 0.04em; color: #ffb3a0; margin: 0; }
+.form-input[aria-invalid="true"], .form-select[aria-invalid="true"], .form-textarea[aria-invalid="true"] { border-color: #ffb3a0; }
+
+/* ── FOCUS ── every interactive control had only the UA default, and the form
+   fields had none at all: :focus changed a 0.5px border colour and nothing more. ── */
+.form-input:focus-visible,
+.form-select:focus-visible,
+.form-textarea:focus-visible,
+.form-submit:focus-visible,
+.expand-cta:focus-visible,
+.builder-submit:focus-visible,
+.popup-close:focus-visible {
+  outline: 2px solid var(--dusty-rose);
+  outline-offset: 2px;
+}
+.rp-preset:focus-visible,
+.rp-btn:focus-visible,
+.rp-cta:focus-visible,
+.addon-item:focus-visible,
+.retreat-nav-logo:focus-visible,
+.retreat-nav-back:focus-visible,
+.rp-small a:focus-visible,
+.enquire-contact a:focus-visible {
+  outline: 2px solid var(--sage-dark);
+  outline-offset: 2px;
+}
+
+/* ── REDUCED MOTION ── the hero fade and every transition ran regardless. ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── ANCHOR OFFSET ── the nav is position:fixed, so every in-page jump
+   landed its heading underneath the bar. ── */
+:target { scroll-margin-top: 92px; }
 .form-success { background: var(--sage); color: white; padding: 24px 28px; border-radius: 4px; font-size: 14px; line-height: 1.7; margin-top: 16px; }
 .enquire-contact { display: flex; gap: 32px; margin-top: 48px; padding-top: 32px; border-top: 0.5px solid rgba(245,237,227,0.1); }
-.enquire-contact a { font-size: 14px; color: rgba(245,237,227,0.78); text-decoration: none; transition: color 0.2s; }
+.enquire-contact a { font-size: 14px; color: rgba(245,237,227,0.82); text-decoration: none; padding: 12px 0; display: inline-block; transition: color 0.2s; }
 .enquire-contact a:hover { color: var(--cream); }
 
 /* ============================================================

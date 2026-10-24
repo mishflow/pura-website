@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../assets/css/pura-styles.css?v=11">
+  <link rel="stylesheet" href="../assets/css/pura-styles.css?v=17">
 
   <style>
     /* Palette taken from the schedule app (apps/schedule/src/index.css) so this
@@ -134,6 +134,24 @@
     .mm-submit:hover { background: var(--mm-accent); }
     .mm-small { font-family: 'Jost', sans-serif; font-size: 14px; color: var(--mm-ink); margin: 18px 0 0; }
 
+    /* ── SUCCESS PANEL ── shown on return from Formspree, see the script below ── */
+    .mm-done { background: var(--mm-white); border: 1px solid var(--mm-line); border-left: 3px solid var(--sage-dark);
+      border-radius: 4px; padding: 30px 32px; margin-top: 34px; }
+    .mm-done:focus { outline: none; }
+    .mm-done b { display: block; font-family: 'Cormorant Garamond', serif; font-size: 27px; font-weight: 400;
+      color: var(--mm-deep); margin-bottom: 10px; }
+    .mm-done span { display: block; font-family: 'Jost', sans-serif; font-size: 17px; line-height: 1.7; color: var(--mm-ink); }
+    .mm-done a { color: var(--sage-dark); text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ── INLINE FIELD ERRORS ── replaces the old alert() ── */
+    .mm-field .mm-err { font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.04em;
+      color: #8f3a2a; margin: 0; }
+    .mm-field input[aria-invalid="true"], .mm-field textarea[aria-invalid="true"] { border-color: #8f3a2a; }
+    .mm-field input:focus-visible, .mm-field textarea:focus-visible,
+    .mm-submit:focus-visible, .mm-hero-btn:focus-visible {
+      outline: 2px solid var(--sage-dark); outline-offset: 2px;
+    }
+
     /* ── MOVE NUMBERS ── warm, not dark ── */
     #mm-business { background: var(--mm-peach); }
     #mm-business .eyebrow { color: var(--mm-deep); }
@@ -163,8 +181,27 @@
   <!-- ── NAV ── -->
   <nav class="retreat-nav">
     <a class="retreat-nav-logo" href="/"><span>Pura</span> <em>Pilates</em></a>
-    <a class="retreat-nav-back" href="/">&larr; Studio</a>
+    <div class="retreat-nav-links">
+      <a class="retreat-nav-link" href="/">Studio</a>
+      <a class="retreat-nav-link" href="/retreat/">Retreat</a>
+      <a class="retreat-nav-link" href="/movement-mentors/" aria-current="page">Mentors</a>
+      <a class="retreat-nav-link" href="/ahangama/">Ahangama</a>
+      <a class="retreat-nav-link" href="/cancellations/">Cancellations</a>
+      <a class="retreat-nav-cta" href="https://www.puracommunity.com" target="_blank" rel="noopener">Book</a>
+    </div>
+    <button class="retreat-nav-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-drawer">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <div class="retreat-nav-drawer" id="site-drawer">
+    <a href="/">Studio</a>
+    <a href="/retreat/">Retreat</a>
+    <a href="/movement-mentors/" aria-current="page">Mentors</a>
+    <a href="/ahangama/">Ahangama</a>
+    <a href="/cancellations/">Cancellations</a>
+    <a class="retreat-nav-cta" href="https://www.puracommunity.com" target="_blank" rel="noopener">Book a class</a>
+  </div>
 
   <!-- ── HERO ── -->
   <section id="mm-hero">
@@ -182,7 +219,7 @@
         <span>Starts 1 December 2026</span>
         <span>Ahangama, Sri Lanka</span>
         <span>Small group of 4 to 10</span>
-        <span>From $675</span>
+        <span>$675 early bird, until 10 November</span>
       </div>
       <a class="mm-hero-btn" href="#mm-apply">Apply now</a>
     </div>
@@ -246,7 +283,7 @@
           <p class="body-text">High energy. Reads a room of bodies in seconds and adapts the class to whoever is in front of her. Traveller, dancer, language addict.</p>
         </div>
         <div class="mm-photo tall">
-          <img src="../assets/images/instructor-denitsa-01.jpg" alt="Denitsa Stoyanova teaching at Pura Pilates" loading="lazy" decoding="async">
+          <img src="../assets/images/instructor-denitsa-01.jpg" alt="Denitsa Stoyanova, who leads the Movement Mentors programme" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
@@ -276,7 +313,7 @@
       <h2 class="section-title">Small group, <em>by application.</em></h2>
       <p class="body-text">We keep it small so everyone gets real attention. Tell us a bit about yourself and what you are looking for, and we will set up a quick call.</p>
 
-      <form class="mm-form" action="https://formspree.io/f/xbdpvqww" method="POST">
+      <form class="mm-form" action="https://formspree.io/f/xbdpvqww" method="POST" novalidate>
         <input type="hidden" name="form_type" value="movement-mentors-application">
         <input type="hidden" name="_subject" value="Movement Mentors application">
         <input type="hidden" name="_next" value="https://purapilatessrilanka.com/movement-mentors/?applied=1">
@@ -313,6 +350,11 @@
         <button class="mm-submit" type="submit">Send application</button>
         <p class="mm-small">Early bird pricing closes 10 November, applications close 20 November. We read every one and come back to you either way.</p>
       </form>
+
+      <div class="mm-done" id="mm-done-apply" tabindex="-1" hidden>
+        <b>Application received.</b>
+        <span>We read every one and come back to you either way, usually within a few days. Early bird pricing closes 10 November. If you need us before then, message us on <a href="https://instagram.com/purapilatessrilanka" target="_blank" rel="noopener">Instagram</a>.</span>
+      </div>
     </div>
   </section>
 
@@ -329,7 +371,7 @@
       </ul>
       <p class="body-text">Dates to be announced. Leave your email and we will tell you first.</p>
 
-      <form class="mm-form" action="https://formspree.io/f/xbdpvqww" method="POST">
+      <form class="mm-form" action="https://formspree.io/f/xbdpvqww" method="POST" novalidate>
         <input type="hidden" name="form_type" value="movement-mentors-business-interest">
         <input type="hidden" name="_subject" value="Move Numbers interest list">
         <input type="hidden" name="_next" value="https://purapilatessrilanka.com/movement-mentors/?registered=1">
@@ -346,6 +388,11 @@
         <button class="mm-submit" type="submit">Register for updates</button>
         <p class="mm-small">Updates about the business programme only. Nothing else.</p>
       </form>
+
+      <div class="mm-done" id="mm-done-business" tabindex="-1" hidden>
+        <b>You are on the list.</b>
+        <span>We will email you as soon as the Move Numbers dates are set. Nothing else, we promise.</span>
+      </div>
     </div>
   </section>
 
@@ -353,16 +400,137 @@
     // Both forms post to the same Formspree endpoint and are separated by the
     // hidden form_type field, so the application list and the business interest
     // list stay apart. Validate before the POST so nothing empty gets sent.
+
+    // Inline errors, shown beside the field that is actually wrong. The old
+    // version used alert(), which says nothing about which field and leaves no
+    // trace once dismissed.
+    function clearError(field) {
+      var msg = field.parentNode.querySelector('.mm-err');
+      if (msg) msg.remove();
+      field.removeAttribute('aria-invalid');
+      field.removeAttribute('aria-describedby');
+    }
+
+    function showError(field, text) {
+      clearError(field);
+      var id = field.id + '-err';
+      var msg = document.createElement('p');
+      msg.className = 'mm-err';
+      msg.id = id;
+      msg.textContent = text;
+      field.parentNode.appendChild(msg);
+      field.setAttribute('aria-invalid', 'true');
+      field.setAttribute('aria-describedby', id);
+    }
+
     document.querySelectorAll('.mm-form').forEach(function (form) {
+      var name  = form.querySelector('input[name="name"]');
+      var email = form.querySelector('input[name="email"]');
+
+      [name, email].forEach(function (field) {
+        field.addEventListener('input', function () {
+          if (field.value.trim()) clearError(field);
+        });
+      });
+
       form.addEventListener('submit', function (e) {
-        var name = form.querySelector('input[name="name"]');
-        var email = form.querySelector('input[name="email"]');
-        if (!name.value.trim() || !email.value.trim()) {
+        var bad = null;
+        if (!name.value.trim()) {
+          showError(name, 'Please tell us your name.');
+          bad = bad || name;
+        } else {
+          clearError(name);
+        }
+        if (!email.value.trim()) {
+          showError(email, 'We need an email address to reply to.');
+          bad = bad || email;
+        } else {
+          clearError(email);
+        }
+        if (bad) {
           e.preventDefault();
-          alert('Please enter your name and email address.');
+          bad.focus();
         }
       });
     });
+
+    // Formspree redirects back here with ?applied=1 or ?registered=1. Without
+    // this the visitor lands at the top of the page with a cleared form and no
+    // word either way, which reads exactly like a failure.
+    (function () {
+      var flags = new URLSearchParams(location.search);
+      var pairs = [
+        { flag: 'applied',    form: 'movement-mentors-application',       done: 'mm-done-apply' },
+        { flag: 'registered', form: 'movement-mentors-business-interest', done: 'mm-done-business' }
+      ];
+
+      pairs.forEach(function (pair) {
+        if (!flags.has(pair.flag)) return;
+        var done = document.getElementById(pair.done);
+        var hidden = document.querySelector('input[value="' + pair.form + '"]');
+        var form = hidden && hidden.closest('.mm-form');
+        if (!done || !form) return;
+
+        form.hidden = true;
+        done.hidden = false;
+        addEventListener('load', function () {
+          done.scrollIntoView({ block: 'center' });
+          done.focus({ preventScroll: true });
+        });
+      });
+    })();
+  </script>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-logo">Pura Pilates</div>
+      <nav class="site-footer-nav" aria-label="Footer">
+        <a href="/">Studio</a>
+        <a href="/retreat/">Retreat</a>
+        <a href="/movement-mentors/" aria-current="page">Movement Mentors</a>
+        <a href="/ahangama/">Ahangama</a>
+        <a href="/cancellations/">Cancellations</a>
+      </nav>
+      <div class="site-footer-social">
+        <a href="https://instagram.com/purapilatessrilanka" target="_blank" rel="noopener">@purapilatessrilanka</a>
+        <a href="mailto:purapilatessrilanka@gmail.com">purapilatessrilanka@gmail.com</a>
+      </div>
+    </div>
+    <p class="site-footer-note">Pura Pilates, Ahangama, Sri Lanka. Reformer, mat and yoga classes, private sessions and retreats.</p>
+  </footer>
+
+  <script>
+    // Shared site nav. The drawer's top is read off the nav itself rather than
+    // hard-coded, because the green season page pushes the bar down 37px for
+    // its banner and a fixed value would leave a gap there.
+    (function () {
+      var burger = document.querySelector('.retreat-nav-burger');
+      var drawer = document.getElementById('site-drawer');
+      var nav    = document.querySelector('.retreat-nav');
+      if (!burger || !drawer || !nav) return;
+
+      function setOpen(open) {
+        drawer.classList.toggle('open', open);
+        burger.setAttribute('aria-expanded', String(open));
+        if (open) drawer.style.top = Math.round(nav.getBoundingClientRect().bottom) + 'px';
+      }
+
+      burger.addEventListener('click', function () {
+        setOpen(burger.getAttribute('aria-expanded') !== 'true');
+      });
+      drawer.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () { setOpen(false); });
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && drawer.classList.contains('open')) {
+          setOpen(false);
+          burger.focus();
+        }
+      });
+      addEventListener('resize', function () {
+        if (drawer.classList.contains('open')) setOpen(true);
+      });
+    })();
   </script>
 
 </body>

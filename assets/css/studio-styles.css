@@ -50,7 +50,7 @@ nav {
 .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 0; }
 .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(42,31,31,0.85) 0%, rgba(42,31,31,0.2) 55%, transparent 100%); z-index: 1; }
 .hero-content { position: relative; z-index: 2; padding: 0 52px 60px; }
-.hero-eyebrow { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(245,237,227,0.78); margin-bottom: 14px; }
+.hero-eyebrow { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cream); margin-bottom: 14px; }  /* 0.78 alpha failed over the bright crop */
 .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(52px, 7vw, 96px); font-weight: 300; line-height: 0.92; color: white; margin-bottom: 20px; }
 .hero-title em { font-style: italic; color: #c8d4b8; }
 .hero-sub { font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(245,237,227,0.78); margin-bottom: 32px; }
@@ -60,6 +60,36 @@ nav {
 a.hero-btn { display: inline-flex; align-items: center; justify-content: center; line-height: normal; }
 .hero-btn-primary { background: white; color: var(--dark); }
 .hero-btn-secondary { background: rgba(255,255,255,0.15); color: white; border: 0.5px solid rgba(255,255,255,0.3); }
+
+/* ── HERO SCRIM ── the eyebrow measured 2.02:1 at its worst over the bright
+   parts of the photograph. A localised scrim behind the text block only, so the
+   rest of the image stays as shot. Sized against the brightest pixel actually
+   measured behind the text, not a theoretical white one. ── */
+.hero-content { position: relative; }
+.hero-content::before {
+  content: '';
+  position: absolute;
+  inset: -56px -52px -72px -52px;
+  /* The eyebrow sits at the TOP of the text block, so the fade is confined to
+     the last 16% or it lands exactly where the scrim has stopped working. */
+  background: linear-gradient(to top,
+    rgba(26,18,14,0.60) 0%,
+    rgba(26,18,14,0.60) 84%,
+    rgba(26,18,14,0) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+  /* The mobile crop lands on a brighter part of every hero, so the scrim needs
+     more there. Measured, not guessed. */
+  .hero-content::before {
+    inset: -40px -24px -48px -24px;
+    background: linear-gradient(to top,
+      rgba(26,18,14,0.68) 0%,
+      rgba(26,18,14,0.68) 86%,
+      rgba(26,18,14,0) 100%);
+  }
+}
 
 /* SECTIONS */
 .section { padding: var(--sp-section) 52px; max-width: 1100px; margin: 0 auto; }

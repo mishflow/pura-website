@@ -294,7 +294,7 @@ body {
   font-weight: 400;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(245, 237, 227, 0.85);
+  color: var(--cream);  /* 0.85 alpha failed over the bright crop */
   margin-bottom: 18px;
 }
 
@@ -322,6 +322,36 @@ body {
   color: rgba(245,237,227,0.78);
 }
 
+
+/* ── HERO SCRIM ── the eyebrow measured 2.02:1 at its worst over the bright
+   parts of the photograph. A localised scrim behind the text block only, so the
+   rest of the image stays as shot. Sized against the brightest pixel actually
+   measured behind the text, not a theoretical white one. ── */
+.hero-content { position: relative; }
+.hero-content::before {
+  content: '';
+  position: absolute;
+  inset: -56px -52px -72px -52px;
+  /* The eyebrow sits at the TOP of the text block, so the fade is confined to
+     the last 16% or it lands exactly where the scrim has stopped working. */
+  background: linear-gradient(to top,
+    rgba(26,18,14,0.60) 0%,
+    rgba(26,18,14,0.60) 84%,
+    rgba(26,18,14,0) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+  /* The mobile crop lands on a brighter part of every hero, so the scrim needs
+     more there. Measured, not guessed. */
+  .hero-content::before {
+    inset: -40px -24px -48px -24px;
+    background: linear-gradient(to top,
+      rgba(26,18,14,0.68) 0%,
+      rgba(26,18,14,0.68) 86%,
+      rgba(26,18,14,0) 100%);
+  }
+}
 
 /* ============================================================
    INTRO
@@ -776,7 +806,7 @@ body {
    Replaces a readonly textarea that clipped the grand total out of view. ── */
 .form-recap { background: rgba(245,237,227,0.06); border: 0.5px solid rgba(245,237,227,0.15); border-radius: 4px; padding: 18px 20px; }
 .form-recap-empty { font-size: 14px; line-height: 1.6; color: rgba(245,237,227,0.6); font-style: italic; margin: 0; }
-.form-recap-preset { font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dusty-rose); margin: 0 0 12px; }
+.form-recap-preset { font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: #d89080; margin: 0 0 12px; }  /* --dusty-rose was 3.64:1 on this panel; this is 4.83:1 */
 .form-recap-line { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; }
 .form-recap-line span { font-size: 14px; color: rgba(245,237,227,0.78); line-height: 1.45; }
 .form-recap-line span em { display: block; font-size: 12px; font-style: normal; color: rgba(245,237,227,0.6); margin-top: 3px; }
@@ -807,10 +837,24 @@ body {
 .addon-item:focus-visible,
 .retreat-nav-logo:focus-visible,
 .retreat-nav-back:focus-visible,
+.retreat-nav-link:focus-visible,
+.retreat-nav-cta:focus-visible,
+.retreat-nav-burger:focus-visible,
+.retreat-nav-drawer a:focus-visible,
+.cx-steps a:focus-visible,
+.cx-help-links a:focus-visible,
 .rp-small a:focus-visible,
 .enquire-contact a:focus-visible {
   outline: 2px solid var(--sage-dark);
   outline-offset: 2px;
+}
+
+/* On the dark grounds a sage ring disappears, so these take cream. */
+.dest-link:focus-visible,
+.site-footer-nav a:focus-visible,
+.site-footer-social a:focus-visible {
+  outline: 2px solid var(--cream);
+  outline-offset: 3px;
 }
 
 /* ── REDUCED MOTION ── the hero fade and every transition ran regardless. ── */

@@ -89,6 +89,53 @@ body {
 .retreat-nav-drawer a[aria-current="page"] { color: var(--sage-dark); }
 .retreat-nav-drawer .retreat-nav-cta { margin-top: 18px; text-align: center; padding: 15px 24px; border-bottom: none; color: var(--white); }
 
+/* ── DESTINATION ── the retreat page sold a place the visitor never saw.
+   Five photographs, all portrait sources, so the mosaic is built from tall
+   cells rather than cropping them into letterboxes. ── */
+#destination { background: var(--dark-brown); padding: 0; }
+#destination .page { padding: var(--sp-section) 52px; }
+#destination .eyebrow { color: rgba(245,237,227,0.78); }
+#destination .section-title { color: var(--cream); margin-top: 10px; }
+#destination .section-title em { font-style: italic; color: rgba(245,237,227,0.78); }
+.dest-lede { font-family: 'Jost', sans-serif; font-size: 17px; line-height: 1.8;
+  color: rgba(245,237,227,0.82); max-width: 54ch; margin: 18px 0 0; }  /* 54ch of Jost measures ~69 real characters */
+
+.dest-grid { display: grid; gap: 8px; margin-top: 40px;
+  grid-template-columns: 1.3fr 1fr 1fr 1fr; grid-template-rows: 230px 230px; }
+.dest-shot { overflow: hidden; border-radius: 4px; background: var(--mauve); }
+.dest-shot img { width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+.dest-shot:hover img { transform: scale(1.04); }
+
+/* Each source is 900x1600, so the crop is aimed per photo rather than centred. */
+.dest-shot:nth-child(1) { grid-column: 1; grid-row: 1 / 3; }
+.dest-shot:nth-child(1) img { object-position: center 42%; }
+.dest-shot:nth-child(2) { grid-column: 2 / 4; grid-row: 1; }
+.dest-shot:nth-child(2) img { object-position: center 58%; }
+.dest-shot:nth-child(3) { grid-column: 4; grid-row: 1 / 3; }
+.dest-shot:nth-child(3) img { object-position: center 60%; }
+.dest-shot:nth-child(4) { grid-column: 2; grid-row: 2; }
+.dest-shot:nth-child(4) img { object-position: center 68%; }
+.dest-shot:nth-child(5) { grid-column: 3; grid-row: 2; }
+.dest-shot:nth-child(5) img { object-position: center 57%; }
+
+.dest-link { display: inline-block; margin-top: 30px; font-family: 'Jost', sans-serif;
+  font-size: 14px; color: var(--cream); text-decoration: underline;
+  text-underline-offset: 4px; padding: 12px 0; }
+.dest-link:hover { color: rgba(245,237,227,0.78); }
+
+@media (max-width: 768px) {
+  #destination .page { padding: var(--sp-section-tight) 20px; }
+  .dest-lede { font-size: 15px; }
+  /* All five stay. The tall portrait keeps the lead image's full figure. */
+  .dest-grid { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 150px); }
+  .dest-shot:nth-child(1) { grid-column: 1; grid-row: 1 / 3; }
+  .dest-shot:nth-child(2) { grid-column: 2; grid-row: 1; }
+  .dest-shot:nth-child(3) { grid-column: 2; grid-row: 2; }
+  .dest-shot:nth-child(4) { grid-column: 1; grid-row: 3; }
+  .dest-shot:nth-child(5) { grid-column: 2; grid-row: 3; }
+}
+
 /* ── CANCELLATIONS ── this page was built from 23 inline style attributes and
    four hexes that are not tokens (#2c2c2a, #3d2e22, #d3d1c7, #5f5e5a), one of
    them a near-miss of --dark. Same layout, on the system. ── */

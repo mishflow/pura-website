@@ -18,6 +18,7 @@ PAGES=(
   "pages/green-season.html:green-season/index.html"
   "pages/ahangama.html:ahangama/index.html"
   "pages/cancellations.html:cancellations/index.html"
+  "pages/movement-mentors.html:movement-mentors/index.html"
 )
 
 # Guard: if a published copy was edited directly and is newer than its source,
@@ -47,7 +48,8 @@ for pair in "${PAGES[@]}"; do
   echo "  $SRC -> $DEST"
 done
 
-git add -A pages/ index.html retreat/ green-season/ ahangama/ cancellations/ assets/ \
+git add -A pages/ index.html retreat/ green-season/ ahangama/ cancellations/ \
+        movement-mentors/ assets/ deploy.sh \
         CNAME .gitignore favicon.svg favicon.ico apple-touch-icon.png sitemap.xml robots.txt
 git commit -m "$MESSAGE"
 # Push explicitly to main so this works from a worktree branch too,

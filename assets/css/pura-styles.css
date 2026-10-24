@@ -61,7 +61,7 @@ body {
   backdrop-filter: blur(8px);
   border-bottom: 0.5px solid rgba(74,85,56,0.1);
 }
-.retreat-nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 400; color: #3d2314; letter-spacing: 0.02em; text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; }
+.retreat-nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 400; color: #3d2314; letter-spacing: 0.02em; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25em; min-height: 44px; }  /* gap replaces the word space: flex drops the whitespace node between <span>Pura</span> and <em>Pilates</em> */
 .retreat-nav-logo em { font-style: italic; color: var(--sage-dark); }  /* #6f7a60 was 3.91:1 on ivory at 21px */
 .retreat-nav-back { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mauve); text-decoration: none; transition: color 0.2s; }
 .retreat-nav-back:hover { color: #3d2314; }

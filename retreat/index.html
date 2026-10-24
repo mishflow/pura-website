@@ -35,7 +35,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="../assets/css/pura-styles.css?v=3">
+  <link rel="stylesheet" href="../assets/css/pura-styles.css?v=4">
 </head>
 <body>
 
@@ -77,72 +77,87 @@
     </div>
   </section>
 
-  <!-- ── PACKAGES ── -->
-  <section id="packages">
+
+  
+    <!-- ── BUILD YOUR RETREAT ── one place to choose, one price ── -->
+  <section id="plan">
     <div class="page">
-      <p class="eyebrow">Choose your experience</p>
-      <h2 class="section-title">Your Pilates retreat.</h2>
-      <p class="pkg-subtext">Click any package to see the full schedule and what's included.</p>
+      <p class="eyebrow">Build your retreat</p>
+      <h2 class="section-title">Pick a starting point,<br><em>then make it yours.</em></h2>
+      <p class="body-text">Start from one of our four, or go straight to the numbers. Reformer costs 2 credits, Mat and Yoga cost 1, so you decide the mix once you are here.</p>
 
-      <div class="package-cards">
-
-        <div class="pkg-card pkg-taste" data-package="taste">
-          <div class="pkg-accent-bar"></div>
-          <div class="pkg-inner">
-            <span class="pkg-badge">ENTRY</span>
-            <h3 class="pkg-name">Taste of Pura</h3>
-            <div class="pkg-duration">4 days · 3 nights</div>
-            <div class="pkg-stats">1 private · 3 group classes</div>
-            <div class="pkg-price">From <span>LKR 24,000</span></div>
-            <div class="pkg-toggle">See details ↓</div>
-          </div>
-        </div>
-
-        <div class="pkg-card pkg-escape" data-package="escape">
-          <div class="pkg-accent-bar"></div>
-          <div class="pkg-inner">
-            <span class="pkg-badge">PURA FEEL</span>
-            <h3 class="pkg-name">Escape</h3>
-            <div class="pkg-duration">7 days · 6 nights</div>
-            <div class="pkg-stats">2 privates · 6 group classes</div>
-            <div class="pkg-price">From <span>LKR 48,000</span></div>
-            <div class="pkg-toggle">See details ↓</div>
-          </div>
-        </div>
-
-        <div class="pkg-card pkg-retreat" data-package="retreat">
-          <div class="pkg-accent-bar"></div>
-          <div class="pkg-inner">
-            <span class="pkg-badge">PURA LOVE</span>
-            <h3 class="pkg-name">Retreat</h3>
-            <div class="pkg-duration">10 days · 9 nights</div>
-            <div class="pkg-stats">2 privates · 8 group classes · Pura tee</div>
-            <div class="pkg-price">From <span>LKR 55,200</span></div>
-            <div class="pkg-toggle">See details ↓</div>
-          </div>
-        </div>
-
-        <div class="pkg-card pkg-immersion" data-package="immersion">
-          <div class="pkg-accent-bar"></div>
-          <div class="pkg-inner">
-            <span class="pkg-badge">PURA BLISS</span>
-            <h3 class="pkg-name">Immersion</h3>
-            <div class="pkg-duration">14 days · 13 nights</div>
-            <div class="pkg-stats">3 privates · 12 group classes · Pura tee</div>
-            <div class="pkg-price">From <span>LKR 81,600</span></div>
-            <div class="pkg-toggle">See details ↓</div>
-          </div>
-        </div>
-
+      <div class="rp-presets">
+        <button type="button" class="rp-preset" data-cr="3" data-pr="1">
+          <b>Taste of Pura</b><span>3 credits &middot; 1 private</span>
+        </button>
+        <button type="button" class="rp-preset" data-cr="6" data-pr="2">
+          <b>Escape</b><span>6 credits &middot; 2 privates</span>
+        </button>
+        <button type="button" class="rp-preset" data-cr="8" data-pr="2">
+          <b>Retreat</b><span>8 credits &middot; 2 privates</span>
+        </button>
+        <button type="button" class="rp-preset" data-cr="12" data-pr="3">
+          <b>Immersion</b><span>12 credits &middot; 3 privates</span>
+        </button>
       </div>
 
-      <div class="pkg-expand" id="pkg-expand">
-        <div class="pkg-expand-inner page"></div>
+      <div class="rp-controls">
+        <div class="rp-ctl">
+          <span class="rp-label">Class credits</span>
+          <div class="rp-step">
+            <button type="button" class="rp-btn" data-act="cr-" aria-label="Fewer credits">&minus;</button>
+            <output class="rp-val" id="rp-cr">6</output>
+            <button type="button" class="rp-btn" data-act="cr+" aria-label="More credits">+</button>
+          </div>
+          <p class="rp-hint" id="rp-cr-hint"></p>
+        </div>
+        <div class="rp-ctl">
+          <span class="rp-label">Private sessions</span>
+          <div class="rp-step">
+            <button type="button" class="rp-btn" data-act="pr-" aria-label="Fewer privates">&minus;</button>
+            <output class="rp-val" id="rp-pr">2</output>
+            <button type="button" class="rp-btn" data-act="pr+" aria-label="More privates">+</button>
+          </div>
+          <p class="rp-hint">60 minutes, one to one, Rs 15,000 each</p>
+        </div>
       </div>
+
+      <div class="rp-total">
+        <div class="rp-line"><span>Class credits</span><b id="rp-cr-amt">Rs 16,000</b></div>
+        <div class="rp-line"><span>Private sessions</span><b id="rp-pr-amt">Rs 30,000</b></div>
+        <div class="rp-line rp-grand"><span>Your retreat</span><b id="rp-grand">Rs 46,000</b></div>
+        <p class="rp-note" id="rp-note"></p>
+      </div>
+
+      <a class="rp-cta" href="#enquire">Send this to us &rarr;</a>
     </div>
   </section>
 
-  <section id="addons">
+
+    <!-- ── WHERE YOU STAY ── partner slots, rates confirmed direct ── -->
+  <section id="stay">
+    <div class="page">
+      <p class="eyebrow">Where you stay</p>
+      <h2 class="section-title">We will match you with <em>somewhere good.</em></h2>
+      <p class="body-text">Most people on retreat want a private room, so we are building a short list of guest houses within a few minutes of the studio. Tell us your budget and what you are after, and we will put you with the right one.</p>
+      <div class="stay-slots">
+        <div class="stay-slot">
+          <b>Simple</b>
+          <span>Clean, close, no fuss. Shared or basic private rooms.</span>
+        </div>
+        <div class="stay-slot">
+          <b>Private ensuite</b>
+          <span>Your own room and bathroom, A/C, walking distance to the studio.</span>
+        </div>
+        <div class="stay-slot">
+          <b>More space</b>
+          <span>Pool or jungle view, room to spread out, for longer stays.</span>
+        </div>
+      </div>
+      <p class="body-text rp-small">You book and pay the guest house directly, so there is nothing added on our side. Run a guest house near the studio? <a href="https://wa.me/94784724956" target="_blank" rel="noopener">Get in touch</a> and we will add you to the list.</p>
+    </div>
+  </section>
+<section id="addons">
   <div class="page">
     <div class="eyebrow">Make it yours</div>
     <h2 class="section-title">Beyond the <em>studio.</em></h2>
@@ -208,168 +223,6 @@
   </div>
 </section>
 
-  <section id="builder">
-  <div class="page">
-    <div class="eyebrow">Build your Pura</div>
-    <h2 class="section-title">Make it <em>yours.</em></h2>
-    <p class="builder-subtext">Pick what you need — we'll confirm everything when you reach out.</p>
-
-    <div class="builder-grid">
-
-      <!-- Step 1: Package -->
-      <div class="builder-step">
-        <div class="builder-step-label">01 — Package</div>
-        <div class="builder-options" id="b-packages">
-          <div class="b-option" data-type="package" data-key="taste" data-price="24000">
-            <div class="b-option-name">Taste of Pura</div>
-            <div class="b-option-sub">4 days · 3 nights</div>
-          </div>
-          <div class="b-option" data-type="package" data-key="escape" data-price="48000">
-            <div class="b-option-name">Escape</div>
-            <div class="b-option-sub">7 days · 6 nights</div>
-          </div>
-          <div class="b-option" data-type="package" data-key="retreat" data-price="55200">
-            <div class="b-option-name">Retreat</div>
-            <div class="b-option-sub">10 days · 9 nights</div>
-          </div>
-          <div class="b-option" data-type="package" data-key="immersion" data-price="81600">
-            <div class="b-option-name">Immersion</div>
-            <div class="b-option-sub">14 days · 13 nights</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Step 2: Accommodation -->
-      <div class="builder-step">
-        <div class="builder-step-label">02 — Accommodation</div>
-        <div class="builder-options" id="b-accom">
-          <div class="b-option" data-type="accom" data-key="none" data-price="0">
-            <div class="b-option-name">None</div>
-            <div class="b-option-sub">I'll arrange my own</div>
-          </div>
-          <div class="b-option" data-type="accom" data-key="dorm" data-price="0">
-            <div class="b-option-name">8-bed Dorm</div>
-            <div class="b-option-sub">Budget</div>
-          </div>
-          <div class="b-option" data-type="accom" data-key="fourbed" data-price="0">
-            <div class="b-option-name">4-bed Superior</div>
-            <div class="b-option-sub">Mid</div>
-          </div>
-          <div class="b-option" data-type="accom" data-key="ensuite" data-price="0">
-            <div class="b-option-name">Private Ensuite</div>
-            <div class="b-option-sub">Premium</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Step 3: Logistics -->
-      <div class="builder-step">
-        <div class="builder-step-label">03 — Logistics</div>
-        <div class="builder-checks">
-          <label class="b-check">
-            <input type="checkbox" id="b-transfer" data-price="33000">
-            <span class="b-check-box"></span>
-            <span>Airport transfer (return)</span>
-          </label>
-          <label class="b-check">
-            <input type="checkbox" id="b-tuktuk" data-price="1000">
-            <span class="b-check-box"></span>
-            <span>Tuk tuk to every class</span>
-          </label>
-        </div>
-      </div>
-
-      <!-- Step 4: Meals -->
-      <div class="builder-step">
-        <div class="builder-step-label">04 — Meals</div>
-        <div class="builder-checks">
-          <label class="b-check">
-            <input type="checkbox" id="b-breakfast" data-price="1000">
-            <span class="b-check-box"></span>
-            <span>Breakfast</span>
-          </label>
-          <label class="b-check">
-            <input type="checkbox" id="b-dinner" data-price="2000">
-            <span class="b-check-box"></span>
-            <span>Dinner</span>
-          </label>
-        </div>
-      </div>
-
-      <!-- Step 5: Activities -->
-      <div class="builder-step">
-        <div class="builder-step-label">05 — Activities</div>
-        <div class="builder-checks">
-          <label class="b-check"><input type="checkbox" class="b-activity" data-price="12000"><span class="b-check-box"></span><span>Surfing</span></label>
-          <label class="b-check"><input type="checkbox" class="b-activity" data-price="3000"><span class="b-check-box"></span><span>Yoga</span></label>
-          <label class="b-check"><input type="checkbox" class="b-activity" data-price="10000"><span class="b-check-box"></span><span>Cooking class</span></label>
-          <label class="b-check"><input type="checkbox" class="b-activity" data-price="10000"><span class="b-check-box"></span><span>Day trips</span></label>
-          <label class="b-check"><input type="checkbox" class="b-activity" data-price="15000"><span class="b-check-box"></span><span>Ahangama town pass</span></label>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Total -->
-    <div class="builder-total">
-      <div class="builder-total-inner">
-        <div class="builder-total-label">Your estimate</div>
-        <div class="builder-total-lkr" id="b-total-lkr">LKR 0</div>
-        <div class="builder-total-fx" id="b-total-fx">≈ $0 USD · A$0 AUD · €0 EUR</div>
-        <div class="builder-total-note">This is an estimate — your final quote comes from us directly. Accommodation total depends on exact dates.</div>
-        <button class="builder-submit" id="b-submit">Send my estimate →</button>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-  <section id="accommodation">
-  <div class="page">
-    <div class="eyebrow">Where you'll stay</div>
-    <h2 class="section-title">LuckyU Hostel, <em>Ahangama.</em></h2>
-    <p class="accom-intro">Pura's preferred accommodation partner — 5 minutes from the studio. Three tiers to suit every budget.</p>
-    <div class="accom-grid">
-      <div class="accom-card">
-        <div class="accom-img-wrap">
-          <img src="../assets/images/luckyu-dorm-01.jpg" alt="8-bed dorm" class="accom-img" onerror="this.style.display='none'" loading="lazy" decoding="async">
-          <div class="accom-img-placeholder"></div>
-        </div>
-        <div class="accom-body">
-          <span class="accom-tier">Budget</span>
-          <div class="accom-name">8-bed Dorm</div>
-          <div class="accom-desc">Deluxe 8-bed mixed · ensuite · A/C · privacy curtain</div>
-          <div class="accom-rate">Starting @ LKR 4,000 <span>/night</span></div>
-        </div>
-      </div>
-      <div class="accom-card">
-        <div class="accom-img-wrap">
-          <img src="../assets/images/luckyu-4bed-01.jpg" alt="4-bed superior" class="accom-img" onerror="this.style.display='none'" loading="lazy" decoding="async">
-          <div class="accom-img-placeholder"></div>
-        </div>
-        <div class="accom-body">
-          <span class="accom-tier">Mid</span>
-          <div class="accom-name">4-bed Superior</div>
-          <div class="accom-desc">Superior 4-bed · ensuite · A/C · more privacy</div>
-          <div class="accom-rate">Starting @ LKR 5,200 <span>/night</span></div>
-        </div>
-      </div>
-      <div class="accom-card">
-        <div class="accom-img-wrap">
-          <img src="../assets/images/luckyu-ensuite-01.jpg" alt="Private ensuite" class="accom-img" onerror="this.style.display='none'" loading="lazy" decoding="async">
-          <div class="accom-img-placeholder"></div>
-        </div>
-        <div class="accom-body">
-          <span class="accom-tier">Premium</span>
-          <div class="accom-name">Private Ensuite</div>
-          <div class="accom-desc">Deluxe double · pool or jungle view · A/C · ensuite</div>
-          <div class="accom-rate">Starting @ LKR 17,000 <span>/night</span></div>
-        </div>
-      </div>
-    </div>
-    <p class="accom-note">Accommodation is subject to availability at booking. Rates vary by package length — exact total shown in the package builder.</p>
-  </div>
-</section>
 
   <section id="how-it-works">
   <div class="page">
@@ -411,15 +264,11 @@
     <form class="enquiry-form" action="https://formspree.io/f/xbdpvqww" method="POST">
       <!-- Redirect back to site after Formspree submission -->
       <input type="hidden" name="_next" value="https://purapilatessrilanka.com/retreat/?sent=1">
-      <!-- Builder selections passed as hidden fields -->
-      <input type="hidden" name="builder_package"       id="bh-package">
-      <input type="hidden" name="builder_accommodation" id="bh-accom">
-      <input type="hidden" name="builder_transfer"      id="bh-transfer">
-      <input type="hidden" name="builder_tuktuk"        id="bh-tuktuk">
-      <input type="hidden" name="builder_breakfast"     id="bh-breakfast">
-      <input type="hidden" name="builder_dinner"        id="bh-dinner">
-      <input type="hidden" name="builder_activities"    id="bh-activities">
-      <input type="hidden" name="builder_total_lkr"     id="bh-total">
+      <!-- What the planner above selected, sent with the enquiry -->
+      <input type="hidden" name="retreat_preset"   id="bh-preset">
+      <input type="hidden" name="retreat_credits"  id="bh-credits">
+      <input type="hidden" name="retreat_privates" id="bh-privates">
+      <input type="hidden" name="retreat_total"    id="bh-total">
       <div class="form-grid">
         <div class="form-group">
           <label class="form-label">Your name</label>
@@ -430,53 +279,24 @@
           <input class="form-input" type="email" name="email" placeholder="your@email.com" required>
         </div>
         <div class="form-group">
-          <label class="form-label">Package interest</label>
-          <select class="form-select" name="package">
-            <option value="">Select a package</option>
-            <option>Taste of Pura — 4 days</option>
-            <option>Escape — 7 days</option>
-            <option>Retreat — 10 days</option>
-            <option>Immersion — 14 days</option>
-            <option>Not sure yet</option>
-          </select>
-        </div>
-        <div class="form-group">
           <label class="form-label">Preferred dates / month</label>
           <select class="form-select" name="dates">
             <option value="">Select a month</option>
-            <option>April 2026</option>
-            <option>May 2026</option>
-            <option>June 2026</option>
-            <option>July 2026</option>
-            <option>August 2026</option>
-            <option>September 2026</option>
+            <option>November 2026</option>
+            <option>December 2026</option>
+            <option>January 2027</option>
+            <option>February 2027</option>
+            <option>March 2027</option>
+            <option>April 2027</option>
+            <option>May 2027</option>
+            <option>June 2027</option>
+            <option>Later in 2027</option>
             <option>Flexible / not sure yet</option>
           </select>
         </div>
-        <div class="form-group">
-          <label class="form-label">Accommodation preference</label>
-          <select class="form-select" name="accommodation">
-            <option value="">Select</option>
-            <option>None — I'll arrange my own</option>
-            <option>8-bed Dorm</option>
-            <option>4-bed Superior</option>
-            <option>Private Ensuite</option>
-            <option>Not sure yet</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Add-ons needed</label>
-          <select class="form-select" name="addons">
-            <option value="">Pilates only</option>
-            <option>+ Accommodation</option>
-            <option>+ Transfers</option>
-            <option>+ Accommodation & transfers</option>
-            <option>Not sure yet</option>
-          </select>
-        </div>
         <div class="form-group full">
-          <label class="form-label">Your estimate summary</label>
-          <textarea class="form-textarea form-textarea-readonly" name="builder_summary" id="f-message" readonly placeholder="Select a package in the builder above and click 'Send my estimate' — your summary will appear here."></textarea>
+          <label class="form-label">Your retreat</label>
+          <textarea class="form-textarea form-textarea-readonly" name="builder_summary" id="f-message" readonly placeholder="Choose your credits and privates above and this fills in by itself."></textarea>
         </div>
         <div class="form-group full">
           <label class="form-label">Anything else we should know</label>
@@ -499,344 +319,127 @@
 </section>
 
   <script>
-    const PACKAGES = {
-      taste: {
-        accent: '#c4776a',
-        stats: ['4', '1', '3', '24k'],
-        statLabels: ['Days', 'Private', 'Classes', 'From LKR'],
-        intro: 'Four days of Pilates dropped into your trip — no fuss, no long commitment. One private session to get you properly set up, three group classes to build momentum.',
-        quote: 'Already in Sri Lanka, or just need a quick reset?',
-        schedule: [
-          { day: 'Day 1', type: 'Private — welcome', tag: '1-on-1', cls: 'is-private', tagCls: 'tag-private' },
-          { day: 'Day 2', type: 'Group class', tag: 'Group', cls: '', tagCls: 'tag-group' },
-          { day: 'Day 3', type: 'Group class', tag: 'Group', cls: '', tagCls: 'tag-group' },
-          { day: 'Day 4', type: 'Group class', tag: 'Group', cls: '', tagCls: 'tag-group' },
-        ],
-        included: [
-          { dot: '#674d50', text: '1 private session — welcome (60 min)' },
-          { dot: '#6f7a60', text: '3 group classes — reformer or mat' },
-          { dot: '#6f7a60', text: 'All levels welcome' },
-        ]
-      },
-      escape: {
-        accent: '#6f7a60',
-        stats: ['7', '2', '6', '48k'],
-        statLabels: ['Days', 'Privates', 'Classes', 'From LKR'],
-        intro: 'Seven days is where the practice starts to settle. Two private sessions bookend your week — one to get you calibrated, one to track what\'s shifted.',
-        quote: 'Long enough to actually feel it.',
-        schedule: [
-          { day: 'Day 1', type: 'Private — welcome', tag: '1-on-1', cls: 'is-private', tagCls: 'tag-private' },
-          { day: 'Day 2', type: 'Reformer', tag: 'Group', cls: '', tagCls: 'tag-group' },
-          { day: 'Day 3', type: 'Mat class', tag: 'Group', cls: '', tagCls: 'tag-group' },
-          { day: 'Day 4', type: 'Rest', tag: 'Free day', cls: 'is-rest', tagCls: 'tag-rest' },
-          { day: 'Day 5', type: 'Reformer', tag: 'Group', cls: '', tagCls: 'tag-group' },
-          { day: 'Day 6', type: 'Reformer + mat', tag: 'Double', cls: '', tagCls: 'tag-double' },
-          { day: 'Day 7', type: 'Private — farewell', tag: '1-on-1', cls: 'is-private', tagCls: 'tag-private' },
-        ],
-        included: [
-          { dot: '#674d50', text: '2 private sessions — welcome + farewell (60 min each)' },
-          { dot: '#6f7a60', text: '6 group classes — reformer, mat, or mixed' },
-          { dot: '#6f7a60', text: 'All levels welcome' },
-        ]
-      },
-      retreat: {
-        accent: '#97644e',
-        stats: ['10', '2', '8', '55k'],
-        statLabels: ['Days', 'Privates', 'Classes', 'From LKR'],
-        intro: 'Ten days is where the practice becomes a habit. Two privates, eight group classes — enough time to feel genuinely transformed.',
-        quote: 'The one where people message us from the airport saying they\'re already looking at flights back.',
-        schedule: [
-          { day: 'Day 1', type: 'Private — welcome', tag: '1-on-1', cls: 'is-private', tagCls: 'tag-private' },
-          { day: 'Day 2', type: 'Reformer', tag: 'Group', cls: '', tagCls: 'tag-group' },
-          { day: 'Day 3', type: 'Reformer + mat', tag: 'Double', cls: '', tagCls: 'tag-double' },
-          { day: 'Day 4', type: 'Rest', tag: 'Free day', cls: 'is-rest', tagCls: 'tag-rest' },
-          { day: 'Day 5', type: 'Mat class', tag: 'Group', cls: '', tagCls: 'tag-group' },
-          { day: 'Day 6', type: 'Reformer', tag: 'Group', cls: '', tagCls: 'tag-group' },
-          { day: 'Day 7', type: 'Private — mid programme', tag: '1-on-1', cls: 'is-private', tagCls: 'tag-private' },
-          { day: 'Day 8', type: 'Rest', tag: 'Free day', cls: 'is-rest', tagCls: 'tag-rest' },
-          { day: 'Day 9', type: 'Reformer + mat', tag: 'Double', cls: '', tagCls: 'tag-double' },
-          { day: 'Day 10', type: 'Reformer', tag: 'Group', cls: '', tagCls: 'tag-group' },
-        ],
-        included: [
-          { dot: '#674d50', text: '2 private sessions — welcome + mid programme (60 min each)' },
-          { dot: '#6f7a60', text: '8 group classes — reformer, mat, or mixed' },
-          { dot: '#c4776a', text: '1 Pura tee included' },
-          { dot: '#6f7a60', text: 'All levels welcome' },
-        ]
-      },
-      immersion: {
-        accent: '#674d50',
-        stats: ['14', '3', '12', '81k'],
-        statLabels: ['Days', 'Privates', 'Classes', 'From LKR'],
-        intro: 'Fourteen days is where something genuinely changes. Three privates track your arc from arrival to departure. Twelve group classes build real consistency.',
-        quote: 'Two weeks is long enough that Sri Lanka starts to feel like home.',
-        schedule: [
-          { day: 'Day 1', type: 'Private — welcome', tag: '1-on-1', cls: 'is-private', tagCls: 'tag-private' },
-          { day: 'Day 2', type: 'Reformer', tag: 'Group', cls: '', tagCls: 'tag-group' },
-          { day: 'Day 3', type: 'Mat class', tag: 'Group', cls: '', tagCls: 'tag-group' },
-          { day: 'Day 4', type: 'Reformer + mat', tag: 'Double', cls: '', tagCls: 'tag-double' },
-          { day: 'Day 5', type: 'Rest', tag: 'Free day', cls: 'is-rest', tagCls: 'tag-rest' },
-          { day: 'Day 6', type: 'Reformer', tag: 'Group', cls: '', tagCls: 'tag-group' },
-          { day: 'Day 7', type: 'Mat class', tag: 'Group', cls: '', tagCls: 'tag-group' },
-          { day: 'Day 8', type: 'Private — mid programme', tag: '1-on-1', cls: 'is-private', tagCls: 'tag-private' },
-          { day: 'Day 9', type: 'Rest', tag: 'Free day', cls: 'is-rest', tagCls: 'tag-rest' },
-          { day: 'Day 10', type: 'Reformer + mat', tag: 'Double', cls: '', tagCls: 'tag-double' },
-          { day: 'Day 11', type: 'Reformer', tag: 'Group', cls: '', tagCls: 'tag-group' },
-          { day: 'Day 12', type: 'Mat class', tag: 'Group', cls: '', tagCls: 'tag-group' },
-          { day: 'Day 13', type: 'Reformer + mat', tag: 'Double', cls: '', tagCls: 'tag-double' },
-          { day: 'Day 14', type: 'Private — farewell', tag: '1-on-1', cls: 'is-private', tagCls: 'tag-private' },
-        ],
-        included: [
-          { dot: '#674d50', text: '3 private sessions — welcome, mid, farewell (60 min each)' },
-          { dot: '#6f7a60', text: '12 group classes — reformer, mat, or mixed' },
-          { dot: '#c4776a', text: '1 Pura tee included' },
-          { dot: '#6f7a60', text: 'All levels welcome' },
-        ]
+    // ── RETREAT PLANNER ──
+    // Credit pricing mirrors creditQuote() in the booking app
+    // (puracommunity: apps/community/src/lib/pricing.js). The live model is at
+    // https://www.puracommunity.com/api/packs — that endpoint sends no CORS
+    // header, so the ladder is copied here. If it changes there, change it here.
+    const CEILING     = 3000;    // Rs per credit before any quantity discount
+    const MAX_CREDITS = 30;      // the booking app's own per-purchase ceiling
+    const PRIVATE_LKR = 15000;   // one 60 minute private session
+    const LADDER = [
+      { min: 3, off: 5 }, { min: 5, off: 10 }, { min: 10, off: 15 },
+      { min: 20, off: 17 }, { min: 30, off: 21.67 },
+    ];
+    const PRESETS = [
+      { name: 'Taste of Pura', cr: 3,  pr: 1 },
+      { name: 'Escape',        cr: 6,  pr: 2 },
+      { name: 'Retreat',       cr: 8,  pr: 2 },
+      { name: 'Immersion',     cr: 12, pr: 3 },
+    ];
+
+    const roundLkr = n => Math.round(Math.max(0, n) / 500) * 500;
+    const round50  = n => Math.round(Math.max(0, n) / 50) * 50;
+    function ladderOff(credits) {
+      let off = 0;
+      if (credits >= LADDER[0].min) for (const t of LADDER) if (credits >= t.min) off = t.off;
+      return off;
+    }
+    function creditsLkr(credits) {
+      if (credits <= 0) return 0;
+      return roundLkr(CEILING * (1 - ladderOff(credits) / 100) * credits);
+    }
+    const fmt = n => 'Rs ' + n.toLocaleString('en-US');
+
+    const plan = { credits: 6, privates: 2 };
+    const $ = id => document.getElementById(id);
+
+    function presetName() {
+      const hit = PRESETS.find(p => p.cr === plan.credits && p.pr === plan.privates);
+      return hit ? hit.name : 'Custom';
+    }
+
+    function renderPlan() {
+      const crAmt = creditsLkr(plan.credits);
+      const prAmt = plan.privates * PRIVATE_LKR;
+      const total = crAmt + prAmt;
+
+      if ($('rp-cr')) $('rp-cr').textContent = plan.credits;
+      if ($('rp-pr')) $('rp-pr').textContent = plan.privates;
+      if ($('rp-cr-amt')) $('rp-cr-amt').textContent = fmt(crAmt);
+      if ($('rp-pr-amt')) $('rp-pr-amt').textContent = fmt(prAmt);
+      if ($('rp-grand'))  $('rp-grand').textContent  = fmt(total);
+
+      // what the credits actually buy
+      const ref = Math.floor(plan.credits / 2);
+      if ($('rp-cr-hint')) {
+        $('rp-cr-hint').textContent =
+          `${ref} Reformer ${ref === 1 ? 'class' : 'classes'}, or ${plan.credits} Mat or Yoga, or any mix`;
       }
-    };
 
-    let activePackage = null;
+      const off = ladderOff(plan.credits);
+      if ($('rp-note')) {
+        $('rp-note').textContent = off > 0
+          ? `That is ${fmt(round50(crAmt / plan.credits))} per credit instead of ${fmt(CEILING)}, because you are taking ${plan.credits}.`
+          : `Credits are ${fmt(CEILING)} each. Take 3 or more and the rate starts dropping.`;
+      }
 
-    document.querySelectorAll('.pkg-card').forEach(card => {
-      card.addEventListener('click', () => {
-        const pkg = card.dataset.package;
-        const expand = document.getElementById('pkg-expand');
-        const inner = expand.querySelector('.pkg-expand-inner');
+      // highlight a matching preset
+      document.querySelectorAll('.rp-preset').forEach(b => {
+        b.classList.toggle('is-on',
+          +b.dataset.cr === plan.credits && +b.dataset.pr === plan.privates);
+      });
 
-        if (activePackage === pkg) {
-          expand.classList.remove('open');
-          card.classList.remove('active');
-          activePackage = null;
-          return;
+      // hand it all to the enquiry form
+      const set = (id, v) => { const el = $(id); if (el) el.value = v; };
+      set('bh-preset',   presetName());
+      set('bh-credits',  plan.credits);
+      set('bh-privates', plan.privates);
+      set('bh-total',    total ? fmt(total) : '');
+      if ($('f-message')) {
+        $('f-message').value =
+          `${presetName()}\n` +
+          `${plan.credits} class credits (${ref} Reformer, or ${plan.credits} Mat or Yoga)  ${fmt(crAmt)}\n` +
+          `${plan.privates} private ${plan.privates === 1 ? 'session' : 'sessions'}  ${fmt(prAmt)}\n` +
+          `Estimate  ${fmt(total)}`;
+      }
+    }
+
+    document.querySelectorAll('.rp-preset').forEach(btn => {
+      btn.addEventListener('click', () => {
+        plan.credits  = +btn.dataset.cr;
+        plan.privates = +btn.dataset.pr;
+        renderPlan();
+      });
+    });
+
+    document.querySelectorAll('.rp-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const a = btn.dataset.act;
+        if (a === 'cr+') plan.credits  = Math.min(MAX_CREDITS, plan.credits + 1);
+        if (a === 'cr-') plan.credits  = Math.max(1, plan.credits - 1);
+        if (a === 'pr+') plan.privates = Math.min(6, plan.privates + 1);
+        if (a === 'pr-') plan.privates = Math.max(0, plan.privates - 1);
+        renderPlan();
+      });
+    });
+
+    renderPlan();
+
+    const enquiryForm = document.querySelector('.enquiry-form');
+    if (enquiryForm) {
+      enquiryForm.addEventListener('submit', function (e) {
+        const name  = this.querySelector('input[name="name"]').value.trim();
+        const email = this.querySelector('input[name="email"]').value.trim();
+        if (!name || !email) {
+          e.preventDefault();
+          alert('Please enter your name and email address.');
         }
-
-        document.querySelectorAll('.pkg-card').forEach(c => c.classList.remove('active'));
-        card.classList.add('active');
-        activePackage = pkg;
-
-        const data = PACKAGES[pkg];
-        const scheduleRows = data.schedule.map(d => `
-          <div class="day-row ${d.cls}">
-            <div class="day-num">${d.day}</div>
-            <div class="day-type">${d.type}</div>
-            <span class="day-tag ${d.tagCls}">${d.tag}</span>
-          </div>`).join('');
-
-        const includedItems = data.included.map(i => `
-          <li>
-            <div class="inc-dot" style="background:${i.dot}"></div>
-            ${i.text}
-          </li>`).join('');
-
-        inner.innerHTML = `
-          <div class="expand-stats">
-            ${data.stats.map((s, i) => `
-              <div class="expand-stat">
-                <div class="expand-stat-num" style="${i === 3 ? 'color:' + data.accent : ''}">${s}</div>
-                <div class="expand-stat-label">${data.statLabels[i]}</div>
-              </div>`).join('')}
-          </div>
-          <div class="expand-body">
-            <div class="expand-schedule">
-              <div class="eyebrow">Your programme</div>
-              <div class="schedule-list" style="margin-top:12px;">${scheduleRows}</div>
-            </div>
-            <div class="expand-intro">
-              <div class="eyebrow">What's included</div>
-              <div class="quote-line" style="border-color:${data.accent}">
-                <p>${data.quote}</p>
-              </div>
-              <p class="body-text">${data.intro}</p>
-              <div class="expand-included">
-                <div class="eyebrow">Always included</div>
-                <ul class="inc-list">${includedItems}</ul>
-              </div>
-              <button class="expand-cta" style="background:${data.accent};color:#fdfaf7;" onclick="selectBuilderPackage('${pkg}')">Start planning</button>
-            </div>
-          </div>`;
-
-        expand.classList.add('open');
-        expand.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        // otherwise it POSTs to Formspree as normal
       });
-    });
-
-    // active card border
-    const style = document.createElement('style');
-    style.textContent = '.pkg-card.active { border-color: var(--mauve); box-shadow: 0 0 0 1px var(--mauve); }';
-    document.head.appendChild(style);
-
-    const PRICING = {
-      packages: {
-        taste:     { days: 4,  nights: 3,  pilates: 24000, tukTuk: 3000 },
-        escape:    { days: 7,  nights: 6,  pilates: 48000, tukTuk: 7000 },
-        retreat:   { days: 10, nights: 9,  pilates: 55200, tukTuk: 8000 },
-        immersion: { days: 14, nights: 13, pilates: 81600, tukTuk: 12000 },
-      },
-      accom: {
-        none:     { 3: 0,     6: 0,     9: 0,     13: 0 },
-        dorm:     { 3: 4200,  6: 4000,  9: 3800,  13: 3600 },
-        fourbed:  { 3: 5200,  6: 5000,  9: 4800,  13: 4600 },
-        ensuite:  { 3: 17000, 6: 16500, 9: 16000, 13: 15500 },
-      },
-      fx: { usd: 300, aud: 195, eur: 320 },
-      mgmt: 0.10,
-    };
-
-    let builderState = {
-      package: null,
-      accom: null,
-      transfer: false,
-      tuktuk: false,
-      breakfast: false,
-      dinner: false,
-      activities: 0,
-    };
-
-    function calcTotal() {
-      if (!builderState.package) return 0;
-      const pkg = PRICING.packages[builderState.package];
-      let total = pkg.pilates;
-      let logistics = 0;
-      if (builderState.accom && builderState.accom !== 'none') {
-        const rate = PRICING.accom[builderState.accom][pkg.nights];
-        logistics += rate * pkg.nights;
-      }
-      if (builderState.transfer) logistics += 33000;
-      if (builderState.tuktuk) logistics += pkg.tukTuk;
-      if (builderState.breakfast) logistics += 1000 * pkg.days;
-      if (builderState.dinner) logistics += 2000 * pkg.days;
-      logistics += builderState.activities * 10000;
-      total += logistics + (logistics * PRICING.mgmt);
-      return Math.round(total);
     }
 
-    function updateTotal() {
-      const total = calcTotal();
-      const fmt = n => n.toLocaleString();
-      document.getElementById('b-total-lkr').textContent = total === 0 ? 'LKR —' : 'LKR ' + fmt(total);
-      document.getElementById('b-total-fx').textContent = total === 0 ? '≈ Select a package to start' :
-        '≈ $' + fmt(Math.round(total/PRICING.fx.usd)) + ' USD · ' +
-        'A$' + fmt(Math.round(total/PRICING.fx.aud)) + ' AUD · ' +
-        '€' + fmt(Math.round(total/PRICING.fx.eur)) + ' EUR';
-      // Sync hidden form fields
-      const set = (id, val) => { const el = document.getElementById(id); if (el) el.value = val; };
-      set('bh-package',    builderState.package  || '');
-      set('bh-accom',      builderState.accom    || '');
-      set('bh-transfer',   builderState.transfer  ? 'Yes' : '');
-      set('bh-tuktuk',     builderState.tuktuk    ? 'Yes' : '');
-      set('bh-breakfast',  builderState.breakfast ? 'Yes' : '');
-      set('bh-dinner',     builderState.dinner    ? 'Yes' : '');
-      set('bh-activities', builderState.activities > 0 ? builderState.activities + ' selected' : '');
-      set('bh-total',      total > 0 ? 'LKR ' + total.toLocaleString() : '');
-    }
-
-    function selectBuilderPackage(pkg) {
-      const opt = document.querySelector(`.b-option[data-type="package"][data-key="${pkg}"]`);
-      if (opt) opt.click();
-      const builder = document.getElementById('builder');
-      if (builder) builder.scrollIntoView({ behavior: 'smooth' });
-    }
-
-    document.querySelectorAll('.b-option').forEach(opt => {
-      opt.addEventListener('click', () => {
-        const type = opt.dataset.type;
-        document.querySelectorAll(`.b-option[data-type="${type}"]`).forEach(o => o.classList.remove('selected'));
-        opt.classList.add('selected');
-        if (type === 'package') builderState.package = opt.dataset.key;
-        if (type === 'accom') builderState.accom = opt.dataset.key;
-        updateTotal();
-      });
-    });
-
-    document.getElementById('b-transfer').addEventListener('change', e => { builderState.transfer = e.target.checked; updateTotal(); });
-    document.getElementById('b-tuktuk').addEventListener('change', e => { builderState.tuktuk = e.target.checked; updateTotal(); });
-    document.getElementById('b-breakfast').addEventListener('change', e => { builderState.breakfast = e.target.checked; updateTotal(); });
-    document.getElementById('b-dinner').addEventListener('change', e => { builderState.dinner = e.target.checked; updateTotal(); });
-    document.querySelectorAll('.b-activity').forEach(cb => {
-      cb.addEventListener('change', () => {
-        builderState.activities = document.querySelectorAll('.b-activity:checked').length;
-        updateTotal();
-      });
-    });
-
-    document.getElementById('b-submit').addEventListener('click', () => {
-      const pkg = builderState.package;
-      const accom = builderState.accom;
-      const total = calcTotal();
-
-      // Map builder keys to form option text
-      const pkgMap = {
-        taste: 'Taste of Pura — 4 days',
-        escape: 'Escape — 7 days',
-        retreat: 'Retreat — 10 days',
-        immersion: 'Immersion — 14 days'
-      };
-      const accomMap = {
-        none: 'None — I\'ll arrange my own',
-        dorm: '8-bed Dorm',
-        fourbed: '4-bed Superior',
-        ensuite: 'Private Ensuite'
-      };
-
-      // Pre-fill package select
-      const pkgSelect = document.querySelector('select[name="package"]');
-      if (pkgSelect && pkg) {
-        Array.from(pkgSelect.options).forEach(o => {
-          if (o.text === pkgMap[pkg]) o.selected = true;
-        });
-      }
-
-      // Pre-fill accommodation select
-      const accomSelect = document.querySelector('select[name="accommodation"]');
-      if (accomSelect && accom) {
-        Array.from(accomSelect.options).forEach(o => {
-          if (o.text === accomMap[accom]) o.selected = true;
-        });
-      }
-
-      // Pre-fill add-ons select
-      const addonsSelect = document.querySelector('select[name="addons"]');
-      if (addonsSelect) {
-        if (builderState.transfer && builderState.tuktuk) {
-          Array.from(addonsSelect.options).forEach(o => { if (o.value === '+ Accommodation & transfers') o.selected = true; });
-        } else if (builderState.transfer) {
-          Array.from(addonsSelect.options).forEach(o => { if (o.text === '+ Transfers') o.selected = true; });
-        } else if (accom && accom !== 'none') {
-          Array.from(addonsSelect.options).forEach(o => { if (o.text === '+ Accommodation') o.selected = true; });
-        }
-      }
-
-      // Build message with full summary
-      const msgField = document.getElementById('f-message');
-      if (msgField) {
-        const lines = [];
-        if (pkg) lines.push(`Package: ${pkgMap[pkg]}`);
-        if (accom && accom !== 'none') lines.push(`Accommodation: ${accomMap[accom]}`);
-        if (builderState.transfer) lines.push('Airport transfer: Yes');
-        if (builderState.tuktuk) lines.push('Tuk tuk to classes: Yes');
-        if (builderState.breakfast) lines.push('Breakfast add-on: Yes');
-        if (builderState.dinner) lines.push('Dinner add-on: Yes');
-        if (builderState.activities > 0) lines.push(`Activities selected: ${builderState.activities}`);
-        if (total > 0) lines.push(`\nEstimate: LKR ${total.toLocaleString()} (≈ $${Math.round(total/PRICING.fx.usd).toLocaleString()} USD)`);
-        lines.push('\n');
-        msgField.value = lines.join('\n');
-      }
-
-      // Scroll to form
-      document.getElementById('enquire').scrollIntoView({ behavior: 'smooth' });
-    });
-
-    document.querySelector('.enquiry-form').addEventListener('submit', function(e) {
-      const name = this.querySelector('input[name="name"]').value.trim();
-      const email = this.querySelector('input[name="email"]').value.trim();
-      if (!name || !email) {
-        e.preventDefault();
-        alert('Please enter your name and email address.');
-      }
-      // Otherwise let the form POST naturally to Formspree
-    });
-
-  // ── ACTIVITY POPUPS ──
+// ── ACTIVITY POPUPS ──
   const overlay = document.getElementById('popup-overlay');
   const content = document.getElementById('popup-content');
 

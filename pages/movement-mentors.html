@@ -33,20 +33,32 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../assets/css/pura-styles.css?v=7">
+  <link rel="stylesheet" href="../assets/css/pura-styles.css?v=8">
 
   <style>
+    /* Palette taken from the schedule app (apps/schedule/src/index.css) so this
+       page matches Pura Community rather than the darker website sections.
+       Every text colour here clears AA on every ground it sits on. */
+    #mm-hero, .mm-sec {
+      --mm-sand:   #f7e4d9;  /* warm page ground */
+      --mm-white:  #fbfcfa;  /* card / frame */
+      --mm-peach:  #ebc7b7;  /* reformer block, used for Move Numbers */
+      --mm-line:   #ead9cd;  /* warm hairline */
+      --mm-deep:   #4d2c1a;  /* headings + labels, 7.6:1 or better everywhere */
+      --mm-ink:    #674d50;  /* body text, 4.67:1 or better everywhere */
+      --mm-accent: #97644e;  /* rust, display sizes only */
+    }
     .mm-sec { padding: 0; }
     .mm-sec .page { padding: var(--sp-section) 52px; }
     .mm-sec--tight .page { padding: var(--sp-section-tight) 52px; }
-    .mm-sec--cream { background: var(--ivory); }
-    .mm-sec--white { background: var(--warm-white); }
+    .mm-sec--cream { background: var(--mm-sand); }
+    .mm-sec--white { background: var(--mm-white); }
 
     /* ── HERO ── */
     #mm-hero { position: relative; min-height: clamp(520px, 64vw, 660px); display: flex; background: var(--sage-dark); overflow: hidden; }
     .mm-hero-img { position: absolute; inset: 0; }
     .mm-hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 42%; display: block; }
-    .mm-hero-veil { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(61,35,20,0.38) 0%, rgba(61,35,20,0.74) 100%); }
+    .mm-hero-veil { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(77,44,26,0.46) 0%, rgba(77,44,26,0.72) 100%); }
     .mm-hero-in { position: relative; z-index: 2; margin: auto; text-align: center;
       /* the site nav is position:fixed and 66px tall, so clear it or the hook clips */
       padding: 112px 28px 56px; max-width: 760px; }
@@ -74,24 +86,25 @@
     .mm-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
     .mm-photo.tall { aspect-ratio: 4/5; }
     .mm-sec .body-text + .body-text { margin-top: 18px; }
-    .mm-lede { font-family: 'Cormorant Garamond', serif; font-size: 21px; line-height: 1.6; color: var(--dark); margin: 22px 0 0; max-width: 36ch; }
+    .mm-lede { font-family: 'Cormorant Garamond', serif; font-size: 21px; line-height: 1.6; color: var(--mm-deep); margin: 22px 0 0; max-width: 36ch; }
 
-    .mm-list { list-style: none; padding: 0; margin: 30px 0 0; border-top: 1px solid rgba(61,35,20,0.16); }
+    .mm-list { list-style: none; padding: 0; margin: 30px 0 0; border-top: 1px solid var(--mm-line); }
     /* block flow, not grid: a nested <span> sub-line must sit under the text,
        and in a grid every child becomes its own cell instead */
     .mm-list li { position: relative; padding: 16px 0 16px 22px;
-      border-bottom: 1px solid rgba(61,35,20,0.16);
-      font-family: 'Jost', sans-serif; font-size: 17px; line-height: 1.6; color: var(--dark); }
+      border-bottom: 1px solid var(--mm-line);
+      font-family: 'Jost', sans-serif; font-size: 17px; line-height: 1.6; color: var(--mm-deep); }
     .mm-list li::before { content: ''; position: absolute; left: 0; top: 27px;
-      width: 5px; height: 5px; border-radius: 999px; background: var(--sage-dark); }
-    .mm-list li span { display: block; font-size: 15px; color: var(--mauve); margin-top: 5px; }
+      width: 5px; height: 5px; border-radius: 999px; background: var(--mm-accent); }
+    .mm-list li span { display: block; font-size: 15px; color: var(--mm-ink); margin-top: 5px; }
 
     /* ── DETAILS ── */
-    .mm-rows { margin-top: 30px; border-top: 1px solid rgba(61,35,20,0.16); }
+    .mm-rows { margin-top: 30px; border-top: 1px solid var(--mm-line); }
     .mm-rows div { display: grid; grid-template-columns: 180px 1fr; gap: 18px; padding: 15px 0;
-      border-bottom: 1px solid rgba(61,35,20,0.16); font-family: 'Jost', sans-serif; font-size: 17px; color: var(--dark); }
+      border-bottom: 1px solid var(--mm-line); font-family: 'Jost', sans-serif; font-size: 17px; color: var(--mm-deep); }
+    .mm-rows strong { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; }
     .mm-rows dt, .mm-rows b { font-size: 12px; font-weight: 500; letter-spacing: 0.16em;
-      text-transform: uppercase; color: var(--sage-dark); }
+      text-transform: uppercase; color: var(--mm-deep); }
     @media (max-width: 680px) { .mm-rows div { grid-template-columns: 1fr; gap: 6px; } }
 
     /* ── FORMS ── */
@@ -100,7 +113,7 @@
     .mm-field { display: flex; flex-direction: column; gap: 9px; }
     .mm-field.full { grid-column: 1 / -1; }
     .mm-field label { font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 500;
-      letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage-dark); }
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--mm-deep); }
     .mm-field input, .mm-field textarea {
       font-family: 'Jost', sans-serif; font-size: 16px; color: var(--dark);
       background: var(--white); border: 1px solid rgba(61,35,20,0.24); border-radius: 4px;
@@ -109,26 +122,27 @@
     .mm-field textarea { min-height: 86px; resize: vertical; }
     .mm-field input::placeholder, .mm-field textarea::placeholder { color: rgba(61,35,20,0.42); }
     .mm-submit { margin-top: 22px; font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 500;
-      letter-spacing: 0.16em; text-transform: uppercase; background: var(--sage-dark); color: var(--cream);
+      letter-spacing: 0.16em; text-transform: uppercase; background: var(--mm-deep); color: var(--mm-sand);
       border: none; border-radius: 2px; padding: 17px 38px; cursor: pointer; transition: background 0.2s ease; }
-    .mm-submit:hover { background: var(--dark); }
-    .mm-small { font-family: 'Jost', sans-serif; font-size: 14px; color: var(--mauve); margin: 18px 0 0; }
+    .mm-submit:hover { background: var(--mm-accent); }
+    .mm-small { font-family: 'Jost', sans-serif; font-size: 14px; color: var(--mm-ink); margin: 18px 0 0; }
 
-    /* ── BUSINESS TEASER ── */
-    #mm-business { background: var(--dark); color: var(--cream); }
-    #mm-business .eyebrow { color: var(--sand); }
-    #mm-business .section-title { color: var(--cream); }
-    #mm-business .section-title em { font-style: italic; color: var(--dusty-rose); }
-    #mm-business .body-text { color: rgba(245,237,227,0.82); }
-    #mm-business .mm-list { border-top-color: rgba(245,237,227,0.2); }
-    #mm-business .mm-list li { border-bottom-color: rgba(245,237,227,0.2); color: var(--cream); }
-    #mm-business .mm-list li::before { background: var(--dusty-rose); }
-    #mm-business .mm-field label { color: var(--sand); }
-    #mm-business .mm-field input { background: rgba(245,237,227,0.06); border-color: rgba(245,237,227,0.28); color: var(--cream); }
-    #mm-business .mm-field input::placeholder { color: rgba(245,237,227,0.5); }
-    #mm-business .mm-submit { background: var(--dusty-rose); color: var(--dark); }
-    #mm-business .mm-submit:hover { background: var(--cream); }
-    #mm-business .mm-small { color: rgba(245,237,227,0.7); }
+    /* ── MOVE NUMBERS ── warm, not dark ── */
+    #mm-business { background: var(--mm-peach); }
+    #mm-business .eyebrow { color: var(--mm-deep); }
+    #mm-business .section-title { color: var(--mm-deep); }
+    #mm-business .section-title em { font-style: italic; color: var(--mm-accent); }
+    #mm-business .body-text { color: var(--mm-ink); }
+    #mm-business .mm-list { border-top-color: rgba(77,44,26,0.22); }
+    #mm-business .mm-list li { border-bottom-color: rgba(77,44,26,0.22); color: var(--mm-deep); }
+    #mm-business .mm-list li::before { background: var(--mm-accent); }
+    #mm-business .mm-list li span { color: var(--mm-ink); }
+    #mm-business .mm-field label { color: var(--mm-deep); }
+    #mm-business .mm-field input { background: var(--mm-white); border-color: rgba(77,44,26,0.28); color: var(--mm-deep); }
+    #mm-business .mm-field input::placeholder { color: rgba(77,44,26,0.45); }
+    #mm-business .mm-submit { background: var(--mm-deep); color: var(--mm-sand); }
+    #mm-business .mm-submit:hover { background: var(--mm-accent); }
+    #mm-business .mm-small { color: var(--mm-ink); }
 
     @media (max-width: 860px) {
       .mm-split, .mm-split--flip { grid-template-columns: 1fr; gap: 34px; }
@@ -161,6 +175,7 @@
         <span>Starts 1 December 2026</span>
         <span>Ahangama, Sri Lanka</span>
         <span>Small group of 4 to 10</span>
+        <span>From $675</span>
       </div>
       <a class="mm-hero-btn" href="#mm-apply">Apply now</a>
     </div>
@@ -241,7 +256,8 @@
         <div><b>Dates</b><span>1 to 14 December 2026</span></div>
         <div><b>Where</b><span>Pura Pilates, Ahangama, Sri Lanka</span></div>
         <div><b>Group size</b><span>4 to 10 teachers. The programme runs with a minimum of 4.</span></div>
-        <div><b>Price</b><span>Shared on your call, once we know the shape of the group.</span></div>
+        <div><b>Early bird</b><span><strong>$675</strong> if you apply by 31 October 2026</span></div>
+        <div><b>Standard</b><span><strong>$750</strong>. Applications close 15 November 2026</span></div>
         <div><b>Getting here</b><span>Flights and visa are your own. We will help you find accommodation and transfers.</span></div>
       </div>
     </div>
@@ -289,7 +305,7 @@
           </div>
         </div>
         <button class="mm-submit" type="submit">Send application</button>
-        <p class="mm-small">Applications close when the group is full. We read every one and come back to you either way.</p>
+        <p class="mm-small">Early bird pricing closes 31 October, applications close 15 November. We read every one and come back to you either way.</p>
       </form>
     </div>
   </section>

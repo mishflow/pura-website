@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../assets/css/pura-styles.css?v=10">
+  <link rel="stylesheet" href="../assets/css/pura-styles.css?v=11">
 
   <style>
     /* Palette taken from the schedule app (apps/schedule/src/index.css) so this
@@ -87,6 +87,13 @@
     .mm-photo.tall { aspect-ratio: 4/5; }
     .mm-sec .body-text + .body-text { margin-top: 18px; }
     .mm-lede { font-family: 'Cormorant Garamond', serif; font-size: 21px; line-height: 1.6; color: var(--mm-deep); margin: 22px 0 0; max-width: 36ch; }
+
+    /* three-up strip. Every source is 600x800, and the boxes are 3:4, so the
+       whole frame shows and nothing is cropped. */
+    .mm-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 42px; }
+    .mm-shot { aspect-ratio: 3/4; overflow: hidden; background: var(--mm-line); }
+    .mm-shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    @media (max-width: 620px) { .mm-strip { gap: 9px; } }
 
     .mm-list { list-style: none; padding: 0; margin: 30px 0 0; border-top: 1px solid var(--mm-line); }
     /* block flow, not grid: a nested <span> sub-line must sit under the text,
@@ -184,19 +191,17 @@
   <!-- ── WHO IT IS FOR ── -->
   <section class="mm-sec">
     <div class="page">
-      <div class="mm-split">
-        <div class="mm-photo tall">
-          <img src="../assets/images/studio-interior-02.jpg" alt="One teacher guiding another on the reformer at Pura" loading="lazy" decoding="async">
-        </div>
-        <div>
-          <p class="eyebrow">Who it is for</p>
-          <h2 class="section-title">Teachers who want <em>more practice.</em></h2>
-          <p class="mm-lede">Certification gives you the exercises. It rarely gives you enough time in front of real bodies.</p>
-          <ul class="mm-list">
-            <li>Newly qualified teachers who want more in-class practice</li>
-            <li>Teachers returning after a break who want a refresher</li>
-          </ul>
-        </div>
+      <p class="eyebrow">Who it is for</p>
+      <h2 class="section-title">Teachers who want <em>more practice.</em></h2>
+      <p class="mm-lede">Certification gives you the exercises. It rarely gives you enough time in front of real bodies.</p>
+      <ul class="mm-list">
+        <li>Newly qualified teachers who want more in-class practice</li>
+        <li>Teachers returning after a break who want a refresher</li>
+      </ul>
+      <div class="mm-strip">
+        <div class="mm-shot"><img src="../assets/images/studio-interior-02.jpg" alt="One teacher guiding another on the reformer" loading="lazy" decoding="async"></div>
+        <div class="mm-shot"><img src="../assets/images/instructor-grace-01.jpg" alt="Working with the magic circle in the studio" loading="lazy" decoding="async"></div>
+        <div class="mm-shot"><img src="../assets/images/studio-interior-03.jpg" alt="Practising on the mat at Pura" loading="lazy" decoding="async"></div>
       </div>
     </div>
   </section>

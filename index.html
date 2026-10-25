@@ -29,7 +29,7 @@
   <meta name="twitter:description" content="Boutique reformer and mat Pilates studio on Sri Lanka's south coast. Small group classes, private sessions and retreats in Ahangama. All levels welcome.">
   <meta name="twitter:image" content="https://purapilatessrilanka.com/assets/images/og-image.jpg">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/studio-styles.css?v=23">
+  <link rel="stylesheet" href="/assets/css/studio-styles.css?v=24">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -101,7 +101,7 @@
     <a class="nav-link" href="/cancellations/">Cancellations</a>
     <a class="nav-cta" href="#book">Book Now</a>
   </div>
-  <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+  <button class="nav-hamburger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-drawer">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -498,18 +498,30 @@
 // Hamburger menu
 const hamburger = document.querySelector('.nav-hamburger');
 const drawer = document.getElementById('nav-drawer');
-if (hamburger && drawer) {
+const nav = document.querySelector('nav');
+if (hamburger && drawer && nav) {
+  // The drawer's top is read off the nav rather than hard-coded, because the
+  // nav's height changes with the breakpoint and a fixed value drifts.
+  function setOpen(open) {
+    drawer.classList.toggle('open', open);
+    hamburger.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', String(open));
+    if (open) drawer.style.top = Math.round(nav.getBoundingClientRect().bottom) + 'px';
+  }
   hamburger.addEventListener('click', () => {
-    const isOpen = drawer.classList.toggle('open');
-    hamburger.classList.toggle('open', isOpen);
-    hamburger.setAttribute('aria-expanded', isOpen);
+    setOpen(hamburger.getAttribute('aria-expanded') !== 'true');
   });
   drawer.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      drawer.classList.remove('open');
-      hamburger.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', false);
-    });
+    a.addEventListener('click', () => setOpen(false));
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && drawer.classList.contains('open')) {
+      setOpen(false);
+      hamburger.focus();
+    }
+  });
+  addEventListener('resize', () => {
+    if (drawer.classList.contains('open')) setOpen(true);
   });
 }
 

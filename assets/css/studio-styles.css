@@ -31,13 +31,13 @@ nav {
   backdrop-filter: blur(8px);
   border-bottom: 0.5px solid rgba(74,85,56,0.1);
 }
-.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 400; color: var(--dark); letter-spacing: 0.02em; }
+.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 400; color: var(--dark); letter-spacing: 0.02em; white-space: nowrap; }
 .nav-logo em { font-style: italic; color: var(--sage-dark); }
 .nav-links { display: flex; align-items: center; gap: 32px; }
 .nav-link { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mauve); transition: color 0.2s; display: flex; align-items: center; gap: 7px; }
 .nav-link:hover { color: var(--dark); }
 .nav-gs-badge { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; background: rgba(111,122,96,0.15); color: var(--sage-dark); padding: 2px 7px; border-radius: 14px; font-family: 'Jost', sans-serif; white-space: nowrap; }
-.nav-cta { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; padding: 10px 22px; border-radius: 999px; background: var(--sage); color: white; transition: opacity 0.2s; }
+.nav-cta { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; padding: 10px 22px; border-radius: 999px; background: var(--sage); color: white; transition: opacity 0.2s; white-space: nowrap; }
 .nav-cta:hover { opacity: 0.85; }
 
 /* HERO */
@@ -544,7 +544,7 @@ footer { background: var(--dark); padding: 48px 52px; }
 .nav-drawer {
   display: none;
   position: fixed;
-  top: 57px;
+  top: 77px;  /* starting value; the script corrects it from the nav's real height */
   left: 0; right: 0;
   background: rgba(232,237,228,0.98);
   backdrop-filter: blur(12px);
@@ -579,13 +579,24 @@ footer { background: var(--dark); padding: 48px 52px; }
   text-transform: uppercase;
 }
 
-/* ── MOBILE ─────────────────────────────────────────── */
-@media (max-width: 768px) {
+/* Measured: the link row needs 844-860px, so it stops fitting between 1040 and
+   1080. Tighten the gaps through the middle band rather than hiding links from
+   laptops and iPads. */
+@media (max-width: 1100px) {
+  nav { padding: 20px 28px; }
+  .nav-links { gap: 18px; }
+  .nav-cta { padding: 10px 16px; }
+}
 
-  /* NAV — hamburger replaces link row */
+/* Below this even the tightened row will not fit, so hand over to the burger. */
+@media (max-width: 960px) {
   nav { padding: 16px 24px; }
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
+}
+
+/* ── MOBILE ─────────────────────────────────────────── */
+@media (max-width: 768px) {
 
   /* HERO — reduce height so content is visible sooner */
   .hero { height: 75vh; min-height: 520px; }

@@ -239,7 +239,7 @@ a.hero-btn { display: inline-flex; align-items: center; justify-content: center;
 .instructor-body { padding: 16px; }
 .instructor-name { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 400; color: var(--dark); margin-bottom: 4px; }
 .instructor-role { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mauve); margin-bottom: 8px; }
-.instructor-bio { font-size: 12px; color: var(--mauve); line-height: 1.6; margin-bottom: 10px; }
+.instructor-bio { font-size: 13px; color: var(--mauve); line-height: 1.65; margin-bottom: 10px; }
 .instructor-ig { font-size: 12px; letter-spacing: 0.08em; color: var(--sage-dark); display: inline-block; }
 .instructors-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 28px; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage-dark); }
 
